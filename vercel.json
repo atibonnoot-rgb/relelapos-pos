@@ -1,14 +1,26 @@
 {
   "version": 2,
-  "functions": {
-    "api/index.js": {
-      "includeFiles": "eversub.dotpe.in/**,admin/**,custom_menu.json,banners.json,restaurant_finances.json,print_jobs.json,bill-and-kot-preview.html"
-    }
-  },
-  "rewrites": [
+  "builds": [
     {
-      "source": "/(.*)",
-      "destination": "/api/index.js"
+      "src": "api/index.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "eversub.dotpe.in/**",
+          "admin/**",
+          "custom_menu.json",
+          "banners.json",
+          "restaurant_finances.json",
+          "print_jobs.json",
+          "bill-and-kot-preview.html"
+        ]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "api/index.js"
     }
   ]
 }

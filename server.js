@@ -45,7 +45,7 @@ function parseBody(req) {
   });
 }
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const BASE_DIR = __dirname;
 const EVERSUB_DIR = path.join(BASE_DIR, 'eversub.dotpe.in');
 

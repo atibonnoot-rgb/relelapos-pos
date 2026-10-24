@@ -36,3 +36,5 @@ get_console.js
 relelapos-printer-daemon/.printed_orders.json
 relelapos-printer-daemon/daemon_printed_cache.json
 
+
+.vercel
