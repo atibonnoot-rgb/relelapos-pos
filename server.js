@@ -578,7 +578,7 @@ function handleRequest(req, res) {
   }
 
   // Intercept ANY Store Catalog API: Return custom editable menu instantly (0ms)
-  if (pathname.includes('/catalog/') && (pathname.includes('/menu') || pathname.endsWith('/catalog') || pathname.includes('/mstore/'))) {
+  if (pathname.includes('catalog') || pathname.includes('mstore') || pathname.includes('/menu')) {
     const catalogData = menuStore.getStoreCatalog();
     const jsonStr = JSON.stringify(catalogData);
     res.writeHead(200, {
@@ -591,8 +591,8 @@ function handleRequest(req, res) {
     return;
   }
 
-  // Intercept Merchant and Store info APIs to eliminate dotpe proxy lag and 401s
-  if (pathname.startsWith('/api/merchant/external/store/')) {
+  // Intercept Merchant and Store info APIs to eliminate dotpe proxy lag and 401/403s
+  if (pathname.startsWith('/api/merchant/external/')) {
     const jsonStr = JSON.stringify({
       status: true,
       store: {
@@ -602,20 +602,7 @@ function handleRequest(req, res) {
         serviceType: "instore",
         status: "ACTIVE",
         isOpen: true
-      }
-    });
-    res.writeHead(200, {
-      'Content-Type': 'application/json',
-      'Content-Length': Buffer.byteLength(jsonStr),
-      'Access-Control-Allow-Origin': '*'
-    });
-    res.end(jsonStr);
-    return;
-  }
-
-  if (pathname.startsWith('/api/merchant/external/merchant/info')) {
-    const jsonStr = JSON.stringify({
-      status: true,
+      },
       merchant: {
         merchantId: 21751,
         name: "Subway",
@@ -980,18 +967,7 @@ function handleRequest(req, res) {
           .loading-home-container,
           .cs-section-loader,
           .cs-section-loader-inner,
-          [class*="dotpe-loader"],
-          [class*="loading-block"],
-          [class*="load-animate"],
-          [class*="section-loader"],
-          [class*="loading-home"],
-          .page-loading,
-          .loading-wrapper,
-          .store-loader,
-          .loading-container,
-          .main-loader,
-          .spinner,
-          .preloader,
+          .loading-block,
           .dot-flashing {
             display: none !important;
             visibility: hidden !important;
@@ -2578,8 +2554,8 @@ function handleRequest(req, res) {
         `;
 
         const mobileBodyScripts = `
-        <script src="/subway_slider_client.js?v=20261024_7"></script>
-        <script src="/subway_cart_client.js?v=20261024_7"></script>
+        <script src="/subway_slider_client.js?v=20261024_8"></script>
+        <script src="/subway_cart_client.js?v=20261024_8"></script>
         <a id="subway-admin-link" href="/admin" target="_blank" title="Open Admin Panel">
           ⚙ Admin
         </a>
