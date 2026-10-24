@@ -26,6 +26,36 @@
   },
   "orders": [
     {
+      "id": "ORD-2053",
+      "orderNumber": 113,
+      "tokenNumber": 13,
+      "orderType": "Dine-In",
+      "table": "T-5",
+      "items": [
+        {
+          "itemID": 80011,
+          "itemName": "Ultimate Cheesy Paneer Sub",
+          "quantity": 1,
+          "price": 249
+        }
+      ],
+      "itemCount": 1,
+      "subtotal": 249,
+      "discount": 0,
+      "cgst": 0,
+      "sgst": 0,
+      "tax": 0,
+      "total": 249,
+      "paymentMethod": "UPI",
+      "paymentStatus": "Paid",
+      "orderStatus": "New",
+      "createdAt": "2026-10-24T09:31:31.957Z",
+      "customer": {
+        "name": "Mobile Tester",
+        "phone": "9988776655"
+      }
+    },
+    {
       "id": "ORD-2052",
       "orderNumber": 112,
       "tokenNumber": 12,

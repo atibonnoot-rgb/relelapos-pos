@@ -446,7 +446,7 @@ function generateKotEscPos(order, storeInfo = DEFAULT_STORE_INFO) {
 }
 
 // Enqueue a print job for an order (Idempotent: prevents duplicate queueing)
-function enqueuePrintJob(order, storeInfo = DEFAULT_STORE_INFO) {
+async function enqueuePrintJob(order, storeInfo = DEFAULT_STORE_INFO) {
   if (!order || !order.id) return null;
 
   const data = getPrintData();
@@ -477,6 +477,9 @@ function enqueuePrintJob(order, storeInfo = DEFAULT_STORE_INFO) {
     existing.customerEscPosBase64 = customerEscPosBase64;
     existing.kotEscPosBase64 = kotEscPosBase64;
     savePrintData(data);
+    try {
+      await supabaseClient.savePrintJobToCloud(existing);
+    } catch (e) {}
     console.log(`[PrintStore] Order ${order.id} re-enqueued as PENDING with fresh receipt formats.`);
     return existing;
   }
@@ -505,7 +508,7 @@ function enqueuePrintJob(order, storeInfo = DEFAULT_STORE_INFO) {
       table: order.table,
       total: order.total,
       paymentMethod: order.paymentMethod,
-      customerName: order.customer?.name || "Rahul Sharma",
+      customerName: order.customer?.name || "Customer",
       customerPhone: order.customer?.phone || storeInfo.phone,
       specialNote: order.notes || order.specialNote || "",
       itemsCount: (order.items || []).length
@@ -515,78 +518,128 @@ function enqueuePrintJob(order, storeInfo = DEFAULT_STORE_INFO) {
   data.queue.push(job);
   savePrintData(data);
   try {
-    supabaseClient.savePrintJobToCloud(job).catch(err => {
-      console.error('[Supabase async print job sync error]:', err.message);
-    });
-  } catch (e) {}
+    await supabaseClient.savePrintJobToCloud(job);
+  } catch (err) {
+    console.error('[Supabase print job sync error]:', err.message);
+  }
   console.log(`[PrintStore] Enqueued print job ${jobId} for order ${order.id} (Token #${job.tokenNumber})`);
   return job;
 }
 
-// Atomically claim pending jobs for a printer device
-function claimPendingJobs(deviceId = "default-daemon", leaseSeconds = 60) {
-  const data = getPrintData();
+// Atomically claim pending jobs for a printer device (Checks Supabase first, then local queue)
+async function claimPendingJobs(deviceId = "default-daemon", leaseSeconds = 60) {
   const now = Date.now();
+  const claimedJobs = [];
+  const seenJobIds = new Set();
+
+  // 1. Primary: Claim pending jobs from Supabase Cloud Database (works across all Vercel instances)
+  try {
+    const cloudPending = await supabaseClient.fetchPendingPrintJobsFromCloud();
+    if (Array.isArray(cloudPending) && cloudPending.length > 0) {
+      for (const row of cloudPending) {
+        const isPending = row.status === 'PENDING';
+        const isClaimExpired = row.status === 'CLAIMED' && row.claim_expires_at && (new Date(row.claim_expires_at).getTime() < now);
+
+        if (isPending || isClaimExpired) {
+          const claimExpiresAt = new Date(now + leaseSeconds * 1000).toISOString();
+          const attempts = (row.attempts || 0) + 1;
+
+          await supabaseClient.updatePrintJobStatusInCloud(row.job_id, {
+            status: 'CLAIMED',
+            claimed_by: deviceId,
+            claimed_at: new Date().toISOString(),
+            claim_expires_at: claimExpiresAt,
+            attempts
+          });
+
+          const jobObj = {
+            jobId: row.job_id,
+            orderId: row.order_id,
+            tokenNumber: row.token_number || 1,
+            status: 'CLAIMED',
+            createdAt: row.created_at,
+            claimedBy: deviceId,
+            claimExpiresAt,
+            attempts,
+            customerReceiptText: row.customer_receipt_text,
+            kotText: row.kot_text,
+            customerEscPosBase64: row.customer_escpos_base64,
+            kotEscPosBase64: row.kot_escpos_base64,
+            rawOrder: row.raw_order || {},
+            orderSummary: row.raw_order || {}
+          };
+
+          claimedJobs.push(jobObj);
+          seenJobIds.add(row.job_id);
+        }
+      }
+    }
+  } catch (cloudErr) {
+    console.error('[PrintStore] Cloud claim error:', cloudErr.message);
+  }
+
+  // 2. Secondary fallback: Local JSON file queue
+  const data = getPrintData();
   data.queue = data.queue || [];
   data.printedOrderIds = data.printedOrderIds || [];
 
-  // Eligible jobs: PENDING or (CLAIMED but lease expired)
-  const eligible = data.queue.filter(j => {
+  const eligibleLocal = data.queue.filter(j => {
+    if (seenJobIds.has(j.jobId)) return false;
     if (j.status === "PENDING") return true;
     if (j.status === "CLAIMED") {
       const exp = j.claimExpiresAt ? new Date(j.claimExpiresAt).getTime() : 0;
-      return exp < now; // Lease expired -> reclaim
+      return exp < now;
     }
     return false;
   });
 
-  if (eligible.length === 0) {
-    return [];
+  if (eligibleLocal.length > 0) {
+    eligibleLocal.forEach(job => {
+      job.status = "CLAIMED";
+      job.claimedBy = deviceId;
+      job.claimedAt = new Date().toISOString();
+      job.claimExpiresAt = new Date(now + leaseSeconds * 1000).toISOString();
+      job.attempts = (job.attempts || 0) + 1;
+      claimedJobs.push(job);
+      seenJobIds.add(job.jobId);
+    });
+    savePrintData(data);
   }
 
-  // Claim all eligible jobs
-  eligible.forEach(job => {
-    job.status = "CLAIMED";
-    job.claimedBy = deviceId;
-    job.claimedAt = new Date().toISOString();
-    job.claimExpiresAt = new Date(now + leaseSeconds * 1000).toISOString();
-    job.attempts = (job.attempts || 0) + 1;
-  });
-
-  savePrintData(data);
-  return eligible;
+  return claimedJobs;
 }
 
-// Acknowledge successful printing of a job
-function acknowledgePrintJob(jobId, deviceId = "default-daemon", status = "PRINTED") {
+// Acknowledge successful printing of a job (updates both Supabase & local cache)
+async function acknowledgePrintJob(jobId, deviceId = "default-daemon", status = "PRINTED") {
   const data = getPrintData();
   data.queue = data.queue || [];
   data.printedOrderIds = data.printedOrderIds || [];
 
   const job = data.queue.find(j => j.jobId === jobId);
-  if (!job) {
-    return { success: false, error: "Job not found" };
-  }
-
-  job.status = status;
-  if (status === "PRINTED") {
-    job.printedAt = new Date().toISOString();
-    job.printedBy = deviceId;
-    if (!data.printedOrderIds.includes(job.orderId)) {
-      data.printedOrderIds.push(job.orderId);
+  if (job) {
+    job.status = status;
+    if (status === "PRINTED") {
+      job.printedAt = new Date().toISOString();
+      job.printedBy = deviceId;
+      if (!data.printedOrderIds.includes(job.orderId)) {
+        data.printedOrderIds.push(job.orderId);
+      }
     }
+    savePrintData(data);
   }
 
-  savePrintData(data);
   try {
-    supabaseClient.updatePrintJobStatusInCloud(jobId, {
+    await supabaseClient.updatePrintJobStatusInCloud(jobId, {
       status,
-      printed_at: job.printedAt,
+      printed_at: new Date().toISOString(),
       printed_by: deviceId
-    }).catch(() => {});
-  } catch (e) {}
-  console.log(`[PrintStore] Job ${jobId} marked as ${status} by ${deviceId}.`);
-  return { success: true, jobId, orderId: job.orderId, status };
+    });
+  } catch (e) {
+    console.error('[PrintStore] Supabase ACK error:', e.message);
+  }
+
+  console.log(`[PrintStore] Job ${jobId} acknowledged as ${status} by ${deviceId}.`);
+  return { success: true, jobId, orderId: job ? job.orderId : jobId, status };
 }
 
 // Force reprint an order (admin action)

@@ -1,5 +1,6 @@
 {
-  "serverUrl": "http://192.168.0.111:3000",
+  "serverUrl": "https://relelapos-pos.vercel.app",
+  "printerSecret": "relelapos_pos_secret_token_7733",
   "deviceId": "laptop-pos-counter",
   "pollIntervalMs": 1500,
   "printerMode": "windows",

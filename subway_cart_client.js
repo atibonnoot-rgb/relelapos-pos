@@ -16,19 +16,33 @@
     if (!root) return;
 
     root.querySelectorAll('.popular-add-ons, .upsells, .popular-add-ons-main-container, .upsellHeader, .popular-items-main-container, .popular-items-inner-container, .popular-addons-heading, [class*="popular-add-ons"], [class*="upsell"]').forEach(el => {
-      el.style.display = 'none';
-      try { el.remove(); } catch(e) {}
+      el.style.setProperty('display', 'none', 'important');
+      el.style.setProperty('visibility', 'hidden', 'important');
     });
 
     root.querySelectorAll('.popular-addons-heading, .upsellHeader').forEach(el => {
       const c = el.closest('.popular-add-ons-main-container') || el.closest('.popular-add-ons');
       if (c && c !== root && c !== document.body) {
-        c.style.display = 'none';
-        try { c.remove(); } catch(e) {}
+        c.style.setProperty('display', 'none', 'important');
+        c.style.setProperty('visibility', 'hidden', 'important');
       }
     });
   }
-  setInterval(purgeUpsellElements, 250);
+
+  // Initial purge
+  purgeUpsellElements();
+  if (window.MutationObserver) {
+    let purgeTimeout = null;
+    const purgeObserver = new MutationObserver(() => {
+      if (purgeTimeout) return;
+      purgeTimeout = setTimeout(() => {
+        purgeTimeout = null;
+        purgeUpsellElements();
+      }, 100);
+    });
+    const rootEl = document.getElementById('root') || document.body;
+    if (rootEl) purgeObserver.observe(rootEl, { childList: true, subtree: true });
+  }
 
   // 2. Floating View Cart Bar creation & update (smooth curved corners in green)
   function getOrCreateViewCartBar() {
@@ -144,10 +158,16 @@
     if (!price) price = 249;
 
     let image = '';
-    const imgTag = panel.querySelector('.product-img-wrap img, img.product-image');
-    if (imgTag && imgTag.src) image = imgTag.src;
+    const candidateImgs = panel.querySelectorAll('.product-img-wrap img, img.product-image, .store-menu-product-item-wrap img, img');
+    for (const img of candidateImgs) {
+      const src = img.src || img.getAttribute('data-src') || '';
+      if (src && !src.includes('veg') && !src.includes('icon') && !src.includes('data:image/svg')) {
+        image = src;
+        break;
+      }
+    }
     if (!image) {
-      const imgWrap = panel.querySelector('.product-img-wrap');
+      const imgWrap = panel.querySelector('.product-img-wrap, [style*="background-image"]');
       if (imgWrap && imgWrap.style.backgroundImage) {
         const m = imgWrap.style.backgroundImage.match(/url\(["']?([^"']+)["']?\)/);
         if (m) image = m[1];
@@ -155,6 +175,15 @@
     }
     if (!image && window.menuCatalogById && window.menuCatalogById[id] && window.menuCatalogById[id].image && window.menuCatalogById[id].image[0]) {
       image = window.menuCatalogById[id].image[0];
+    }
+    if (!image && window.menuCatalogByName && window.menuCatalogByName[name.toLowerCase()] && window.menuCatalogByName[name.toLowerCase()].image && window.menuCatalogByName[name.toLowerCase()].image[0]) {
+      image = window.menuCatalogByName[name.toLowerCase()].image[0];
+    }
+    if (image && image.startsWith('//')) {
+      image = 'https:' + image;
+    }
+    if (!image) {
+      image = 'https://cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg';
     }
 
     return { id, name, price, image };
@@ -244,20 +273,22 @@
   }
 
   // 3. Create Cart Bottom Sheet & Modal
+  window._isOrderConfirmedScreenActive = false;
+
   function getOrCreateCartModal() {
     let modal = document.getElementById('subway-cart-modal');
     if (!modal) {
       modal = document.createElement('div');
       modal.id = 'subway-cart-modal';
       modal.innerHTML = `
-        <div class="subway-cart-backdrop" onclick="closeSubwayCart()"></div>
+        <div class="subway-cart-backdrop" onclick="window.handleSubwayModalClose()"></div>
         <div class="subway-cart-sheet">
           <div class="subway-cart-header">
             <div>
-              <h3>My Subway Cart</h3>
-              <span style="font-size:12px; color:#6b7280;">Subway Topsia Kolkata Store</span>
+              <h3 id="subway-cart-header-title">My Subway Cart</h3>
+              <span id="subway-cart-header-sub" style="font-size:12px; color:#6b7280;">Subway Topsia Kolkata Store</span>
             </div>
-            <button class="subway-cart-close" onclick="closeSubwayCart()">✕</button>
+            <button class="subway-cart-close" id="subway-cart-close-btn" onclick="window.handleSubwayModalClose()" aria-label="Close">✕</button>
           </div>
 
           <div class="subway-cart-body" id="subway-cart-body">
@@ -275,6 +306,60 @@
     }
     return modal;
   }
+
+  window.handleSubwayModalClose = function() {
+    if (window._isOrderConfirmedScreenActive) {
+      window.doneOrderConfirmation();
+    } else {
+      window.closeSubwayCart();
+    }
+  };
+
+  window.clearAndResetAllOrderSelections = function() {
+    window.subwayCart.items = {};
+
+    // 1. Hide floating view cart bar and reset counters
+    const bar = document.getElementById('subway-view-cart-bar');
+    if (bar) {
+      bar.classList.remove('visible');
+      const badge = document.getElementById('subway-cart-badge');
+      const amount = document.getElementById('subway-cart-amount');
+      if (badge) badge.textContent = '0 Items';
+      if (amount) amount.textContent = '₹0';
+    }
+
+    // 2. Revert all item buttons on the page back to ADD
+    document.querySelectorAll('.item-layout-panel, .best-sell-items-inner-container').forEach(panel => {
+      const info = getItemInfoFromPanel(panel);
+      if (!info) return;
+
+      let addContainer = panel.querySelector('.add-btn-container');
+      const addBtn = panel.querySelector('.add-quantity-btn');
+      if (!addContainer && addBtn) {
+        addContainer = addBtn.parentElement;
+      }
+      if (!addContainer) return;
+
+      const counterEl = addContainer.querySelector('.subway-item-counter');
+      if (counterEl) {
+        addContainer.innerHTML = `
+          <div class="add-quantity-btn img-size-new md-pc md-text13 md-f700"><div class="add-quantity-text">ADD</div></div>
+          ${panel.querySelector('.custmisable-btn') ? '<div class="custmisable-btn">customizable</div>' : ''}
+        `;
+        bindAddButton(addContainer, info);
+      }
+    });
+
+    // 3. Clear any saved browser storage
+    try {
+      localStorage.removeItem('subway_cart');
+      sessionStorage.removeItem('subway_cart');
+    } catch(e) {}
+
+    // 4. Clear order notes
+    const notesEl = document.getElementById('subway-order-notes');
+    if (notesEl) notesEl.value = '';
+  };
 
   window.openSubwayCart = function() {
     const modal = getOrCreateCartModal();
@@ -319,6 +404,8 @@
     const footerBtn = document.getElementById('subway-place-order-btn');
     if (!body) return;
 
+    if (window._isOrderConfirmedScreenActive) return;
+
     const items = Object.values(window.subwayCart.items);
     const subtotal = window.subwayCart.getSubtotal();
     const total = subtotal; // Non-GST billing
@@ -360,16 +447,17 @@
 
     let itemsHtml = items.map(item => `
       <div class="subway-cart-item">
+        <img class="subway-cart-item-img" src="${item.image || 'https://cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg'}" alt="${item.name}" onerror="this.src='https://cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg'">
         <div class="subway-cart-item-info">
           <div class="subway-cart-item-name">${item.name}</div>
           <div class="subway-cart-item-price">₹${item.price} each</div>
         </div>
         <div class="subway-cart-item-qty">
-          <button onclick="changeCartItemQty('${item.id}', -1)">−</button>
-          <span style="font-size:14px; font-weight:800; color:#111827; min-width:18px; text-align:center;">${item.qty}</span>
-          <button onclick="changeCartItemQty('${item.id}', 1)">+</button>
+          <button type="button" onclick="window.changeCartItemQty('${item.id}', -1)" title="Decrease quantity">−</button>
+          <span style="font-size:14px; font-weight:900; color:#111827; min-width:18px; text-align:center;">${item.qty}</span>
+          <button type="button" onclick="window.changeCartItemQty('${item.id}', 1)" title="Increase quantity">+</button>
         </div>
-        <div style="font-size:14px; font-weight:800; color:#111827; margin-left:16px; min-width:55px; text-align:right;">
+        <div class="subway-cart-item-total">
           ₹${item.price * item.qty}
         </div>
       </div>
@@ -403,7 +491,7 @@
 
       <!-- Cooking instructions note -->
       <div style="margin-top:10px;">
-        <input type="text" id="subway-order-notes" placeholder="Cooking instructions (e.g., extra napkins, toasted well)" style="width:100%; height:42px; padding:0 12px; border:1px solid #d1d5db; border-radius:8px; font-size:13px; outline:none; box-sizing:border-box;">
+        <input type="text" id="subway-order-notes" placeholder="Cooking instructions (extra napkins, toasted well, etc.)" style="width:100%; height:42px; padding:0 12px; border:1px solid #d1d5db; border-radius:8px; font-size:13px; outline:none; box-sizing:border-box;">
       </div>
 
       <!-- Bill breakdown (Non-GST) -->
@@ -549,8 +637,8 @@
 
       const orderedItemsSnapshot = [...items];
 
-      // Clear cart items in memory
-      window.subwayCart.items = {};
+      // Clear previous order selections immediately from memory, DOM, and storage
+      window.clearAndResetAllOrderSelections();
 
       // Display Confirmed Order Screen with Animated Tick Mark and Unique Token
       showOrderConfirmedScreen(confirmedOrder, orderedItemsSnapshot, total);
@@ -568,7 +656,7 @@
         customer: orderPayload.customer
       };
       const orderedItemsSnapshot = [...items];
-      window.subwayCart.items = {};
+      window.clearAndResetAllOrderSelections();
       showOrderConfirmedScreen(fallbackOrder, orderedItemsSnapshot, total);
     } finally {
       window._isSubmittingOrder = false;
@@ -581,6 +669,7 @@
   };
 
   function showOrderConfirmedScreen(order, items, total) {
+    window._isOrderConfirmedScreenActive = true;
     const modal = getOrCreateCartModal();
     const body = document.getElementById('subway-cart-body');
     const footer = document.getElementById('subway-cart-footer');
@@ -589,15 +678,37 @@
     if (footer) footer.style.display = 'none';
     modal.classList.add('open');
 
+    // Update modal header for order confirmation
+    const headerTitle = document.getElementById('subway-cart-header-title');
+    if (headerTitle) headerTitle.textContent = 'Order Placed';
+    const headerSub = document.getElementById('subway-cart-header-sub');
+    if (headerSub) headerSub.textContent = 'Sent to POS-80 Counter Thermal Printer';
+
     const tokenNum = order.tokenNumber || order.orderNumber || 1;
     const isCashOrder = (order.paymentMethod || '').toLowerCase().includes('cash');
 
-    const itemsListHtml = (items || []).map(it => `
-      <div style="display:flex; justify-content:space-between; align-items:center; font-size:13px; padding:4px 0;">
-        <span style="font-weight:700; color:#111827;">${it.qty || it.quantity || 1}x ${it.name || it.itemName}</span>
-        <span style="font-weight:700; color:#008938;">₹${(it.price || 0) * (it.qty || it.quantity || 1)}</span>
-      </div>
-    `).join('');
+    const itemsListHtml = (items || []).map(it => {
+      const itName = it.name || it.itemName || 'Subway Item';
+      const itQty = it.qty || it.quantity || 1;
+      const itPrice = it.price || 0;
+      const itImg = it.image || 'https://cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg';
+
+      return `
+        <div style="display:flex; align-items:center; gap:12px; padding:10px 12px; background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; margin-bottom:8px; box-shadow:0 1px 3px rgba(0,0,0,0.03);">
+          <img src="${itImg}" alt="${itName}" style="width:52px; height:52px; border-radius:10px; object-fit:cover; flex-shrink:0; border:1px solid #f1f3f5; background:#f8fafc;" onerror="this.src='https://cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg'">
+          <div style="flex:1; min-width:0;">
+            <div style="font-size:14px; font-weight:800; color:#111827; line-height:1.2; margin-bottom:4px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${itName}</div>
+            <div style="display:flex; align-items:center; gap:8px; font-size:12px; color:#6b7280;">
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:700; padding:2px 7px; border-radius:6px; font-size:11px;">Qty: ${itQty}</span>
+              <span>₹${itPrice} each</span>
+            </div>
+          </div>
+          <div style="font-size:15px; font-weight:900; color:#008938; text-align:right; flex-shrink:0;">
+            ₹${itPrice * itQty}
+          </div>
+        </div>
+      `;
+    }).join('');
 
     body.innerHTML = `
       <div class="subway-confirm-screen">
@@ -608,17 +719,17 @@
           </svg>
         </div>
 
-        <h2 style="font-size:23px; font-weight:800; color:#111827; margin:0 0 4px 0;">Order Confirmed!</h2>
-        <p style="font-size:13px; color:#6b7280; margin:0 0 14px 0;">Your order has been sent to POS-80 printer & kitchen ticket</p>
+        <h2 style="font-size:22px; font-weight:800; color:#111827; margin:0 0 4px 0;">Order Placed Successfully!</h2>
+        <p style="font-size:13px; color:#6b7280; margin:0 0 14px 0;">Customer Bill & Kitchen KOT sent to counter POS-80</p>
 
         <!-- Prominent Unique Token Number -->
-        <div style="background:linear-gradient(135deg, #008938, #005a24); color:#ffffff; padding:18px 24px; border-radius:16px; margin:0 0 18px 0; text-align:center; box-shadow:0 6px 16px rgba(0,137,56,0.3); width:100%; box-sizing:border-box;">
+        <div style="background:linear-gradient(135deg, #008938, #005a24); color:#ffffff; padding:18px 24px; border-radius:16px; margin:0 0 16px 0; text-align:center; box-shadow:0 6px 16px rgba(0,137,56,0.3); width:100%; box-sizing:border-box;">
           <div style="font-size:11px; text-transform:uppercase; letter-spacing:1.5px; opacity:0.9; font-weight:700;">YOUR ORDER TOKEN</div>
           <div style="font-size:42px; font-weight:900; letter-spacing:1px; line-height:1.1; margin:6px 0;">#${tokenNum}</div>
           <div style="font-size:12px; opacity:0.95; font-weight:500;">Quote Token #${tokenNum} at the counter</div>
         </div>
 
-        <div style="background:#f9fafb; border:1px solid #f1f3f5; border-radius:14px; padding:16px; width:100%; text-align:left; margin-bottom:16px; box-sizing:border-box;">
+        <div style="background:#f9fafb; border:1px solid #f1f3f5; border-radius:14px; padding:14px 16px; width:100%; text-align:left; margin-bottom:14px; box-sizing:border-box;">
           <div style="display:flex; justify-content:space-between; font-size:13px; margin-bottom:8px;">
             <span style="color:#6b7280;">Order ID:</span>
             <span style="font-weight:700; color:#111827;">${order.id || 'ORD-2053'}</span>
@@ -627,35 +738,23 @@
             <span style="color:#6b7280;">Service Type:</span>
             <span style="font-weight:700; color:#111827;">${order.orderType || 'Dine-In'} ${order.table ? '(' + order.table + ')' : ''}</span>
           </div>
-          <div style="display:flex; justify-content:space-between; font-size:13px; margin-bottom:8px;">
+          <div style="display:flex; justify-content:space-between; font-size:13px; margin-bottom:12px;">
             <span style="color:#6b7280;">Payment Method:</span>
             <span style="font-weight:700; color:${isCashOrder ? '#b45309' : '#008938'};">
               ${isCashOrder ? '💵 Cash (Pay at Counter)' : '⚡ UPI / Online (Paid)'}
             </span>
           </div>
 
-          <!-- Items list ordered by customer -->
-          <div style="margin:10px 0; border-top:1px dashed #e5e7eb; border-bottom:1px dashed #e5e7eb; padding:8px 0;">
-            <div style="font-size:11px; font-weight:700; color:#6b7280; text-transform:uppercase; margin-bottom:6px;">Items Ordered (${items.length})</div>
+          <!-- Items list with food pictures -->
+          <div style="margin:8px 0; border-top:1px dashed #e5e7eb; border-bottom:1px dashed #e5e7eb; padding:10px 0 2px 0;">
+            <div style="font-size:11px; font-weight:800; color:#6b7280; text-transform:uppercase; margin-bottom:8px; letter-spacing:0.5px;">Order Items (${items.length})</div>
             ${itemsListHtml}
           </div>
 
-          <div style="display:flex; justify-content:space-between; font-size:13px; padding-top:4px;">
-            <span style="color:#6b7280;">Total Amount:</span>
-            <span style="font-weight:800; color:#008938; font-size:16px;">₹${total}</span>
+          <div style="display:flex; justify-content:space-between; align-items:center; font-size:13px; padding-top:8px;">
+            <span style="color:#6b7280; font-weight:600;">Total Paid:</span>
+            <span style="font-weight:900; color:#008938; font-size:18px;">₹${total}</span>
           </div>
-        </div>
-
-        <div style="display:flex; gap:10px; width:100%; margin-bottom:8px;">
-          <button id="subway-reprint-btn" class="subway-place-order-btn" style="flex:1; background:#0f172a; color:#fff;" onclick="printCustomerBillFromStore()">
-            🖨 Print Bill (POS-80)
-          </button>
-          <button class="subway-place-order-btn" style="flex:1; background:#008938; color:#fff;" onclick="doneOrderConfirmation()">
-            Done / Order More
-          </button>
-        </div>
-        <div id="subway-print-toast" style="font-size:12px; color:#008938; font-weight:700; text-align:center; display:none; padding:4px 0 8px 0;">
-          ✓ Bill & KOT Sent to POS-80 Thermal Printer with Paper Cut!
         </div>
       </div>
     `;
@@ -663,43 +762,160 @@
     window.lastPlacedOrder = order;
   }
 
-  window.printCustomerBillFromStore = async function() {
-    const o = window.lastPlacedOrder;
-    if (!o) return;
-    const btn = document.getElementById('subway-reprint-btn');
-    const toast = document.getElementById('subway-print-toast');
-    if (btn) {
-      btn.disabled = true;
-      btn.textContent = '⏳ Printing...';
-    }
-    try {
-      const res = await fetch('/api/printer/reprint/' + (o.id || o.orderId), { method: 'POST' });
-      const data = await res.json();
-      if (toast) {
-        toast.textContent = '✓ Bill & KOT Sent to POS-80 Thermal Printer with Paper Cut!';
-        toast.style.display = 'block';
-        setTimeout(() => { if (toast) toast.style.display = 'none'; }, 4000);
-      }
-    } catch(err) {
-      console.error('Print error:', err);
-    } finally {
-      if (btn) {
-        btn.disabled = false;
-        btn.textContent = '🖨 Print Bill (POS-80)';
-      }
-    }
-  };
-
   window.doneOrderConfirmation = function() {
-    closeSubwayCart();
-    updateCartUI();
+    window._isOrderConfirmedScreenActive = false;
+    window.clearAndResetAllOrderSelections();
+    window.closeSubwayCart();
+
+    // Reset modal header
+    const headerTitle = document.getElementById('subway-cart-header-title');
+    if (headerTitle) headerTitle.textContent = 'My Subway Cart';
+    const headerSub = document.getElementById('subway-cart-header-sub');
+    if (headerSub) headerSub.textContent = 'Subway Topsia Kolkata Store';
+
+    // Reset modal footer and body
     const footer = document.getElementById('subway-cart-footer');
     if (footer) footer.style.display = 'block';
+    renderCartModalItems();
   };
 
-  // Initialize buttons and listeners
-  setTimeout(initAddButtons, 600);
-  setInterval(initAddButtons, 1000);
+  // Global Event Delegation: Entire Item Card is Clickable + Steppers
+  let lastTouchTime = 0;
+
+  function handleItemInteraction(targetEl, e) {
+    if (!targetEl) return false;
+
+    // Never intercept clicks inside the cart modal, bottom cart bar, or admin button
+    if (targetEl.closest('#subway-cart-modal') || targetEl.closest('#subway-view-cart-bar') || targetEl.closest('#subway-admin-link')) {
+      return false;
+    }
+
+    // 1. Stepper minus button
+    const minusBtn = targetEl.closest('.subway-counter-btn.minus');
+    if (minusBtn) {
+      if (e && e.cancelable) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      const counter = minusBtn.closest('.subway-item-counter');
+      const id = counter ? counter.dataset.id : null;
+      if (id && window.subwayCart.items[id]) {
+        window.subwayCart.items[id].qty--;
+        if (window.subwayCart.items[id].qty <= 0) {
+          delete window.subwayCart.items[id];
+        }
+        updateCartUI();
+      }
+      return true;
+    }
+
+    // 2. Stepper plus button
+    const plusBtn = targetEl.closest('.subway-counter-btn.plus');
+    if (plusBtn) {
+      if (e && e.cancelable) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      const counter = plusBtn.closest('.subway-item-counter');
+      const id = counter ? counter.dataset.id : null;
+      if (id && window.subwayCart.items[id]) {
+        window.subwayCart.items[id].qty++;
+        updateCartUI();
+      }
+      return true;
+    }
+
+    // 3. Counter value span (clicking the number inside stepper - do not increment twice)
+    if (targetEl.closest('.subway-item-counter')) {
+      if (e && e.cancelable) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      return true;
+    }
+
+    // 4. Entire item box (card) OR explicit ADD button
+    const panel = targetEl.closest('.item-layout-panel, .best-sell-items-inner-container, .store-menu-product-item-wrap, [class*="item-layout-panel"], [class*="store-menu-product"]');
+    if (panel) {
+      if (e && e.cancelable) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+
+      const info = getItemInfoFromPanel(panel);
+      if (info) {
+        if (!window.subwayCart.items[info.id]) {
+          window.subwayCart.items[info.id] = {
+            id: info.id,
+            name: info.name,
+            price: info.price,
+            image: info.image,
+            qty: 1
+          };
+        } else {
+          window.subwayCart.items[info.id].qty++;
+        }
+        updateCartUI();
+
+        // Subtle micro-tap feedback on item panel
+        try {
+          panel.style.transition = 'transform 0.12s ease';
+          panel.style.transform = 'scale(0.98)';
+          setTimeout(() => { panel.style.transform = 'none'; }, 120);
+        } catch(err) {}
+
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  // Mobile touch listener (capture: true)
+  document.addEventListener('touchend', function(e) {
+    if (handleItemInteraction(e.target, e)) {
+      lastTouchTime = Date.now();
+    }
+  }, { capture: true, passive: false });
+
+  // Universal click listener (capture: true)
+  document.addEventListener('click', function(e) {
+    // If just handled via touch within 450ms, prevent synthetic double-click
+    if (Date.now() - lastTouchTime < 450 && e.target.closest('.item-layout-panel, .best-sell-items-inner-container, .store-menu-product-item-wrap, [class*="item-layout-panel"], [class*="store-menu-product"], .subway-counter-btn')) {
+      if (e && e.cancelable) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      return;
+    }
+
+    handleItemInteraction(e.target, e);
+  }, { capture: true, passive: false });
+
+  // Initialize buttons and listeners safely
+  function startObservers() {
+    initAddButtons();
+    if (window.MutationObserver) {
+      let btnTimeout = null;
+      const btnObserver = new MutationObserver(() => {
+        if (btnTimeout) return;
+        btnTimeout = setTimeout(() => {
+          btnTimeout = null;
+          initAddButtons();
+        }, 120);
+      });
+      const targetNode = document.body || document.documentElement;
+      if (targetNode) {
+        btnObserver.observe(targetNode, { childList: true, subtree: true });
+      }
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startObservers);
+  } else {
+    startObservers();
+  }
 
   // 6. Sticky Category Navigation Bar & Smooth Scrolling
   let isProgrammaticScrolling = false;
@@ -850,7 +1066,78 @@
     } else {
       buildNav();
     }
-    setInterval(buildNav, 300);
+    // Check after catalog loads, then stop
+    setTimeout(buildNav, 1000);
+    setTimeout(buildNav, 3000);
   }
   initCategoryNavigation();
+
+  // Instant Loader Elimination & Continuous Scroll Unlocker for Mobile & Desktop
+  function forceUnlockAndCleanLoaders() {
+    // 1. Visually eliminate all DotPe loading screen elements without detaching them from DOM (so React Fiber reconciler does not throw NotFoundError removeChild)
+    const loaders = document.querySelectorAll('.dotpe-loader-main-container, .loader-gif, .loader-slider, [class*="dotpe-loader"], .page-loading, .loading-wrapper, .store-loader, .loading-container');
+    loaders.forEach(l => {
+      l.style.setProperty('display', 'none', 'important');
+      l.style.setProperty('visibility', 'hidden', 'important');
+      l.style.setProperty('opacity', '0', 'important');
+      l.style.setProperty('pointer-events', 'none', 'important');
+    });
+
+    // 2. Unlock html and body natural scrolling
+    if (document.documentElement) {
+      if (document.documentElement.style.overflowY === 'hidden') document.documentElement.style.overflowY = 'auto';
+      if (document.documentElement.style.height && document.documentElement.style.height !== 'auto') document.documentElement.style.height = 'auto';
+    }
+    if (document.body) {
+      document.body.classList.remove('ReactModal__Body--open');
+      if (document.body.style.overflowY === 'hidden' || document.body.style.overflow === 'hidden') {
+        document.body.style.overflowY = 'auto';
+        document.body.style.overflow = 'visible';
+      }
+      if (document.body.style.height && document.body.style.height !== 'auto') {
+        document.body.style.height = 'auto';
+      }
+      if (document.body.style.position === 'fixed') {
+        document.body.style.position = 'static';
+      }
+    }
+
+    // 3. Unlock #root, .store-catalog-wrapper, .main-store-page-wrap so all 141+ items scroll freely
+    const root = document.getElementById('root');
+    if (root) {
+      if (root.style.overflowY === 'hidden' || root.style.overflow === 'hidden') {
+        root.style.overflowY = 'visible';
+        root.style.overflow = 'visible';
+      }
+      if (root.style.height && root.style.height !== 'auto') {
+        root.style.height = 'auto';
+      }
+      if (root.style.position === 'fixed') {
+        root.style.position = 'static';
+      }
+    }
+
+    const wrappers = document.querySelectorAll('.store-catalog-wrapper, .main-store-page-wrap');
+    wrappers.forEach(w => {
+      if (w.style.height && w.style.height !== 'auto') w.style.height = 'auto';
+      if (w.style.overflow === 'hidden' || w.style.overflowY === 'hidden') w.style.overflow = 'visible';
+    });
+  }
+
+  // Run immediately and continuously
+  forceUnlockAndCleanLoaders();
+  setInterval(forceUnlockAndCleanLoaders, 100);
+
+  if (window.MutationObserver) {
+    const unblockObserver = new MutationObserver(() => {
+      forceUnlockAndCleanLoaders();
+    });
+    unblockObserver.observe(document.documentElement, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['style', 'class']
+    });
+  }
 })();
+

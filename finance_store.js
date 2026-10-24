@@ -284,7 +284,7 @@ function calculateSummary() {
 }
 
 // Order management
-function createOrder(orderPayload) {
+async function createOrder(orderPayload) {
   const data = getFinances();
   const nextNum = (data.orders.length > 0 ? Math.max(...data.orders.map(o => o.orderNumber || 100)) + 1 : 101);
   const nextId = `ORD-${nextNum + 1940}`;
@@ -332,10 +332,10 @@ function createOrder(orderPayload) {
   data.orders.unshift(newOrder);
   saveFinances(data);
   try {
-    supabaseClient.saveOrderToCloud(newOrder).catch(err => {
-      console.error('[Supabase async order sync error]:', err.message);
-    });
-  } catch (e) {}
+    await supabaseClient.saveOrderToCloud(newOrder);
+  } catch (err) {
+    console.error('[Supabase order sync error]:', err.message);
+  }
   return newOrder;
 }
 

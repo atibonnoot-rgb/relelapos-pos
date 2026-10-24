@@ -24,14 +24,17 @@ const CACHE_FILE = path.join(SCRIPT_DIR, 'daemon_printed_cache.json');
 if (!fs.existsSync(HISTORY_DIR)) fs.mkdirSync(HISTORY_DIR, { recursive: true });
 if (!fs.existsSync(SPOOL_DIR)) fs.mkdirSync(SPOOL_DIR, { recursive: true });
 
+let globalConfig = null;
+
 // Load Configuration
 function loadConfig() {
   const defaults = {
-    serverUrl: "http://localhost:3000",
+    serverUrl: "https://relelapos-pos.vercel.app",
+    printerSecret: "relelapos_pos_secret_token_7733",
     deviceId: `pos-${os.hostname().toLowerCase().replace(/[^a-z0-9]/g, '-')}`,
     pollIntervalMs: 1500,
     printerMode: "windows", // "windows" | "raw_escpos" | "file_spool" | "both"
-    windowsPrinterName: "",
+    windowsPrinterName: "POS-80",
     networkPrinter: { host: "192.168.1.200", port: 9100 },
     printCustomerBill: true,
     printKotSlip: true,
@@ -89,10 +92,11 @@ function recordPrintedInCache(orderId) {
 }
 
 // HTTP Helper with timeout
-function makeRequest(urlStr, method = 'GET', postData = null) {
+function makeRequest(urlStr, method = 'GET', postData = null, secret = null) {
   return new Promise((resolve, reject) => {
     const parsed = new URL(urlStr);
     const client = parsed.protocol === 'https:' ? https : http;
+    const token = secret || (globalConfig && globalConfig.printerSecret) || 'relelapos_pos_secret_token_7733';
     
     const options = {
       hostname: parsed.hostname,
@@ -101,7 +105,8 @@ function makeRequest(urlStr, method = 'GET', postData = null) {
       method: method,
       headers: {
         'Accept': 'application/json',
-        'User-Agent': 'RELELAPOS-PrinterDaemon/1.0'
+        'User-Agent': 'RELELAPOS-PrinterDaemon/1.0',
+        'x-printer-secret': token
       },
       timeout: 8000
     };
@@ -320,8 +325,9 @@ async function processJob(job, config) {
     const ackRes = await makeRequest(`${config.serverUrl}/api/printer/ack`, 'POST', {
       jobId: job.jobId,
       deviceId: config.deviceId,
-      status: "PRINTED"
-    });
+      status: "PRINTED",
+      secret: config.printerSecret
+    }, config.printerSecret);
     console.log(`[ACK CONFIRMED] Server acknowledged Order ${job.orderId} as PRINTED.`);
   } catch (err) {
     console.error(`[ACK WARNING] Could not send ACK to server (${err.message}). Local cache preserved.`);
@@ -340,8 +346,9 @@ async function pollQueue(config) {
   isPolling = true;
 
   try {
-    const url = `${config.serverUrl}/api/printer/jobs?deviceId=${encodeURIComponent(config.deviceId)}&lease=60`;
-    const res = await makeRequest(url, 'GET');
+    const secret = encodeURIComponent(config.printerSecret || 'relelapos_pos_secret_token_7733');
+    const url = `${config.serverUrl}/api/printer/jobs?deviceId=${encodeURIComponent(config.deviceId)}&lease=60&secret=${secret}`;
+    const res = await makeRequest(url, 'GET', null, config.printerSecret);
 
     if (consecutiveErrors > 0) {
       console.log(`[CONNECTION RESTORED] Reconnected to RELELAPOS POS server at ${config.serverUrl}`);
@@ -410,6 +417,7 @@ function printStartupBanner(config) {
 // Entrypoint
 async function start() {
   const config = loadConfig();
+  globalConfig = config;
   const runOnce = process.argv.includes('--once');
 
   printStartupBanner(config);

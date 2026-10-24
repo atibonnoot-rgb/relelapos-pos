@@ -20,12 +20,17 @@ const bannerStore = require('./banner_store');
 const printStore = require('./print_store');
 const cartHandler = require('./cart_handler');
 
-// -- Releela POS Daemon: Zero-Delay Instant Thermal Printer API --
+// Security token for KOT & POS hardware thermal printer daemon
+const PRINTER_SECRET = process.env.PRINTER_SECRET || 'relelapos_pos_secret_token_7733';
+
+function isPrinterAuthorized(req, parsedUrl) {
+  const headerToken = req.headers['x-printer-secret'] || (req.headers['authorization'] || '').replace(/^Bearer\s+/i, '');
+  const queryToken = parsedUrl.searchParams.get('secret');
+  return (headerToken === PRINTER_SECRET || queryToken === PRINTER_SECRET);
+}
+
 // Local POS Daemon push disabled per user request:
-// Orders are NOT sent to 127.0.0.1:5001, preventing any other print CMD windows on this laptop from printing.
-// All printing is handled exclusively via the network queue (/api/printer/jobs) by the dedicated POS counter laptop.
 function callPosDaemon(order, isReprint) {
-  // No-op
   return;
 }
 // -----------------------------------------------------------------
@@ -211,6 +216,13 @@ function handleRequest(req, res) {
   if (pathname.endsWith('/undefined') || pathname.endsWith('/null')) {
     res.writeHead(302, { 'Location': '/store/521/1/999' });
     res.end();
+    return;
+  }
+
+  // Intercept GTM & 3rd-party analytics to prevent 404 HTML SyntaxError
+  if (pathname.includes('googletagmanager') || pathname.includes('gtm') || pathname.includes('google-analytics') || pathname.includes('criteo') || pathname.includes('connect.facebook.net')) {
+    res.writeHead(200, { 'Content-Type': 'application/javascript; charset=utf-8' });
+    res.end('/* gtm & analytics mock */ window.dataLayer = window.dataLayer || [];');
     return;
   }
 
@@ -565,8 +577,8 @@ function handleRequest(req, res) {
     }
   }
 
-  // Intercept Store Catalog API: Return custom editable menu
-  if (pathname === '/api/catalog/store/521/menu') {
+  // Intercept ANY Store Catalog API: Return custom editable menu instantly (0ms)
+  if (pathname.includes('/catalog/') && (pathname.includes('/menu') || pathname.endsWith('/catalog') || pathname.includes('/mstore/'))) {
     const catalogData = menuStore.getStoreCatalog();
     const jsonStr = JSON.stringify(catalogData);
     res.writeHead(200, {
@@ -574,6 +586,57 @@ function handleRequest(req, res) {
       'Content-Length': Buffer.byteLength(jsonStr),
       'Access-Control-Allow-Origin': '*',
       'Cache-Control': 'no-cache, no-store, must-revalidate'
+    });
+    res.end(jsonStr);
+    return;
+  }
+
+  // Intercept Merchant and Store info APIs to eliminate dotpe proxy lag and 401s
+  if (pathname.startsWith('/api/merchant/external/store/')) {
+    const jsonStr = JSON.stringify({
+      status: true,
+      store: {
+        storeId: 521,
+        merchantId: 21751,
+        name: "Subway",
+        serviceType: "instore",
+        status: "ACTIVE",
+        isOpen: true
+      }
+    });
+    res.writeHead(200, {
+      'Content-Type': 'application/json',
+      'Content-Length': Buffer.byteLength(jsonStr),
+      'Access-Control-Allow-Origin': '*'
+    });
+    res.end(jsonStr);
+    return;
+  }
+
+  if (pathname.startsWith('/api/merchant/external/merchant/info')) {
+    const jsonStr = JSON.stringify({
+      status: true,
+      merchant: {
+        merchantId: 21751,
+        name: "Subway",
+        status: "ACTIVE"
+      }
+    });
+    res.writeHead(200, {
+      'Content-Type': 'application/json',
+      'Content-Length': Buffer.byteLength(jsonStr),
+      'Access-Control-Allow-Origin': '*'
+    });
+    res.end(jsonStr);
+    return;
+  }
+
+  if (pathname.startsWith('/api/location/serviceability/')) {
+    const jsonStr = JSON.stringify({ status: true, serviceable: true });
+    res.writeHead(200, {
+      'Content-Type': 'application/json',
+      'Content-Length': Buffer.byteLength(jsonStr),
+      'Access-Control-Allow-Origin': '*'
     });
     res.end(jsonStr);
     return;
@@ -640,13 +703,13 @@ function handleRequest(req, res) {
     return;
   }
 
-  // Customer Store Order Placement API: Creates order in financeStore (restaurant_finances.json)
+  // Customer Store Order Placement API: Creates order in financeStore (restaurant_finances.json & Supabase)
   if ((pathname === '/api/order' || pathname === '/api/orders' || pathname === '/api/checkout' || pathname === '/api/cart/checkout' || pathname === '/api/cart/fd/checkout' || pathname === '/api/cart/super/checkout') && req.method === 'POST') {
-    parseBody(req).then(body => {
-      const order = financeStore.createOrder(body);
+    parseBody(req).then(async body => {
+      const order = await financeStore.createOrder(body);
       const storeInfo = financeStore.getFinances().storeInfo;
       // Enqueue order for the counter POS laptop to pick up and print
-      printStore.enqueuePrintJob(order, storeInfo);
+      await printStore.enqueuePrintJob(order, storeInfo);
 
       const jsonStr = JSON.stringify({ status: true, order });
       res.writeHead(201, {
@@ -671,24 +734,40 @@ function handleRequest(req, res) {
 
   // GET /api/printer/jobs (Claim pending unprinted jobs for a printer device)
   if (pathname === '/api/printer/jobs' && req.method === 'GET') {
+    if (!isPrinterAuthorized(req, parsedUrl)) {
+      res.writeHead(401, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
+      res.end(JSON.stringify({ status: false, error: 'Unauthorized: Invalid or missing printer security token' }));
+      return;
+    }
+
     const deviceId = parsedUrl.searchParams.get('deviceId') || req.headers['x-device-id'] || 'daemon-laptop';
     const leaseSeconds = parseInt(parsedUrl.searchParams.get('lease')) || 60;
-    const jobs = printStore.claimPendingJobs(deviceId, leaseSeconds);
-    const jsonStr = JSON.stringify({ status: true, jobs, count: jobs.length, deviceId });
-    res.writeHead(200, {
-      'Content-Type': 'application/json',
-      'Content-Length': Buffer.byteLength(jsonStr),
-      'Access-Control-Allow-Origin': '*'
+    printStore.claimPendingJobs(deviceId, leaseSeconds).then(jobs => {
+      const jsonStr = JSON.stringify({ status: true, jobs, count: jobs.length, deviceId });
+      res.writeHead(200, {
+        'Content-Type': 'application/json',
+        'Content-Length': Buffer.byteLength(jsonStr),
+        'Access-Control-Allow-Origin': '*'
+      });
+      res.end(jsonStr);
+    }).catch(err => {
+      res.writeHead(500, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
+      res.end(JSON.stringify({ status: false, error: err.message }));
     });
-    res.end(jsonStr);
     return;
   }
 
   // POST /api/printer/ack (Acknowledge successful printing -> permanently marks printed)
   if (pathname === '/api/printer/ack' && req.method === 'POST') {
-    parseBody(req).then(body => {
+    if (!isPrinterAuthorized(req, parsedUrl)) {
+      res.writeHead(401, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
+      res.end(JSON.stringify({ status: false, error: 'Unauthorized: Invalid or missing printer security token' }));
+      return;
+    }
+
+    parseBody(req).then(async body => {
       const { jobId, deviceId, status } = body;
-      const result = printStore.acknowledgePrintJob(jobId, deviceId || 'daemon-laptop', status || 'PRINTED');
+      const result = await printStore.acknowledgePrintJob(jobId, deviceId || 'daemon-laptop', status || 'PRINTED');
       const jsonStr = JSON.stringify(result);
       res.writeHead(200, {
         'Content-Type': 'application/json',
@@ -705,6 +784,12 @@ function handleRequest(req, res) {
 
   // POST /api/printer/reprint/:id (Admin & Storefront manual reprint trigger)
   if (pathname.startsWith('/api/printer/reprint/') && req.method === 'POST') {
+    if (!isPrinterAuthorized(req, parsedUrl)) {
+      res.writeHead(401, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
+      res.end(JSON.stringify({ status: false, error: 'Unauthorized: Invalid or missing printer security token' }));
+      return;
+    }
+
     const orderId = pathname.slice('/api/printer/reprint/'.length);
     const storeInfo = financeStore.getFinances().storeInfo;
     const job = printStore.reprintOrder(orderId, storeInfo);
@@ -839,8 +924,18 @@ function handleRequest(req, res) {
   const possibleLocalFile = path.join(BASE_DIR, pathname);
   if (fs.existsSync(possibleLocalFile) && fs.statSync(possibleLocalFile).isFile()) {
     const ext = path.extname(possibleLocalFile).toLowerCase();
-    res.writeHead(200, { 'Content-Type': MIME_TYPES[ext] || 'application/octet-stream' });
+    res.writeHead(200, {
+      'Content-Type': MIME_TYPES[ext] || 'application/octet-stream',
+      'Cache-Control': (ext === '.js' || ext === '.css' || ext === '.html') ? 'no-cache, no-store, must-revalidate' : 'public, max-age=3600'
+    });
     fs.createReadStream(possibleLocalFile).pipe(res);
+    return;
+  }
+
+  // Root URL redirect to Store SPA
+  if (pathname === '/' || pathname === '') {
+    res.writeHead(302, { 'Location': '/store/521/1/999' });
+    res.end();
     return;
   }
 
@@ -857,6 +952,12 @@ function handleRequest(req, res) {
         // Disable service worker to prevent registration/caching errors on mobile
         htmlContent = htmlContent.replace('"serviceWorker"in navigator', 'false');
 
+        // Neutralize heavy blocking third-party tracking scripts cleanly without syntax errors
+        htmlContent = htmlContent.replace(/<script[^>]*assets\.loginwithamazon\.com[^>]*><\/script>/gi, '');
+        htmlContent = htmlContent.replace(/<script[^>]*dynamic\.criteo\.com[^>]*><\/script>/gi, '');
+        htmlContent = htmlContent.replace(/<script>!function\(e,a,t,n,g,o,c\)[\s\S]*?ga\("send","pageview"\)<\/script>/gi, '');
+        htmlContent = htmlContent.replace(/<script type="text\/javascript">window\.onAmazonLoginReady=[\s\S]*?login1\.js.*?\(document\)<\/script>/gi, '');
+
         const mobileInnerStyle = `
         <style id="mobile-inner-patch">
           /* Universal reset & scrollbar cleanup */
@@ -872,9 +973,42 @@ function handleRequest(req, res) {
             background: transparent !important;
           }
 
+          /* Immediately destroy and hide any DotPe loading screens, spinning animations, dot loaders, and skeleton shimmers */
+          .dotpe-loader-main-container,
+          .loader-gif,
+          .loader-slider,
+          .loading-home-container,
+          .cs-section-loader,
+          .cs-section-loader-inner,
+          [class*="dotpe-loader"],
+          [class*="loading-block"],
+          [class*="load-animate"],
+          [class*="section-loader"],
+          [class*="loading-home"],
+          .page-loading,
+          .loading-wrapper,
+          .store-loader,
+          .loading-container,
+          .main-loader,
+          .spinner,
+          .preloader,
+          .dot-flashing {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+            height: 0 !important;
+            width: 0 !important;
+            max-height: 0 !important;
+            overflow: hidden !important;
+            position: absolute !important;
+            z-index: -99999 !important;
+          }
+
           html, body {
             width: 100% !important;
             min-height: 100% !important;
+            height: auto !important;
             margin: 0 !important;
             padding: 0 !important;
             background-color: #f1f5f9 !important;
@@ -889,6 +1023,7 @@ function handleRequest(req, res) {
             overflow-y: auto !important;
             overflow-x: hidden !important;
             position: static !important;
+            height: auto !important;
           }
 
           /* Suppress ALL Dine In / Takeaway toggle overlays, dimmer overlays and timing popups */
@@ -986,10 +1121,11 @@ function handleRequest(req, res) {
             opacity: 0 !important;
           }
 
-          /* Responsive Centered App Shell Container */
+          /* Responsive Centered App Shell Container - Unlocked for Natural Scrolling */
           #root,
           .store-catalog-wrapper {
             width: 100% !important;
+            height: auto !important;
             min-height: 100vh !important;
             max-width: 100% !important;
             margin: 0 !important;
@@ -998,6 +1134,9 @@ function handleRequest(req, res) {
             border: none !important;
             box-shadow: none !important;
             display: block !important;
+            overflow: visible !important;
+            overflow-y: visible !important;
+            position: static !important;
           }
 
           .main-store-page-wrap,
@@ -1008,11 +1147,13 @@ function handleRequest(req, res) {
             padding: 0 !important;
             background-color: #ffffff !important;
             border: none !important;
+            height: auto !important;
             min-height: calc(100vh - 40px) !important;
             box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08) !important;
             border-radius: 20px 20px 0 0 !important;
             display: block !important;
             overflow: visible !important;
+            overflow-y: visible !important;
             position: relative !important;
           }
 
@@ -1023,6 +1164,7 @@ function handleRequest(req, res) {
               margin: 0 !important;
               border-radius: 0 !important;
               box-shadow: none !important;
+              height: auto !important;
               min-height: 100vh !important;
             }
           }
@@ -1471,9 +1613,10 @@ function handleRequest(req, res) {
             background-color: #ffffff !important;
           }
 
-          /* Item Card Layout */
+          /* Item Card Layout - Entire Item Box Clickable */
           .item-layout-panel,
-          .best-sell-items-inner-container {
+          .best-sell-items-inner-container,
+          [class*="item-layout-panel"] {
             display: flex !important;
             flex-direction: row !important;
             justify-content: space-between !important;
@@ -1486,6 +1629,14 @@ function handleRequest(req, res) {
             border-bottom: 1px solid #f1f3f5 !important;
             position: relative !important;
             min-height: 124px !important;
+            cursor: pointer !important;
+            user-select: none !important;
+            -webkit-tap-highlight-color: rgba(0, 137, 56, 0.08) !important;
+            transition: transform 0.12s ease !important;
+          }
+          .item-layout-panel:active,
+          .best-sell-items-inner-container:active {
+            transform: scale(0.985) !important;
           }
 
           .item-layout-panel:last-child,
@@ -1880,15 +2031,25 @@ function handleRequest(req, res) {
           .subway-cart-close {
             background: #f3f4f6 !important;
             border: none !important;
-            width: 32px !important;
-            height: 32px !important;
+            width: 36px !important;
+            height: 36px !important;
             border-radius: 50% !important;
-            font-size: 16px !important;
+            font-size: 18px !important;
             cursor: pointer !important;
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
-            color: #4b5563 !important;
+            color: #374151 !important;
+            font-weight: 800 !important;
+            transition: all 0.15s ease !important;
+            -webkit-tap-highlight-color: transparent !important;
+          }
+
+          .subway-cart-close:hover,
+          .subway-cart-close:active {
+            background: #e5e7eb !important;
+            color: #111827 !important;
+            transform: scale(1.08) !important;
           }
 
           .subway-cart-body {
@@ -1903,24 +2064,45 @@ function handleRequest(req, res) {
             display: flex !important;
             align-items: center !important;
             justify-content: space-between !important;
-            padding: 12px 0 !important;
-            border-bottom: 1px dashed #e5e7eb !important;
+            padding: 10px 12px !important;
+            background: #ffffff !important;
+            border: 1px solid #e5e7eb !important;
+            border-radius: 14px !important;
+            margin-bottom: 10px !important;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03) !important;
+            box-sizing: border-box !important;
+            gap: 10px !important;
+          }
+
+          .subway-cart-item-img {
+            width: 52px !important;
+            height: 52px !important;
+            border-radius: 10px !important;
+            object-fit: cover !important;
+            flex-shrink: 0 !important;
+            border: 1px solid #f1f3f5 !important;
+            background: #f9fafb !important;
           }
 
           .subway-cart-item-info {
             flex: 1 1 auto !important;
-            padding-right: 12px !important;
+            min-width: 0 !important;
+            padding-right: 6px !important;
           }
 
           .subway-cart-item-name {
             font-size: 14px !important;
-            font-weight: 700 !important;
-            color: #1f2937 !important;
-            margin-bottom: 4px !important;
+            font-weight: 800 !important;
+            color: #111827 !important;
+            margin-bottom: 2px !important;
+            line-height: 1.25 !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+            white-space: nowrap !important;
           }
 
           .subway-cart-item-price {
-            font-size: 13px !important;
+            font-size: 12px !important;
             font-weight: 600 !important;
             color: #6b7280 !important;
           }
@@ -1929,24 +2111,37 @@ function handleRequest(req, res) {
             display: flex !important;
             align-items: center !important;
             background: #f0fdf4 !important;
-            border: 1px solid #008938 !important;
+            border: 1.5px solid #008938 !important;
             border-radius: 8px !important;
-            padding: 2px 6px !important;
-            gap: 8px !important;
+            padding: 2px 4px !important;
+            gap: 6px !important;
+            flex-shrink: 0 !important;
           }
 
           .subway-cart-item-qty button {
             background: none !important;
             border: none !important;
             color: #008938 !important;
-            font-size: 16px !important;
-            font-weight: 800 !important;
+            font-size: 18px !important;
+            font-weight: 900 !important;
             cursor: pointer !important;
-            width: 22px !important;
-            height: 22px !important;
+            width: 26px !important;
+            height: 26px !important;
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
+            border-radius: 6px !important;
+            padding: 0 !important;
+            -webkit-tap-highlight-color: transparent !important;
+          }
+
+          .subway-cart-item-total {
+            font-size: 14px !important;
+            font-weight: 900 !important;
+            color: #111827 !important;
+            min-width: 50px !important;
+            text-align: right !important;
+            flex-shrink: 0 !important;
           }
 
           .subway-cart-bill {
@@ -2080,9 +2275,33 @@ function handleRequest(req, res) {
             });
             observer.observe(document.head, { childList: true });
 
-            // Ensure natural scrolling
-            document.documentElement.style.overflowY = 'auto';
-            document.body.style.overflowY = 'auto';
+            // Continuously guarantee full natural scrolling for all 141+ menu items
+            function ensureNaturalScrolling() {
+              if (document.documentElement) {
+                if (document.documentElement.style.overflowY === 'hidden') document.documentElement.style.overflowY = 'auto';
+                if (document.documentElement.style.height === '100%') document.documentElement.style.height = 'auto';
+              }
+              if (document.body) {
+                if (document.body.style.overflowY === 'hidden') document.body.style.overflowY = 'auto';
+                if (document.body.style.height === '100%') document.body.style.height = 'auto';
+                if (document.body.classList.contains('ReactModal__Body--open')) {
+                  document.body.classList.remove('ReactModal__Body--open');
+                }
+              }
+              const root = document.getElementById('root');
+              if (root) {
+                if (root.style.overflowY === 'hidden') root.style.overflowY = 'visible';
+                if (root.style.height && root.style.height !== 'auto') root.style.height = 'auto';
+                if (root.style.maxHeight && root.style.maxHeight !== 'none') root.style.maxHeight = 'none';
+              }
+              const wrap = document.querySelector('.main-store-page-wrap');
+              if (wrap && wrap.style.overflowY === 'hidden') {
+                wrap.style.overflowY = 'visible';
+              }
+            }
+            ensureNaturalScrolling();
+            setInterval(ensureNaturalScrolling, 120);
+            window.addEventListener('scroll', ensureNaturalScrolling, { passive: true });
 
             let isProgrammaticScrolling = false;
 
@@ -2234,7 +2453,6 @@ function handleRequest(req, res) {
               } else {
                 buildNav();
               }
-              setInterval(buildNav, 300);
             }
             initCategoryNavigation();
 
@@ -2263,10 +2481,13 @@ function handleRequest(req, res) {
               if (!menuCatalogMap) return;
               try {
                 if (!localStorage.getItem('diningType')) localStorage.setItem('diningType', 'DINE_IN');
-                if (!sessionStorage.getItem('diningType')) sessionStorage.setItem('diningType', 'DINE_IN');
-                document.body.classList.remove('ReactModal__Body--open');
-                document.documentElement.style.overflowY = 'auto';
-                document.body.style.overflowY = 'auto';
+                if (document.body) {
+                  document.body.classList.remove('ReactModal__Body--open');
+                  document.body.style.overflowY = 'auto';
+                }
+                if (document.documentElement) {
+                  document.documentElement.style.overflowY = 'auto';
+                }
               } catch(e) {}
 
               document.querySelectorAll('.item-layout-panel, .best-sell-items-inner-container').forEach(panel => {
@@ -2308,13 +2529,23 @@ function handleRequest(req, res) {
                 }
               });
             }
+
             initCatalogImages();
-            setInterval(hydrateCategoryImages, 250);
+            let hydrateTimer = null;
+            function scheduleHydration() {
+              if (hydrateTimer) return;
+              hydrateTimer = setTimeout(() => {
+                hydrateTimer = null;
+                hydrateCategoryImages();
+              }, 80);
+            }
+            if (window.MutationObserver) {
+              const obs = new MutationObserver(scheduleHydration);
+              obs.observe(document.body || document.documentElement, { childList: true, subtree: true });
+            }
 
           })();
         </script>
-        <script src="/subway_slider_client.js"></script>
-        <script src="/subway_cart_client.js"></script>
         <style>
           #subway-admin-link {
             position: fixed;
@@ -2344,12 +2575,23 @@ function handleRequest(req, res) {
             transform: translateY(-1px);
           }
         </style>
+        `;
+
+        const mobileBodyScripts = `
+        <script src="/subway_slider_client.js?v=20261024_7"></script>
+        <script src="/subway_cart_client.js?v=20261024_7"></script>
         <a id="subway-admin-link" href="/admin" target="_blank" title="Open Admin Panel">
           ⚙ Admin
         </a>
         `;
+
         if (htmlContent.includes('</head>')) {
           htmlContent = htmlContent.replace('</head>', `${mobileInnerStyle}</head>`);
+        }
+        if (htmlContent.includes('</body>')) {
+          htmlContent = htmlContent.replace('</body>', `${mobileBodyScripts}</body>`);
+        } else {
+          htmlContent += mobileBodyScripts;
         }
         res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
         res.end(htmlContent);

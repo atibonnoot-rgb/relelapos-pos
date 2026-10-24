@@ -12,7 +12,9 @@
           "banners.json",
           "restaurant_finances.json",
           "print_jobs.json",
-          "bill-and-kot-preview.html"
+          "bill-and-kot-preview.html",
+          "subway_cart_client.js",
+          "subway_slider_client.js"
         ]
       }
     }
