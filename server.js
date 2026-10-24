@@ -919,7 +919,11 @@ function handleRequest(req, res) {
 
     if (fs.existsSync(localStaticFile) && fs.statSync(localStaticFile).isFile()) {
       const ext = path.extname(localStaticFile).toLowerCase();
-      res.writeHead(200, { 'Content-Type': MIME_TYPES[ext] || 'application/octet-stream' });
+      res.writeHead(200, {
+        'Content-Type': MIME_TYPES[ext] || 'application/octet-stream',
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Pragma': 'no-cache'
+      });
       fs.createReadStream(localStaticFile).pipe(res);
       return;
     }
@@ -2619,11 +2623,21 @@ function handleRequest(req, res) {
         } else {
           htmlContent += mobileBodyScripts;
         }
-        res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+        res.writeHead(200, {
+          'Content-Type': 'text/html; charset=utf-8',
+          'Cache-Control': 'no-cache, no-store, must-revalidate',
+          'Pragma': 'no-cache',
+          'Expires': '0'
+        });
         res.end(htmlContent);
         return;
       } catch (e) {
-        res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+        res.writeHead(200, {
+          'Content-Type': 'text/html; charset=utf-8',
+          'Cache-Control': 'no-cache, no-store, must-revalidate',
+          'Pragma': 'no-cache',
+          'Expires': '0'
+        });
         fs.createReadStream(storeHtml).pipe(res);
         return;
       }
