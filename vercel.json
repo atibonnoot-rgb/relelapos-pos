@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "eversub.dotpe.in/**,admin/**,custom_menu.json,banners.json,restaurant_finances.json,print_jobs.json,bill-and-kot-preview.html"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api/index.js"
+    }
+  ]
+}

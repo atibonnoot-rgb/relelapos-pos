@@ -1,0 +1,862 @@
+{
+  "queue": [
+    {
+      "jobId": "PJ-ORD-2042",
+      "orderId": "ORD-2042",
+      "tokenNumber": 2,
+      "status": "PRINTED",
+      "createdAt": "2026-10-23T19:23:53.907Z",
+      "claimedBy": "laptop-pos-counter",
+      "claimedAt": "2026-10-23T19:30:00.249Z",
+      "claimExpiresAt": "2026-10-23T19:31:00.249Z",
+      "printedAt": "2026-10-24T06:27:24.832Z",
+      "printedBy": "server-direct",
+      "attempts": 3,
+      "customerReceiptText": "\n                RELELAPOS\n    Pure Taste - Freshly Made Always\n Main Road Outlet | Ph: +91 98765 43210\n-----------------------------------------\nTOKEN NO : 2\nTABLE NO : T-1 (DINE-IN)\nCUSTOMER : Walk-in\nDATE/TIME: 24-Oct-2026 12:53 AM\nPAYMENT  : UPI\n=========================================\nITEM                   QTY   RATE  AMOUNT\n-----------------------------------------\nIDLY (4 PCS)            1     50      50\nMASALA DOSA             1     60      60\nWATER BOTTLE            1     10      10\n-----------------------------------------\nTOTAL AMOUNT : Rs 120\n-----------------------------------------\n    Good Food Brings People Together\n     *** THANK YOU! VISIT AGAIN ***\n",
+      "kotText": "\n                RELELAPOS\n=========================================\n                TOKEN #2\n=========================================\nMode: DINE-IN\nTable: T-1              24-10 00:53\nPay  : UPI\n-----------------------------------------\n1x IDLY (4 PCS)\n1x MASALA DOSA\n1x WATER BOTTLE\n=========================================\n",
+      "orderSummary": {
+        "id": "ORD-2042",
+        "tokenNumber": 2,
+        "orderType": "Dine-In",
+        "table": "T-1",
+        "total": 120,
+        "paymentMethod": "UPI",
+        "customerName": "Walk-in",
+        "itemsCount": 3
+      }
+    },
+    {
+      "jobId": "PJ-ORD-2043",
+      "orderId": "ORD-2043",
+      "tokenNumber": 3,
+      "status": "PRINTED",
+      "createdAt": "2026-10-23T19:32:49.124Z",
+      "claimedBy": "laptop-pos-counter",
+      "claimedAt": "2026-10-24T08:16:49.212Z",
+      "claimExpiresAt": "2026-10-24T08:17:49.212Z",
+      "printedAt": "2026-10-24T08:16:49.219Z",
+      "printedBy": "laptop-pos-counter",
+      "attempts": 6,
+      "customerReceiptText": "                   RELELAPOS\n        Pure Taste - Freshly Made Always\n     Main Road Outlet | Ph: +91 98765 43210\n------------------------------------------------\nTOKEN NO : 3\nTABLE NO : T-1 (DINE-IN)\nCUSTOMER : Walk-in\nDATE/TIME: 24-Oct-2026 1:45 PM\nPAYMENT  : UPI\n================================================\nITEM                            QTY  RATE AMOUNT\n------------------------------------------------\n------------------------------------------------\nTOTAL AMOUNT : Rs 190\n------------------------------------------------\n        Good Food Brings People Together\n         *** THANK YOU! VISIT AGAIN ***\n[-- ESC/POS CUT PAPER --]\n",
+      "kotText": "           RELELAPOS\n================================\n            TOKEN #3\n================================\nMode: DINE-IN\nTable: T-1           24-10 13:45\nPay  : UPI\n--------------------------------\n================================\n[-- ESC/POS CUT PAPER --]\n",
+      "orderSummary": {
+        "id": "ORD-2043",
+        "tokenNumber": 3,
+        "orderType": "Dine-In",
+        "table": "T-1",
+        "total": 190,
+        "paymentMethod": "UPI",
+        "customerName": "Walk-in",
+        "itemsCount": 3
+      },
+      "customerEscPosBase64": "G0AbYQEbRQFSRUxFTEFQT1MKG0UAUHVyZSBUYXN0ZSAtIEZyZXNobHkgTWFkZSBBbHdheXMKTWFpbiBSb2FkIE91dGxldCB8IFBoOiArOTEgOTg3NjUgNDMyMTAKG2EALS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tClRPS0VOIE5PIDogMwpUQUJMRSBOTyA6IFQtMSAoRElORS1JTikKQ1VTVE9NRVIgOiBXYWxrLWluCkRBVEUvVElNRTogMjQtT2N0LTIwMjYgMTo0NSBQTQpQQVlNRU5UICA6IFVQSQo9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KSVRFTSAgICAgICAgICAgICAgICAgICAgICAgICAgICBRVFkgIFJBVEUgQU1PVU5UCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KG0UBHSEBVE9UQUwgQU1PVU5UIDogUnMgMTkwCh0hABtFAC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQobYQFHb29kIEZvb2QgQnJpbmdzIFBlb3BsZSBUb2dldGhlcgoqKiogVEhBTksgWU9VISBWSVNJVCBBR0FJTiAqKioKCgoKCgobZAQdVkIAHVZBAB1WAR1WABtpG20dVjEdVjA=",
+      "kotEscPosBase64": "G0AbYQEbRQFSRUxFTEFQT1MKG0UAPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KHSERG0UBVE9LRU4gIzMKHSEAG0UAPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KG2EATW9kZTogRElORS1JTgpUYWJsZTogVC0xICAgICAgICAgICAyNC0xMCAxMzo0NQpQYXkgIDogVVBJCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tChtFAR0hAR0hABtFAD09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CgoKCgoKG2QEHVZCAB1WQQAdVgEdVgAbaRttHVYxHVYw"
+    },
+    {
+      "jobId": "PJ-ORD-2044",
+      "orderId": "ORD-2044",
+      "tokenNumber": 4,
+      "status": "PRINTED",
+      "createdAt": "2026-10-23T19:46:33.253Z",
+      "claimedBy": "laptop-pos-counter",
+      "claimedAt": "2026-10-24T08:11:50.990Z",
+      "claimExpiresAt": "2026-10-24T08:12:50.990Z",
+      "printedAt": "2026-10-24T08:11:51.087Z",
+      "printedBy": "laptop-pos-counter",
+      "attempts": 2,
+      "customerReceiptText": "                   RELELAPOS\n        Pure Taste - Freshly Made Always\n     Main Road Outlet | Ph: +91 98765 43210\n------------------------------------------------\nTOKEN NO : 4\nTABLE NO : T-1 (DINE-IN)\nCUSTOMER : Walk-in\nDATE/TIME: 24-Oct-2026 1:41 PM\nPAYMENT  : CASH\n================================================\nITEM                            QTY  RATE AMOUNT\n------------------------------------------------\n------------------------------------------------\nTOTAL AMOUNT : Rs 240\n------------------------------------------------\n        Good Food Brings People Together\n         *** THANK YOU! VISIT AGAIN ***\n[-- ESC/POS CUT PAPER --]\n",
+      "kotText": "           RELELAPOS\n================================\n            TOKEN #4\n================================\nMode: DINE-IN\nTable: T-1           24-10 13:41\nPay  : CASH\n--------------------------------\n================================\n[-- ESC/POS CUT PAPER --]\n",
+      "orderSummary": {
+        "id": "ORD-2044",
+        "tokenNumber": 4,
+        "orderType": "Dine-In",
+        "table": "T-1",
+        "total": 240,
+        "paymentMethod": "CASH",
+        "customerName": "Rahul Sharma",
+        "itemsCount": 3
+      },
+      "customerEscPosBase64": "G0AbYQEbRQFSRUxFTEFQT1MKG0UAUHVyZSBUYXN0ZSAtIEZyZXNobHkgTWFkZSBBbHdheXMKTWFpbiBSb2FkIE91dGxldCB8IFBoOiArOTEgOTg3NjUgNDMyMTAKG2EALS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tClRPS0VOIE5PIDogNApUQUJMRSBOTyA6IFQtMSAoRElORS1JTikKQ1VTVE9NRVIgOiBXYWxrLWluCkRBVEUvVElNRTogMjQtT2N0LTIwMjYgMTo0MSBQTQpQQVlNRU5UICA6IENBU0gKPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CklURU0gICAgICAgICAgICAgICAgICAgICAgICAgICAgUVRZICBSQVRFIEFNT1VOVAotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tChtFAR0hAVRPVEFMIEFNT1VOVCA6IFJzIDI0MAodIQAbRQAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KG2EBR29vZCBGb29kIEJyaW5ncyBQZW9wbGUgVG9nZXRoZXIKKioqIFRIQU5LIFlPVSEgVklTSVQgQUdBSU4gKioqCgoKCgoKG2QEHVZCAB1WQQAdVgEdVgAbaRttHVYxHVYw",
+      "kotEscPosBase64": "G0AbYQEbRQFSRUxFTEFQT1MKG0UAPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KHSERG0UBVE9LRU4gIzQKHSEAG0UAPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KG2EATW9kZTogRElORS1JTgpUYWJsZTogVC0xICAgICAgICAgICAyNC0xMCAxMzo0MQpQYXkgIDogQ0FTSAotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQobRQEdIQEdIQAbRQA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQoKCgoKChtkBB1WQgAdVkEAHVYBHVYAG2kbbR1WMR1WMA=="
+    },
+    {
+      "jobId": "PJ-ORD-2045",
+      "orderId": "ORD-2045",
+      "tokenNumber": 5,
+      "status": "PRINTED",
+      "createdAt": "2026-10-23T19:48:25.963Z",
+      "claimedBy": "laptop-pos-counter",
+      "claimedAt": "2026-10-23T19:49:29.450Z",
+      "claimExpiresAt": "2026-10-23T19:50:29.450Z",
+      "printedAt": "2026-10-23T19:49:33.548Z",
+      "printedBy": "laptop-pos-counter",
+      "attempts": 1,
+      "rawOrder": {
+        "id": "ORD-2045",
+        "orderNumber": 105,
+        "tokenNumber": 5,
+        "orderType": "Dine-In",
+        "table": "T-1",
+        "items": [
+          {
+            "itemID": 201,
+            "itemName": "Masala Dosa",
+            "price": 60,
+            "quantity": 1
+          },
+          {
+            "itemID": 202,
+            "itemName": "Idly (4 pcs)",
+            "price": 60,
+            "quantity": 2
+          },
+          {
+            "itemID": 203,
+            "itemName": "Wada (2 pcs)",
+            "price": 60,
+            "quantity": 1
+          }
+        ],
+        "itemCount": 4,
+        "subtotal": 240,
+        "discount": 0,
+        "cgst": 0,
+        "sgst": 0,
+        "tax": 0,
+        "total": 240,
+        "paymentMethod": "CASH",
+        "paymentStatus": "Pending (Cash)",
+        "orderStatus": "New",
+        "createdAt": "2026-10-23T19:48:25.960Z",
+        "customer": {
+          "name": "Rahul Sharma",
+          "phone": "+91 98765 43210"
+        }
+      },
+      "customerReceiptText": "                   RELELAPOS\n        Pure Taste - Freshly Made Always\n     Main Road Outlet | Ph: +91 98765 43210\n------------------------------------------------\nTOKEN NO : 05\nTABLE NO : T-1 (DINE-IN)\nCUSTOMER : Rahul Sharma\nPHONE    : +91 98765 43210\nDATE/TIME: 24-Oct-2026 01:18 AM\nPAYMENT  : CASH\n================================================\nITEM                           QTY   RATE AMOUNT\n------------------------------------------------\nMasala Dosa                      1     60     60\nIdly (4 pcs)                     2     60    120\nWada (2 pcs)                     1     60     60\n------------------------------------------------\nTOTAL AMOUNT: Rs 240\n------------------------------------------------\n        Good Food Brings People Together\n         *** THANK YOU! VISIT AGAIN ***\n[-- ESC/POS CUT PAPER --]\n",
+      "kotText": "           RELELAPOS\n================================\n           TOKEN #05\n================================\nMode: DINE-IN        24/10 01:18\nTable: T-1\nPay  : CASH\n--------------------------------\n1x MASALA DOSA\n2x IDLY (4 PCS)\n1x WADA (2 PCS)\n--------------------------------\n================================\n[-- ESC/POS CUT PAPER --]\n",
+      "customerEscPosBase64": "G0AbYQEbRQFSRUxFTEFQT1MKG0UAUHVyZSBUYXN0ZSAtIEZyZXNobHkgTWFkZSBBbHdheXMKTWFpbiBSb2FkIE91dGxldCB8IFBoOiArOTEgOTg3NjUgNDMyMTAKG2EALS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tClRPS0VOIE5PIDogMDUKVEFCTEUgTk8gOiBULTEgKERJTkUtSU4pCkNVU1RPTUVSIDogUmFodWwgU2hhcm1hClBIT05FICAgIDogKzkxIDk4NzY1IDQzMjEwCkRBVEUvVElNRTogMjQtT2N0LTIwMjYgMDE6MTggQU0KUEFZTUVOVCAgOiBDQVNICj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQpJVEVNICAgICAgICAgICAgICAgICAgICAgICAgICAgUVRZICAgUkFURSBBTU9VTlQKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCk1hc2FsYSBEb3NhICAgICAgICAgICAgICAgICAgICAgIDEgICAgIDYwICAgICA2MApJZGx5ICg0IHBjcykgICAgICAgICAgICAgICAgICAgICAyICAgICA2MCAgICAxMjAKV2FkYSAoMiBwY3MpICAgICAgICAgICAgICAgICAgICAgMSAgICAgNjAgICAgIDYwCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQobRQEdIQFUT1RBTCBBTU9VTlQ6IFJzIDI0MAodIQAbRQAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KG2EBR29vZCBGb29kIEJyaW5ncyBQZW9wbGUgVG9nZXRoZXIKKioqIFRIQU5LIFlPVSEgVklTSVQgQUdBSU4gKioqCgoKCh1WQQA=",
+      "kotEscPosBase64": "G0AbYQEbRQFSRUxFTEFQT1MKG0UAPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KHSERG0UBVE9LRU4gIzA1Ch0hABtFAD09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09ChthAE1vZGU6IERJTkUtSU4gICAgICAgIDI0LzEwIDAxOjE4ClRhYmxlOiBULTEKUGF5ICA6IENBU0gKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KG0UBHSEBMXggTUFTQUxBIERPU0EKMnggSURMWSAoNCBQQ1MpCjF4IFdBREEgKDIgUENTKQodIQAbRQAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQo9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQoKCgodVkEA",
+      "orderSummary": {
+        "id": "ORD-2045",
+        "tokenNumber": 5,
+        "orderType": "Dine-In",
+        "table": "T-1",
+        "total": 240,
+        "paymentMethod": "CASH",
+        "customerName": "Rahul Sharma",
+        "customerPhone": "+91 98765 43210",
+        "specialNote": "",
+        "itemsCount": 3
+      }
+    },
+    {
+      "jobId": "PJ-ORD-2046",
+      "orderId": "ORD-2046",
+      "tokenNumber": 6,
+      "status": "PRINTED",
+      "createdAt": "2026-10-23T19:57:43.164Z",
+      "claimedBy": "laptop-pos-counter",
+      "claimedAt": "2026-10-24T08:16:49.212Z",
+      "claimExpiresAt": "2026-10-24T08:17:49.212Z",
+      "printedAt": "2026-10-24T08:16:49.222Z",
+      "printedBy": "laptop-pos-counter",
+      "attempts": 1,
+      "rawOrder": {
+        "id": "ORD-2046",
+        "orderNumber": 106,
+        "tokenNumber": 6,
+        "orderType": "Dine-In",
+        "table": "Table 4",
+        "items": [
+          {
+            "itemID": 101,
+            "itemName": "Paneer Tikka Sub",
+            "quantity": 1,
+            "price": 249,
+            "costPrice": 100,
+            "isVegetarian": "Y"
+          }
+        ],
+        "itemCount": 1,
+        "subtotal": 249,
+        "discount": 0,
+        "cgst": 0,
+        "sgst": 0,
+        "tax": 0,
+        "total": 249,
+        "paymentMethod": "UPI",
+        "paymentStatus": "Paid",
+        "orderStatus": "New",
+        "createdAt": "2026-10-23T19:57:43.163Z",
+        "customer": {
+          "name": "Customer Test",
+          "phone": "9876543210"
+        }
+      },
+      "customerReceiptText": "                   RELELAPOS\n        Pure Taste - Freshly Made Always\n     Main Road Outlet | Ph: +91 98765 43210\n------------------------------------------------\nTOKEN NO : 06\nTABLE NO : TABLE 4 (DINE-IN)\nCUSTOMER : Customer Test\nPHONE    : 9876543210\nDATE/TIME: 24-Oct-2026 01:27 AM\nPAYMENT  : UPI\n================================================\nITEM                           QTY   RATE AMOUNT\n------------------------------------------------\nPaneer Tikka Sub                 1    249    249\n------------------------------------------------\nTOTAL AMOUNT: Rs 249\n------------------------------------------------\n        Good Food Brings People Together\n         *** THANK YOU! VISIT AGAIN ***\n[-- ESC/POS CUT PAPER --]\n",
+      "kotText": "           RELELAPOS\n================================\n           TOKEN #06\n================================\nMode: DINE-IN        24/10 01:27\nTable: TABLE 4\nPay  : UPI\n--------------------------------\n1x PANEER TIKKA SUB\n--------------------------------\n================================\n[-- ESC/POS CUT PAPER --]\n",
+      "customerEscPosBase64": "G0AbYQEbRQFSRUxFTEFQT1MKG0UAUHVyZSBUYXN0ZSAtIEZyZXNobHkgTWFkZSBBbHdheXMKTWFpbiBSb2FkIE91dGxldCB8IFBoOiArOTEgOTg3NjUgNDMyMTAKG2EALS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tClRPS0VOIE5PIDogMDYKVEFCTEUgTk8gOiBUQUJMRSA0IChESU5FLUlOKQpDVVNUT01FUiA6IEN1c3RvbWVyIFRlc3QKUEhPTkUgICAgOiA5ODc2NTQzMjEwCkRBVEUvVElNRTogMjQtT2N0LTIwMjYgMDE6MjcgQU0KUEFZTUVOVCAgOiBVUEkKPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CklURU0gICAgICAgICAgICAgICAgICAgICAgICAgICBRVFkgICBSQVRFIEFNT1VOVAotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KUGFuZWVyIFRpa2thIFN1YiAgICAgICAgICAgICAgICAgMSAgICAyNDkgICAgMjQ5Ci0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQobRQEdIQFUT1RBTCBBTU9VTlQ6IFJzIDI0OQodIQAbRQAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KG2EBR29vZCBGb29kIEJyaW5ncyBQZW9wbGUgVG9nZXRoZXIKKioqIFRIQU5LIFlPVSEgVklTSVQgQUdBSU4gKioqCgoKCh1WQQA=",
+      "kotEscPosBase64": "G0AbYQEbRQFSRUxFTEFQT1MKG0UAPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KHSERG0UBVE9LRU4gIzA2Ch0hABtFAD09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09ChthAE1vZGU6IERJTkUtSU4gICAgICAgIDI0LzEwIDAxOjI3ClRhYmxlOiBUQUJMRSA0ClBheSAgOiBVUEkKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KG0UBHSEBMXggUEFORUVSIFRJS0tBIFNVQgodIQAbRQAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQo9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQoKCgodVkEA",
+      "orderSummary": {
+        "id": "ORD-2046",
+        "tokenNumber": 6,
+        "orderType": "Dine-In",
+        "table": "Table 4",
+        "total": 249,
+        "paymentMethod": "UPI",
+        "customerName": "Customer Test",
+        "customerPhone": "9876543210",
+        "specialNote": "",
+        "itemsCount": 1
+      }
+    },
+    {
+      "jobId": "PJ-ORD-2047",
+      "orderId": "ORD-2047",
+      "tokenNumber": 7,
+      "status": "PRINTED",
+      "createdAt": "2026-10-23T19:59:01.945Z",
+      "claimedBy": "laptop-pos-counter",
+      "claimedAt": "2026-10-24T08:18:40.859Z",
+      "claimExpiresAt": "2026-10-24T08:19:40.859Z",
+      "printedAt": "2026-10-24T08:18:42.405Z",
+      "printedBy": "laptop-pos-counter",
+      "attempts": 1,
+      "rawOrder": {
+        "id": "ORD-2047",
+        "orderNumber": 107,
+        "tokenNumber": 7,
+        "orderType": "Dine-In",
+        "table": "Table 4",
+        "items": [
+          {
+            "itemID": 7053596,
+            "itemName": "Chilli Bean Patty Rice Bowl",
+            "quantity": 1,
+            "price": 249,
+            "costPrice": 100,
+            "isVegetarian": "Y"
+          }
+        ],
+        "itemCount": 1,
+        "subtotal": 249,
+        "discount": 0,
+        "cgst": 0,
+        "sgst": 0,
+        "tax": 0,
+        "total": 249,
+        "paymentMethod": "UPI / QR",
+        "paymentStatus": "Paid",
+        "orderStatus": "New",
+        "createdAt": "2026-10-23T19:59:01.944Z",
+        "customer": {
+          "name": "Guest Customer",
+          "phone": "+91 98765 43210",
+          "notes": ""
+        }
+      },
+      "customerReceiptText": "                   RELELAPOS\n        Pure Taste - Freshly Made Always\n     Main Road Outlet | Ph: +91 98765 43210\n------------------------------------------------\nTOKEN NO : 07\nTABLE NO : TABLE 4 (DINE-IN)\nCUSTOMER : Guest Customer\nPHONE    : +91 98765 43210\nDATE/TIME: 24-Oct-2026 01:29 AM\nPAYMENT  : UPI\n================================================\nITEM                           QTY   RATE AMOUNT\n------------------------------------------------\nChilli Bean Patty Rice Bowl      1    249    249\n------------------------------------------------\nTOTAL AMOUNT: Rs 249\n------------------------------------------------\n        Good Food Brings People Together\n         *** THANK YOU! VISIT AGAIN ***\n[-- ESC/POS CUT PAPER --]\n",
+      "kotText": "           RELELAPOS\n================================\n           TOKEN #07\n================================\nMode: DINE-IN        24/10 01:29\nTable: TABLE 4\nPay  : UPI\n--------------------------------\n1x CHILLI BEAN PATTY RICE BOWL\n--------------------------------\n================================\n[-- ESC/POS CUT PAPER --]\n",
+      "customerEscPosBase64": "G0AbYQEbRQFSRUxFTEFQT1MKG0UAUHVyZSBUYXN0ZSAtIEZyZXNobHkgTWFkZSBBbHdheXMKTWFpbiBSb2FkIE91dGxldCB8IFBoOiArOTEgOTg3NjUgNDMyMTAKG2EALS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tClRPS0VOIE5PIDogMDcKVEFCTEUgTk8gOiBUQUJMRSA0IChESU5FLUlOKQpDVVNUT01FUiA6IEd1ZXN0IEN1c3RvbWVyClBIT05FICAgIDogKzkxIDk4NzY1IDQzMjEwCkRBVEUvVElNRTogMjQtT2N0LTIwMjYgMDE6MjkgQU0KUEFZTUVOVCAgOiBVUEkKPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CklURU0gICAgICAgICAgICAgICAgICAgICAgICAgICBRVFkgICBSQVRFIEFNT1VOVAotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KQ2hpbGxpIEJlYW4gUGF0dHkgUmljZSBCb3dsICAgICAgMSAgICAyNDkgICAgMjQ5Ci0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQobRQEdIQFUT1RBTCBBTU9VTlQ6IFJzIDI0OQodIQAbRQAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KG2EBR29vZCBGb29kIEJyaW5ncyBQZW9wbGUgVG9nZXRoZXIKKioqIFRIQU5LIFlPVSEgVklTSVQgQUdBSU4gKioqCgoKCh1WQQA=",
+      "kotEscPosBase64": "G0AbYQEbRQFSRUxFTEFQT1MKG0UAPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KHSERG0UBVE9LRU4gIzA3Ch0hABtFAD09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09ChthAE1vZGU6IERJTkUtSU4gICAgICAgIDI0LzEwIDAxOjI5ClRhYmxlOiBUQUJMRSA0ClBheSAgOiBVUEkKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KG0UBHSEBMXggQ0hJTExJIEJFQU4gUEFUVFkgUklDRSBCT1dMCh0hABtFAC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CgoKCh1WQQA=",
+      "orderSummary": {
+        "id": "ORD-2047",
+        "tokenNumber": 7,
+        "orderType": "Dine-In",
+        "table": "Table 4",
+        "total": 249,
+        "paymentMethod": "UPI / QR",
+        "customerName": "Guest Customer",
+        "customerPhone": "+91 98765 43210",
+        "specialNote": "",
+        "itemsCount": 1
+      }
+    },
+    {
+      "jobId": "PJ-ORD-2048",
+      "orderId": "ORD-2048",
+      "tokenNumber": 8,
+      "status": "PRINTED",
+      "createdAt": "2026-10-23T20:21:13.945Z",
+      "claimedBy": "laptop-pos-counter",
+      "claimedAt": "2026-10-24T08:19:11.055Z",
+      "claimExpiresAt": "2026-10-24T08:20:11.055Z",
+      "printedAt": "2026-10-24T08:19:12.584Z",
+      "printedBy": "laptop-pos-counter",
+      "attempts": 1,
+      "rawOrder": {
+        "id": "ORD-2048",
+        "orderNumber": 108,
+        "tokenNumber": 8,
+        "orderType": "Dine-In",
+        "table": "T-1",
+        "items": [
+          {
+            "itemID": 7053596,
+            "itemName": "Chilli Bean Patty Rice Bowl",
+            "quantity": 1,
+            "price": 249,
+            "costPrice": 100,
+            "isVegetarian": "Y"
+          }
+        ],
+        "itemCount": 1,
+        "subtotal": 249,
+        "discount": 0,
+        "cgst": 0,
+        "sgst": 0,
+        "tax": 0,
+        "total": 249,
+        "paymentMethod": "UPI",
+        "paymentStatus": "Paid",
+        "orderStatus": "New",
+        "createdAt": "2026-10-23T20:21:13.943Z",
+        "customer": {
+          "name": "Guest Customer",
+          "phone": "+91 98765 43210",
+          "notes": ""
+        }
+      },
+      "customerReceiptText": "                   RELELAPOS\n        Pure Taste - Freshly Made Always\n     Main Road Outlet | Ph: +91 98765 43210\n------------------------------------------------\nTOKEN NO : 08\nTABLE NO : T-1 (DINE-IN)\nCUSTOMER : Guest Customer\nPHONE    : +91 98765 43210\nDATE/TIME: 24-Oct-2026 01:51 AM\nPAYMENT  : UPI\n================================================\nITEM                           QTY   RATE AMOUNT\n------------------------------------------------\nChilli Bean Patty Rice Bowl      1    249    249\n------------------------------------------------\nTOTAL AMOUNT: Rs 249\n------------------------------------------------\n        Good Food Brings People Together\n         *** THANK YOU! VISIT AGAIN ***\n[-- ESC/POS CUT PAPER --]\n",
+      "kotText": "           RELELAPOS\n================================\n           TOKEN #08\n================================\nMode: DINE-IN        24/10 01:51\nTable: T-1\nPay  : UPI\n--------------------------------\n1x CHILLI BEAN PATTY RICE BOWL\n--------------------------------\n================================\n[-- ESC/POS CUT PAPER --]\n",
+      "customerEscPosBase64": "G0AbYQEbRQFSRUxFTEFQT1MKG0UAUHVyZSBUYXN0ZSAtIEZyZXNobHkgTWFkZSBBbHdheXMKTWFpbiBSb2FkIE91dGxldCB8IFBoOiArOTEgOTg3NjUgNDMyMTAKG2EALS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tClRPS0VOIE5PIDogMDgKVEFCTEUgTk8gOiBULTEgKERJTkUtSU4pCkNVU1RPTUVSIDogR3Vlc3QgQ3VzdG9tZXIKUEhPTkUgICAgOiArOTEgOTg3NjUgNDMyMTAKREFURS9USU1FOiAyNC1PY3QtMjAyNiAwMTo1MSBBTQpQQVlNRU5UICA6IFVQSQo9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KSVRFTSAgICAgICAgICAgICAgICAgICAgICAgICAgIFFUWSAgIFJBVEUgQU1PVU5UCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQpDaGlsbGkgQmVhbiBQYXR0eSBSaWNlIEJvd2wgICAgICAxICAgIDI0OSAgICAyNDkKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tChtFAR0hAVRPVEFMIEFNT1VOVDogUnMgMjQ5Ch0hABtFAC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQobYQFHb29kIEZvb2QgQnJpbmdzIFBlb3BsZSBUb2dldGhlcgoqKiogVEhBTksgWU9VISBWSVNJVCBBR0FJTiAqKioKCgoKHVZBAA==",
+      "kotEscPosBase64": "G0AbYQEbRQFSRUxFTEFQT1MKG0UAPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KHSERG0UBVE9LRU4gIzA4Ch0hABtFAD09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09ChthAE1vZGU6IERJTkUtSU4gICAgICAgIDI0LzEwIDAxOjUxClRhYmxlOiBULTEKUGF5ICA6IFVQSQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQobRQEdIQExeCBDSElMTEkgQkVBTiBQQVRUWSBSSUNFIEJPV0wKHSEAG0UALS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KCgoKHVZBAA==",
+      "orderSummary": {
+        "id": "ORD-2048",
+        "tokenNumber": 8,
+        "orderType": "Dine-In",
+        "table": "T-1",
+        "total": 249,
+        "paymentMethod": "UPI",
+        "customerName": "Guest Customer",
+        "customerPhone": "+91 98765 43210",
+        "specialNote": "",
+        "itemsCount": 1
+      }
+    },
+    {
+      "jobId": "PJ-ORD-2049",
+      "orderId": "ORD-2049",
+      "tokenNumber": 9,
+      "status": "PRINTED",
+      "createdAt": "2026-10-23T20:21:13.949Z",
+      "claimedBy": "laptop-pos-counter",
+      "claimedAt": "2026-10-24T08:30:26.503Z",
+      "claimExpiresAt": "2026-10-24T08:31:26.503Z",
+      "printedAt": "2026-10-24T08:30:28.049Z",
+      "printedBy": "laptop-pos-counter",
+      "attempts": 1,
+      "rawOrder": {
+        "id": "ORD-2049",
+        "orderNumber": 109,
+        "tokenNumber": 9,
+        "orderType": "Dine-In",
+        "table": "T-1",
+        "items": [
+          {
+            "itemID": 7053596,
+            "itemName": "Chilli Bean Patty Rice Bowl",
+            "quantity": 1,
+            "price": 249,
+            "costPrice": 100,
+            "isVegetarian": "Y"
+          }
+        ],
+        "itemCount": 1,
+        "subtotal": 249,
+        "discount": 0,
+        "cgst": 0,
+        "sgst": 0,
+        "tax": 0,
+        "total": 249,
+        "paymentMethod": "UPI",
+        "paymentStatus": "Paid",
+        "orderStatus": "New",
+        "createdAt": "2026-10-23T20:21:13.947Z",
+        "customer": {
+          "name": "Guest Customer",
+          "phone": "+91 98765 43210",
+          "notes": ""
+        }
+      },
+      "customerReceiptText": "                   RELELAPOS\n        Pure Taste - Freshly Made Always\n     Main Road Outlet | Ph: +91 98765 43210\n------------------------------------------------\nTOKEN NO : 09\nTABLE NO : T-1 (DINE-IN)\nCUSTOMER : Guest Customer\nPHONE    : +91 98765 43210\nDATE/TIME: 24-Oct-2026 01:51 AM\nPAYMENT  : UPI\n================================================\nITEM                           QTY   RATE AMOUNT\n------------------------------------------------\nChilli Bean Patty Rice Bowl      1    249    249\n------------------------------------------------\nTOTAL AMOUNT: Rs 249\n------------------------------------------------\n        Good Food Brings People Together\n         *** THANK YOU! VISIT AGAIN ***\n[-- ESC/POS CUT PAPER --]\n",
+      "kotText": "           RELELAPOS\n================================\n           TOKEN #09\n================================\nMode: DINE-IN        24/10 01:51\nTable: T-1\nPay  : UPI\n--------------------------------\n1x CHILLI BEAN PATTY RICE BOWL\n--------------------------------\n================================\n[-- ESC/POS CUT PAPER --]\n",
+      "customerEscPosBase64": "G0AbYQEbRQFSRUxFTEFQT1MKG0UAUHVyZSBUYXN0ZSAtIEZyZXNobHkgTWFkZSBBbHdheXMKTWFpbiBSb2FkIE91dGxldCB8IFBoOiArOTEgOTg3NjUgNDMyMTAKG2EALS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tClRPS0VOIE5PIDogMDkKVEFCTEUgTk8gOiBULTEgKERJTkUtSU4pCkNVU1RPTUVSIDogR3Vlc3QgQ3VzdG9tZXIKUEhPTkUgICAgOiArOTEgOTg3NjUgNDMyMTAKREFURS9USU1FOiAyNC1PY3QtMjAyNiAwMTo1MSBBTQpQQVlNRU5UICA6IFVQSQo9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KSVRFTSAgICAgICAgICAgICAgICAgICAgICAgICAgIFFUWSAgIFJBVEUgQU1PVU5UCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQpDaGlsbGkgQmVhbiBQYXR0eSBSaWNlIEJvd2wgICAgICAxICAgIDI0OSAgICAyNDkKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tChtFAR0hAVRPVEFMIEFNT1VOVDogUnMgMjQ5Ch0hABtFAC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQobYQFHb29kIEZvb2QgQnJpbmdzIFBlb3BsZSBUb2dldGhlcgoqKiogVEhBTksgWU9VISBWSVNJVCBBR0FJTiAqKioKCgoKHVZBAA==",
+      "kotEscPosBase64": "G0AbYQEbRQFSRUxFTEFQT1MKG0UAPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KHSERG0UBVE9LRU4gIzA5Ch0hABtFAD09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09ChthAE1vZGU6IERJTkUtSU4gICAgICAgIDI0LzEwIDAxOjUxClRhYmxlOiBULTEKUGF5ICA6IFVQSQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQobRQEdIQExeCBDSElMTEkgQkVBTiBQQVRUWSBSSUNFIEJPV0wKHSEAG0UALS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KCgoKHVZBAA==",
+      "orderSummary": {
+        "id": "ORD-2049",
+        "tokenNumber": 9,
+        "orderType": "Dine-In",
+        "table": "T-1",
+        "total": 249,
+        "paymentMethod": "UPI",
+        "customerName": "Guest Customer",
+        "customerPhone": "+91 98765 43210",
+        "specialNote": "",
+        "itemsCount": 1
+      }
+    },
+    {
+      "jobId": "PJ-ORD-2050",
+      "orderId": "ORD-2050",
+      "tokenNumber": 10,
+      "status": "PRINTED",
+      "createdAt": "2026-10-23T20:21:47.527Z",
+      "claimedBy": "laptop-pos-counter",
+      "claimedAt": "2026-10-24T08:32:27.082Z",
+      "claimExpiresAt": "2026-10-24T08:33:27.082Z",
+      "printedAt": "2026-10-24T08:32:28.758Z",
+      "printedBy": "laptop-pos-counter",
+      "attempts": 1,
+      "rawOrder": {
+        "id": "ORD-2050",
+        "orderNumber": 110,
+        "tokenNumber": 10,
+        "orderType": "Dine-In",
+        "table": "T-3",
+        "items": [
+          {
+            "name": "Paneer Tikka Sub",
+            "qty": 1,
+            "price": 249
+          },
+          {
+            "name": "Chilli Bean Patty Rice Bowl",
+            "qty": 1,
+            "price": 249
+          }
+        ],
+        "itemCount": 2,
+        "subtotal": null,
+        "discount": 0,
+        "cgst": 0,
+        "sgst": 0,
+        "tax": 0,
+        "total": null,
+        "paymentMethod": "UPI",
+        "paymentStatus": "Paid",
+        "orderStatus": "New",
+        "createdAt": "2026-10-24T08:32:26.487Z",
+        "customer": {
+          "name": "Great customer",
+          "phone": "9988776655"
+        }
+      },
+      "customerReceiptText": "         .----------------------------.\n         |      * * * [ R ] * * *     |\n         |      R E L E L A P O S     |\n         |        * * * * * * *       |\n         '----------------------------'\n\n        ================================\n               R E L E L A P O S\n        ================================\n        Pure Taste - Freshly Made Always\n                Main Road Outlet\n------------------------------------------------\n        ================================\n                T O K E N   #10\n        ================================\n------------------------------------------------\nDATE/TIME: 24-Oct-2026 2:02 PM\nPAYMENT  : UPI\n================================================\nITEM                            QTY  RATE AMOUNT\n------------------------------------------------\nPANEER TIKKA SUB                  1   249    249\nCHILLI BEAN PATTY RICE BOWL       1   249    249\n------------------------------------------------\nTOTAL AMOUNT : Rs 0\n------------------------------------------------\n        Good Food Brings People Together\n         *** THANK YOU! VISIT AGAIN ***\n[-- ESC/POS CUT PAPER --]\n",
+      "kotText": "           RELELAPOS\n================================\n           TOKEN #10\n================================\nMode: DINE-IN\nTable: T-3           24-10 14:02\nPay  : UPI\n--------------------------------\n1x PANEER TIKKA SUB\n1x CHILLI BEAN PATTY RICE BOWL\n================================\n[-- ESC/POS CUT PAPER --]\n",
+      "customerEscPosBase64": "G0AbYQEgICAgICAgICAuLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS4KICAgICAgICAgfCAgICAgICogKiAqIFsgUiBdICogKiAqICAgICB8CiAgICAgICAgIHwgICAgICBSIEUgTCBFIEwgQSBQIE8gUyAgICAgfAogICAgICAgICB8ICAgICAgICAqICogKiAqICogKiAqICAgICAgIHwKICAgICAgICAgJy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0nCgobRQEdIRFSRUxFTEFQT1MKHSEAG0UAUHVyZSBUYXN0ZSAtIEZyZXNobHkgTWFkZSBBbHdheXMKTWFpbiBSb2FkIE91dGxldAotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KG0UBHSERVE9LRU4gIzEwCh0hABtFAC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQobYQBEQVRFL1RJTUU6IDI0LU9jdC0yMDI2IDI6MDIgUE0KUEFZTUVOVCAgOiBVUEkKPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CklURU0gICAgICAgICAgICAgICAgICAgICAgICAgICAgUVRZICBSQVRFIEFNT1VOVAotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KUEFORUVSIFRJS0tBIFNVQiAgICAgICAgICAgICAgICAgIDEgICAyNDkgICAgMjQ5CkNISUxMSSBCRUFOIFBBVFRZIFJJQ0UgQk9XTCAgICAgICAxICAgMjQ5ICAgIDI0OQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KG0UBHSEBVE9UQUwgQU1PVU5UIDogUnMgMAodIQAbRQAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KG2EBR29vZCBGb29kIEJyaW5ncyBQZW9wbGUgVG9nZXRoZXIKKioqIFRIQU5LIFlPVSEgVklTSVQgQUdBSU4gKioqCgoKCgoKG2QEHVZCAB1WQQAdVgEdVgAbaRttHVYxHVYw",
+      "kotEscPosBase64": "G0AbYQEbRQFSRUxFTEFQT1MKG0UAPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KHSERG0UBVE9LRU4gIzEwCh0hABtFAD09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09ChthAE1vZGU6IERJTkUtSU4KVGFibGU6IFQtMyAgICAgICAgICAgMjQtMTAgMTQ6MDIKUGF5ICA6IFVQSQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQobRQEdIQExeCBQQU5FRVIgVElLS0EgU1VCCjF4IENISUxMSSBCRUFOIFBBVFRZIFJJQ0UgQk9XTAodIQAbRQA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQoKCgoKChtkBB1WQgAdVkEAHVYBHVYAG2kbbR1WMR1WMA==",
+      "orderSummary": {
+        "id": "ORD-2050",
+        "tokenNumber": 10,
+        "orderType": "Dine-In",
+        "table": "T-1",
+        "total": 249,
+        "paymentMethod": "UPI",
+        "customerName": "Guest Customer",
+        "customerPhone": "+91 98765 43210",
+        "specialNote": "",
+        "itemsCount": 1
+      }
+    },
+    {
+      "jobId": "PJ-ORD-2051",
+      "orderId": "ORD-2051",
+      "tokenNumber": 11,
+      "status": "PRINTED",
+      "createdAt": "2026-10-23T20:21:47.532Z",
+      "claimedBy": "laptop-pos-counter",
+      "claimedAt": "2026-10-24T08:33:32.053Z",
+      "claimExpiresAt": "2026-10-24T08:34:32.052Z",
+      "printedAt": "2026-10-24T08:33:33.616Z",
+      "printedBy": "laptop-pos-counter",
+      "attempts": 1,
+      "rawOrder": {
+        "id": "ORD-2051",
+        "orderNumber": 111,
+        "tokenNumber": 11,
+        "orderType": "Dine-In",
+        "table": "T-4",
+        "items": [
+          {
+            "name": "Paneer Tikka Sub",
+            "qty": 1,
+            "price": 249
+          },
+          {
+            "name": "Chilli Bean Patty Rice Bowl",
+            "qty": 1,
+            "price": 249
+          }
+        ],
+        "itemCount": 2,
+        "subtotal": 498,
+        "discount": 0,
+        "cgst": 0,
+        "sgst": 0,
+        "tax": 0,
+        "total": 498,
+        "paymentMethod": "UPI",
+        "paymentStatus": "Paid",
+        "orderStatus": "New",
+        "createdAt": "2026-10-24T08:33:31.692Z",
+        "customer": {
+          "name": "Great customer",
+          "phone": "9988776655"
+        }
+      },
+      "customerReceiptText": "         .----------------------------.\n         |      * * * [ R ] * * *     |\n         |      R E L E L A P O S     |\n         |        * * * * * * *       |\n         '----------------------------'\n\n        ================================\n               R E L E L A P O S\n        ================================\n        Pure Taste - Freshly Made Always\n                Main Road Outlet\n------------------------------------------------\n        ================================\n                T O K E N   #11\n        ================================\n------------------------------------------------\nDATE/TIME: 24-Oct-2026 2:03 PM\nPAYMENT  : UPI\n================================================\nITEM                            QTY  RATE AMOUNT\n------------------------------------------------\nPANEER TIKKA SUB                  1   249    249\nCHILLI BEAN PATTY RICE BOWL       1   249    249\n------------------------------------------------\nTOTAL AMOUNT : Rs 498\n------------------------------------------------\n        Good Food Brings People Together\n         *** THANK YOU! VISIT AGAIN ***\n[-- ESC/POS CUT PAPER --]\n",
+      "kotText": "           RELELAPOS\n================================\n           TOKEN #11\n================================\nMode: DINE-IN\nTable: T-4           24-10 14:03\nPay  : UPI\n--------------------------------\n1x PANEER TIKKA SUB\n1x CHILLI BEAN PATTY RICE BOWL\n================================\n[-- ESC/POS CUT PAPER --]\n",
+      "customerEscPosBase64": "G0AbYQEgICAgICAgICAuLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS4KICAgICAgICAgfCAgICAgICogKiAqIFsgUiBdICogKiAqICAgICB8CiAgICAgICAgIHwgICAgICBSIEUgTCBFIEwgQSBQIE8gUyAgICAgfAogICAgICAgICB8ICAgICAgICAqICogKiAqICogKiAqICAgICAgIHwKICAgICAgICAgJy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0nCgobRQEdIRFSRUxFTEFQT1MKHSEAG0UAUHVyZSBUYXN0ZSAtIEZyZXNobHkgTWFkZSBBbHdheXMKTWFpbiBSb2FkIE91dGxldAotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KG0UBHSERVE9LRU4gIzExCh0hABtFAC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQobYQBEQVRFL1RJTUU6IDI0LU9jdC0yMDI2IDI6MDMgUE0KUEFZTUVOVCAgOiBVUEkKPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CklURU0gICAgICAgICAgICAgICAgICAgICAgICAgICAgUVRZICBSQVRFIEFNT1VOVAotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KUEFORUVSIFRJS0tBIFNVQiAgICAgICAgICAgICAgICAgIDEgICAyNDkgICAgMjQ5CkNISUxMSSBCRUFOIFBBVFRZIFJJQ0UgQk9XTCAgICAgICAxICAgMjQ5ICAgIDI0OQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KG0UBHSEBVE9UQUwgQU1PVU5UIDogUnMgNDk4Ch0hABtFAC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQobYQFHb29kIEZvb2QgQnJpbmdzIFBlb3BsZSBUb2dldGhlcgoqKiogVEhBTksgWU9VISBWSVNJVCBBR0FJTiAqKioKCgoKCgobZAQdVkIAHVZBAB1WAR1WABtpG20dVjEdVjA=",
+      "kotEscPosBase64": "G0AbYQEbRQFSRUxFTEFQT1MKG0UAPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KHSERG0UBVE9LRU4gIzExCh0hABtFAD09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09ChthAE1vZGU6IERJTkUtSU4KVGFibGU6IFQtNCAgICAgICAgICAgMjQtMTAgMTQ6MDMKUGF5ICA6IFVQSQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQobRQEdIQExeCBQQU5FRVIgVElLS0EgU1VCCjF4IENISUxMSSBCRUFOIFBBVFRZIFJJQ0UgQk9XTAodIQAbRQA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQoKCgoKChtkBB1WQgAdVkEAHVYBHVYAG2kbbR1WMR1WMA==",
+      "orderSummary": {
+        "id": "ORD-2051",
+        "tokenNumber": 11,
+        "orderType": "Dine-In",
+        "table": "T-1",
+        "total": 249,
+        "paymentMethod": "UPI",
+        "customerName": "Guest Customer",
+        "customerPhone": "+91 98765 43210",
+        "specialNote": "",
+        "itemsCount": 1
+      }
+    },
+    {
+      "jobId": "PJ-ORD-2052",
+      "orderId": "ORD-2052",
+      "tokenNumber": 12,
+      "status": "PRINTED",
+      "createdAt": "2026-10-23T20:29:53.075Z",
+      "claimedBy": "laptop-pos-counter",
+      "claimedAt": "2026-10-24T08:44:15.821Z",
+      "claimExpiresAt": "2026-10-24T08:45:15.821Z",
+      "printedAt": "2026-10-24T08:44:17.499Z",
+      "printedBy": "laptop-pos-counter",
+      "attempts": 1,
+      "rawOrder": {
+        "id": "ORD-2052",
+        "orderNumber": 112,
+        "tokenNumber": 12,
+        "orderType": "Dine-In",
+        "table": "T-1",
+        "items": [
+          {
+            "itemID": 7053603,
+            "itemName": "Tandoori Chicken Tikka Rice Bowl",
+            "quantity": 1,
+            "price": 219,
+            "costPrice": 88,
+            "isVegetarian": "Y"
+          },
+          {
+            "itemID": 7134144,
+            "itemName": "Chicken 65 Rice Bowl",
+            "quantity": 1,
+            "price": 219,
+            "costPrice": 88,
+            "isVegetarian": "Y"
+          }
+        ],
+        "itemCount": 2,
+        "subtotal": 438,
+        "discount": 0,
+        "cgst": 0,
+        "sgst": 0,
+        "tax": 0,
+        "total": 438,
+        "paymentMethod": "UPI",
+        "paymentStatus": "Paid",
+        "orderStatus": "New",
+        "createdAt": "2026-10-24T08:44:15.068Z",
+        "customer": {
+          "name": "Guest Customer",
+          "phone": "+91 98765 43210",
+          "notes": ""
+        }
+      },
+      "customerReceiptText": "        ================================\n               R E L E L A P O S\n        ================================\n        Pure Taste - Freshly Made Always\n                Main Road Outlet\n------------------------------------------------\n        ================================\n                T O K E N   #12\n        ================================\n------------------------------------------------\nDATE/TIME: 24-Oct-2026 2:14 PM\nPAYMENT  : UPI\n================================================\nITEM                            QTY  RATE AMOUNT\n------------------------------------------------\nTANDOORI CHICKEN TIKKA RICE BOWL  1   219    219\nCHICKEN 65 RICE BOWL              1   219    219\n------------------------------------------------\nTOTAL AMOUNT : Rs 438\n------------------------------------------------\n        Good Food Brings People Together\n         *** THANK YOU! VISIT AGAIN ***\n[-- ESC/POS CUT PAPER --]\n",
+      "kotText": "           RELELAPOS\n================================\n           TOKEN #12\n================================\nMode: DINE-IN\nTable: T-1           24-10 14:14\nPay  : UPI\n--------------------------------\n1x TANDOORI CHICKEN TIKKA RICE BOWL\n1x CHICKEN 65 RICE BOWL\n================================\n[-- ESC/POS CUT PAPER --]\n",
+      "customerEscPosBase64": "G0AbYQEbRQEdIRFSRUxFTEFQT1MKHSEAG0UAUHVyZSBUYXN0ZSAtIEZyZXNobHkgTWFkZSBBbHdheXMKTWFpbiBSb2FkIE91dGxldAotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KG0UBHSERVE9LRU4gIzEyCh0hABtFAC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQobYQBEQVRFL1RJTUU6IDI0LU9jdC0yMDI2IDI6MTQgUE0KUEFZTUVOVCAgOiBVUEkKPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CklURU0gICAgICAgICAgICAgICAgICAgICAgICAgICAgUVRZICBSQVRFIEFNT1VOVAotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KVEFORE9PUkkgQ0hJQ0tFTiBUSUtLQSBSSUNFIEJPV0wgIDEgICAyMTkgICAgMjE5CkNISUNLRU4gNjUgUklDRSBCT1dMICAgICAgICAgICAgICAxICAgMjE5ICAgIDIxOQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KG0UBHSEBVE9UQUwgQU1PVU5UIDogUnMgNDM4Ch0hABtFAC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQobYQFHb29kIEZvb2QgQnJpbmdzIFBlb3BsZSBUb2dldGhlcgoqKiogVEhBTksgWU9VISBWSVNJVCBBR0FJTiAqKioKCgoKCh1WQQA=",
+      "kotEscPosBase64": "G0AbYQEbRQFSRUxFTEFQT1MKG0UAPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KHSERG0UBVE9LRU4gIzEyCh0hABtFAD09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09ChthAE1vZGU6IERJTkUtSU4KVGFibGU6IFQtMSAgICAgICAgICAgMjQtMTAgMTQ6MTQKUGF5ICA6IFVQSQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQobRQEdIQExeCBUQU5ET09SSSBDSElDS0VOIFRJS0tBIFJJQ0UgQk9XTAoxeCBDSElDS0VOIDY1IFJJQ0UgQk9XTAodIQAbRQA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQoKCgoKHVZBAA==",
+      "orderSummary": {
+        "id": "ORD-2052",
+        "tokenNumber": 12,
+        "orderType": "Dine-In",
+        "table": "T-1",
+        "total": 249,
+        "paymentMethod": "UPI",
+        "customerName": "Guest Customer",
+        "customerPhone": "+91 98765 43210",
+        "specialNote": "",
+        "itemsCount": 1
+      }
+    },
+    {
+      "jobId": "PJ-ORD-2053",
+      "orderId": "ORD-2053",
+      "tokenNumber": 13,
+      "status": "PRINTED",
+      "createdAt": "2026-10-23T20:29:53.079Z",
+      "claimedBy": "laptop-pos-counter",
+      "claimedAt": "2026-10-24T08:09:28.681Z",
+      "claimExpiresAt": "2026-10-24T08:10:28.681Z",
+      "printedAt": "2026-10-24T08:09:31.948Z",
+      "printedBy": "laptop-pos-counter",
+      "attempts": 1,
+      "rawOrder": {
+        "id": "ORD-2053",
+        "orderNumber": 113,
+        "tokenNumber": 13,
+        "orderType": "Dine-In",
+        "table": "T-1",
+        "items": [
+          {
+            "itemID": 7053596,
+            "itemName": "Chilli Bean Patty Rice Bowl",
+            "quantity": 1,
+            "price": 249,
+            "costPrice": 100,
+            "isVegetarian": "Y"
+          }
+        ],
+        "itemCount": 1,
+        "subtotal": 249,
+        "discount": 0,
+        "cgst": 0,
+        "sgst": 0,
+        "tax": 0,
+        "total": 249,
+        "paymentMethod": "UPI",
+        "paymentStatus": "Paid",
+        "orderStatus": "New",
+        "createdAt": "2026-10-23T20:29:53.077Z",
+        "customer": {
+          "name": "Guest Customer",
+          "phone": "+91 98765 43210",
+          "notes": ""
+        }
+      },
+      "customerReceiptText": "                   RELELAPOS\n        Pure Taste - Freshly Made Always\n     Main Road Outlet | Ph: +91 98765 43210\n------------------------------------------------\nTOKEN NO : 13\nTABLE NO : T-1 (DINE-IN)\nCUSTOMER : Walk-in\nDATE/TIME: 24-Oct-2026 1:59 AM\nPAYMENT  : UPI\n================================================\nITEM                            QTY  RATE AMOUNT\n------------------------------------------------\nCHILLI BEAN PATTY RICE BOWL       1   249    249\n------------------------------------------------\nTOTAL AMOUNT : Rs 249\n------------------------------------------------\n        Good Food Brings People Together\n         *** THANK YOU! VISIT AGAIN ***\n[-- ESC/POS CUT PAPER --]\n",
+      "kotText": "           RELELAPOS\n================================\n           TOKEN #13\n================================\nMode: DINE-IN\nTable: T-1           24-10 01:59\nPay  : UPI\n--------------------------------\n1x CHILLI BEAN PATTY RICE BOWL\n================================\n[-- ESC/POS CUT PAPER --]\n",
+      "customerEscPosBase64": "G0AbYQEbRQFSRUxFTEFQT1MKG0UAUHVyZSBUYXN0ZSAtIEZyZXNobHkgTWFkZSBBbHdheXMKTWFpbiBSb2FkIE91dGxldCB8IFBoOiArOTEgOTg3NjUgNDMyMTAKG2EALS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tClRPS0VOIE5PIDogMTMKVEFCTEUgTk8gOiBULTEgKERJTkUtSU4pCkNVU1RPTUVSIDogV2Fsay1pbgpEQVRFL1RJTUU6IDI0LU9jdC0yMDI2IDE6NTkgQU0KUEFZTUVOVCAgOiBVUEkKPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CklURU0gICAgICAgICAgICAgICAgICAgICAgICAgICAgUVRZICBSQVRFIEFNT1VOVAotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KQ0hJTExJIEJFQU4gUEFUVFkgUklDRSBCT1dMICAgICAgIDEgICAyNDkgICAgMjQ5Ci0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQobRQEdIQFUT1RBTCBBTU9VTlQgOiBScyAyNDkKHSEAG0UALS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tChthAUdvb2QgRm9vZCBCcmluZ3MgUGVvcGxlIFRvZ2V0aGVyCioqKiBUSEFOSyBZT1UhIFZJU0lUIEFHQUlOICoqKgoKCgoKHVZBAB1WAA==",
+      "kotEscPosBase64": "G0AbYQEbRQFSRUxFTEFQT1MKG0UAPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KHSERG0UBVE9LRU4gIzEzCh0hABtFAD09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09ChthAE1vZGU6IERJTkUtSU4KVGFibGU6IFQtMSAgICAgICAgICAgMjQtMTAgMDE6NTkKUGF5ICA6IFVQSQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQobRQEdIQExeCBDSElMTEkgQkVBTiBQQVRUWSBSSUNFIEJPV0wKHSEAG0UAPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KCgoKCh1WQQAdVgA=",
+      "orderSummary": {
+        "id": "ORD-2053",
+        "tokenNumber": 13,
+        "orderType": "Dine-In",
+        "table": "T-1",
+        "total": 249,
+        "paymentMethod": "UPI",
+        "customerName": "Guest Customer",
+        "customerPhone": "+91 98765 43210",
+        "specialNote": "",
+        "itemsCount": 1
+      }
+    },
+    {
+      "jobId": "PJ-ORD-2054",
+      "orderId": "ORD-2054",
+      "tokenNumber": 14,
+      "status": "PRINTED",
+      "createdAt": "2026-10-23T20:49:24.118Z",
+      "claimedBy": null,
+      "claimedAt": null,
+      "claimExpiresAt": null,
+      "printedAt": "2026-10-23T20:49:28.781Z",
+      "printedBy": "server-direct",
+      "attempts": 0,
+      "rawOrder": {
+        "id": "ORD-2054",
+        "orderNumber": 114,
+        "tokenNumber": 14,
+        "orderType": "Dine-In",
+        "table": "T-1",
+        "items": [
+          {
+            "itemID": 7053596,
+            "itemName": "Chilli Bean Patty Rice Bowl",
+            "quantity": 1,
+            "price": 249,
+            "costPrice": 100,
+            "isVegetarian": "Y"
+          }
+        ],
+        "itemCount": 1,
+        "subtotal": 249,
+        "discount": 0,
+        "cgst": 0,
+        "sgst": 0,
+        "tax": 0,
+        "total": 249,
+        "paymentMethod": "UPI",
+        "paymentStatus": "Paid",
+        "orderStatus": "New",
+        "createdAt": "2026-10-23T20:49:24.115Z",
+        "customer": {
+          "name": "Guest Customer",
+          "phone": "+91 98765 43210",
+          "notes": ""
+        }
+      },
+      "customerReceiptText": "                   RELELAPOS\n        Pure Taste - Freshly Made Always\n     Main Road Outlet | Ph: +91 98765 43210\n------------------------------------------------\nTOKEN NO : 14\nTABLE NO : T-1 (DINE-IN)\nCUSTOMER : Walk-in\nDATE/TIME: 24-Oct-2026 2:19 AM\nPAYMENT  : UPI\n================================================\nITEM                            QTY  RATE AMOUNT\n------------------------------------------------\nCHILLI BEAN PATTY RICE BOWL       1   249    249\n------------------------------------------------\nTOTAL AMOUNT : Rs 249\n------------------------------------------------\n        Good Food Brings People Together\n         *** THANK YOU! VISIT AGAIN ***\n[-- ESC/POS CUT PAPER --]\n",
+      "kotText": "           RELELAPOS\n================================\n           TOKEN #14\n================================\nMode: DINE-IN\nTable: T-1           24-10 02:19\nPay  : UPI\n--------------------------------\n1x CHILLI BEAN PATTY RICE BOWL\n================================\n[-- ESC/POS CUT PAPER --]\n",
+      "customerEscPosBase64": "G0AbYQEbRQFSRUxFTEFQT1MKG0UAUHVyZSBUYXN0ZSAtIEZyZXNobHkgTWFkZSBBbHdheXMKTWFpbiBSb2FkIE91dGxldCB8IFBoOiArOTEgOTg3NjUgNDMyMTAKG2EALS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tClRPS0VOIE5PIDogMTQKVEFCTEUgTk8gOiBULTEgKERJTkUtSU4pCkNVU1RPTUVSIDogV2Fsay1pbgpEQVRFL1RJTUU6IDI0LU9jdC0yMDI2IDI6MTkgQU0KUEFZTUVOVCAgOiBVUEkKPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CklURU0gICAgICAgICAgICAgICAgICAgICAgICAgICAgUVRZICBSQVRFIEFNT1VOVAotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KQ0hJTExJIEJFQU4gUEFUVFkgUklDRSBCT1dMICAgICAgIDEgICAyNDkgICAgMjQ5Ci0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQobRQEdIQFUT1RBTCBBTU9VTlQgOiBScyAyNDkKHSEAG0UALS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tChthAUdvb2QgRm9vZCBCcmluZ3MgUGVvcGxlIFRvZ2V0aGVyCioqKiBUSEFOSyBZT1UhIFZJU0lUIEFHQUlOICoqKgoKCgoKChtkBB1WQgAdVkEAHVYBHVYAG2kbbR1WMR1WMA==",
+      "kotEscPosBase64": "G0AbYQEbRQFSRUxFTEFQT1MKG0UAPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KHSERG0UBVE9LRU4gIzE0Ch0hABtFAD09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09ChthAE1vZGU6IERJTkUtSU4KVGFibGU6IFQtMSAgICAgICAgICAgMjQtMTAgMDI6MTkKUGF5ICA6IFVQSQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQobRQEdIQExeCBDSElMTEkgQkVBTiBQQVRUWSBSSUNFIEJPV0wKHSEAG0UAPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KCgoKCgobZAQdVkIAHVZBAB1WAR1WABtpG20dVjEdVjA=",
+      "orderSummary": {
+        "id": "ORD-2054",
+        "tokenNumber": 14,
+        "orderType": "Dine-In",
+        "table": "T-1",
+        "total": 249,
+        "paymentMethod": "UPI",
+        "customerName": "Guest Customer",
+        "customerPhone": "+91 98765 43210",
+        "specialNote": "",
+        "itemsCount": 1
+      }
+    },
+    {
+      "jobId": "PJ-ORD-2055",
+      "orderId": "ORD-2055",
+      "tokenNumber": 15,
+      "status": "PRINTED",
+      "createdAt": "2026-10-23T20:55:13.369Z",
+      "claimedBy": null,
+      "claimedAt": null,
+      "claimExpiresAt": null,
+      "printedAt": "2026-10-23T20:55:17.978Z",
+      "printedBy": "server-direct",
+      "attempts": 0,
+      "rawOrder": {
+        "id": "ORD-2055",
+        "orderNumber": 115,
+        "tokenNumber": 15,
+        "orderType": "Dine-In",
+        "table": "T-1",
+        "items": [
+          {
+            "itemID": 7053596,
+            "itemName": "Chilli Bean Patty Rice Bowl",
+            "quantity": 1,
+            "price": 249,
+            "costPrice": 100,
+            "isVegetarian": "Y"
+          }
+        ],
+        "itemCount": 1,
+        "subtotal": 249,
+        "discount": 0,
+        "cgst": 0,
+        "sgst": 0,
+        "tax": 0,
+        "total": 249,
+        "paymentMethod": "UPI",
+        "paymentStatus": "Paid",
+        "orderStatus": "New",
+        "createdAt": "2026-10-23T20:55:13.367Z",
+        "customer": {
+          "name": "Guest Customer",
+          "phone": "+91 98765 43210",
+          "notes": ""
+        }
+      },
+      "customerReceiptText": "                   RELELAPOS\n        Pure Taste - Freshly Made Always\n     Main Road Outlet | Ph: +91 98765 43210\n------------------------------------------------\nTOKEN NO : 15\nTABLE NO : T-1 (DINE-IN)\nCUSTOMER : Walk-in\nDATE/TIME: 24-Oct-2026 2:25 AM\nPAYMENT  : UPI\n================================================\nITEM                            QTY  RATE AMOUNT\n------------------------------------------------\nCHILLI BEAN PATTY RICE BOWL       1   249    249\n------------------------------------------------\nTOTAL AMOUNT : Rs 249\n------------------------------------------------\n        Good Food Brings People Together\n         *** THANK YOU! VISIT AGAIN ***\n[-- ESC/POS CUT PAPER --]\n",
+      "kotText": "           RELELAPOS\n================================\n           TOKEN #15\n================================\nMode: DINE-IN\nTable: T-1           24-10 02:25\nPay  : UPI\n--------------------------------\n1x CHILLI BEAN PATTY RICE BOWL\n================================\n[-- ESC/POS CUT PAPER --]\n",
+      "customerEscPosBase64": "G0AbYQEbRQFSRUxFTEFQT1MKG0UAUHVyZSBUYXN0ZSAtIEZyZXNobHkgTWFkZSBBbHdheXMKTWFpbiBSb2FkIE91dGxldCB8IFBoOiArOTEgOTg3NjUgNDMyMTAKG2EALS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tClRPS0VOIE5PIDogMTUKVEFCTEUgTk8gOiBULTEgKERJTkUtSU4pCkNVU1RPTUVSIDogV2Fsay1pbgpEQVRFL1RJTUU6IDI0LU9jdC0yMDI2IDI6MjUgQU0KUEFZTUVOVCAgOiBVUEkKPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CklURU0gICAgICAgICAgICAgICAgICAgICAgICAgICAgUVRZICBSQVRFIEFNT1VOVAotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KQ0hJTExJIEJFQU4gUEFUVFkgUklDRSBCT1dMICAgICAgIDEgICAyNDkgICAgMjQ5Ci0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQobRQEdIQFUT1RBTCBBTU9VTlQgOiBScyAyNDkKHSEAG0UALS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tChthAUdvb2QgRm9vZCBCcmluZ3MgUGVvcGxlIFRvZ2V0aGVyCioqKiBUSEFOSyBZT1UhIFZJU0lUIEFHQUlOICoqKgoKCgoKChtkBB1WQgAdVkEAHVYBHVYAG2kbbR1WMR1WMA==",
+      "kotEscPosBase64": "G0AbYQEbRQFSRUxFTEFQT1MKG0UAPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KHSERG0UBVE9LRU4gIzE1Ch0hABtFAD09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09ChthAE1vZGU6IERJTkUtSU4KVGFibGU6IFQtMSAgICAgICAgICAgMjQtMTAgMDI6MjUKUGF5ICA6IFVQSQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQobRQEdIQExeCBDSElMTEkgQkVBTiBQQVRUWSBSSUNFIEJPV0wKHSEAG0UAPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KCgoKCgobZAQdVkIAHVZBAB1WAR1WABtpG20dVjEdVjA=",
+      "orderSummary": {
+        "id": "ORD-2055",
+        "tokenNumber": 15,
+        "orderType": "Dine-In",
+        "table": "T-1",
+        "total": 249,
+        "paymentMethod": "UPI",
+        "customerName": "Guest Customer",
+        "customerPhone": "+91 98765 43210",
+        "specialNote": "",
+        "itemsCount": 1
+      }
+    },
+    {
+      "jobId": "PJ-ORD-2041",
+      "orderId": "ORD-2041",
+      "tokenNumber": 1,
+      "status": "PRINTED",
+      "createdAt": "2026-10-24T06:00:23.599Z",
+      "claimedBy": null,
+      "claimedAt": null,
+      "claimExpiresAt": null,
+      "printedAt": "2026-10-24T06:01:43.177Z",
+      "printedBy": "server-direct",
+      "attempts": 0,
+      "rawOrder": {
+        "id": "ORD-2041",
+        "orderNumber": 101,
+        "tokenNumber": 1,
+        "orderType": "Dine-In",
+        "table": "T-1",
+        "items": [
+          {
+            "itemID": 7053596,
+            "itemName": "Chilli Bean Patty Rice Bowl",
+            "quantity": 1,
+            "price": 249,
+            "costPrice": 100,
+            "isVegetarian": "Y"
+          }
+        ],
+        "itemCount": 1,
+        "subtotal": 249,
+        "discount": 0,
+        "cgst": 0,
+        "sgst": 0,
+        "tax": 0,
+        "total": 249,
+        "paymentMethod": "Cash",
+        "paymentStatus": "Pending (Pay at Counter)",
+        "orderStatus": "New",
+        "createdAt": "2026-10-24T06:00:23.594Z",
+        "customer": {
+          "name": "Guest Customer",
+          "phone": "+91 98765 43210",
+          "notes": ""
+        }
+      },
+      "customerReceiptText": "                   RELELAPOS\n        Pure Taste - Freshly Made Always\n     Main Road Outlet | Ph: +91 98765 43210\n------------------------------------------------\nTOKEN NO : 1\nTABLE NO : T-1 (DINE-IN)\nCUSTOMER : Walk-in\nDATE/TIME: 24-Oct-2026 11:30 AM\nPAYMENT  : CASH\n================================================\nITEM                            QTY  RATE AMOUNT\n------------------------------------------------\nCHILLI BEAN PATTY RICE BOWL       1   249    249\n------------------------------------------------\nTOTAL AMOUNT : Rs 249\n------------------------------------------------\n        Good Food Brings People Together\n         *** THANK YOU! VISIT AGAIN ***\n[-- ESC/POS CUT PAPER --]\n",
+      "kotText": "           RELELAPOS\n================================\n            TOKEN #1\n================================\nMode: DINE-IN\nTable: T-1           24-10 11:30\nPay  : CASH\n--------------------------------\n1x CHILLI BEAN PATTY RICE BOWL\n================================\n[-- ESC/POS CUT PAPER --]\n",
+      "customerEscPosBase64": "G0AbYQEbRQFSRUxFTEFQT1MKG0UAUHVyZSBUYXN0ZSAtIEZyZXNobHkgTWFkZSBBbHdheXMKTWFpbiBSb2FkIE91dGxldCB8IFBoOiArOTEgOTg3NjUgNDMyMTAKG2EALS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tClRPS0VOIE5PIDogMQpUQUJMRSBOTyA6IFQtMSAoRElORS1JTikKQ1VTVE9NRVIgOiBXYWxrLWluCkRBVEUvVElNRTogMjQtT2N0LTIwMjYgMTE6MzAgQU0KUEFZTUVOVCAgOiBDQVNICj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQpJVEVNICAgICAgICAgICAgICAgICAgICAgICAgICAgIFFUWSAgUkFURSBBTU9VTlQKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCkNISUxMSSBCRUFOIFBBVFRZIFJJQ0UgQk9XTCAgICAgICAxICAgMjQ5ICAgIDI0OQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KG0UBHSEBVE9UQUwgQU1PVU5UIDogUnMgMjQ5Ch0hABtFAC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQobYQFHb29kIEZvb2QgQnJpbmdzIFBlb3BsZSBUb2dldGhlcgoqKiogVEhBTksgWU9VISBWSVNJVCBBR0FJTiAqKioKCgoKCgobZAQdVkIAHVZBAB1WAR1WABtpG20dVjEdVjA=",
+      "kotEscPosBase64": "G0AbYQEbRQFSRUxFTEFQT1MKG0UAPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KHSERG0UBVE9LRU4gIzEKHSEAG0UAPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KG2EATW9kZTogRElORS1JTgpUYWJsZTogVC0xICAgICAgICAgICAyNC0xMCAxMTozMApQYXkgIDogQ0FTSAotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQobRQEdIQExeCBDSElMTEkgQkVBTiBQQVRUWSBSSUNFIEJPV0wKHSEAG0UAPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KCgoKCgobZAQdVkIAHVZBAB1WAR1WABtpG20dVjEdVjA=",
+      "orderSummary": {
+        "id": "ORD-2041",
+        "tokenNumber": 1,
+        "orderType": "Dine-In",
+        "table": "T-1",
+        "total": 249,
+        "paymentMethod": "Cash",
+        "customerName": "Guest Customer",
+        "customerPhone": "+91 98765 43210",
+        "specialNote": "",
+        "itemsCount": 1
+      }
+    }
+  ],
+  "printedOrderIds": [
+    "ORD-2042",
+    "ORD-2045",
+    "ORD-2054",
+    "ORD-2055",
+    "ORD-2041",
+    "ORD-2053",
+    "ORD-2044",
+    "ORD-2043",
+    "ORD-2046",
+    "ORD-2047",
+    "ORD-2048",
+    "ORD-2049",
+    "ORD-2050",
+    "ORD-2051",
+    "ORD-2052"
+  ]
+}

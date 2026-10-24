@@ -1,0 +1,18 @@
+{
+  "serverUrl": "http://192.168.0.111:3000",
+  "deviceId": "laptop-pos-counter",
+  "pollIntervalMs": 1500,
+  "printerMode": "windows",
+  "windowsPrinterName": "POS-80",
+  "networkPrinter": {
+    "host": "192.168.1.200",
+    "port": 9100
+  },
+  "printCustomerBill": true,
+  "printKotSlip": true,
+  "paperWidthCols": 41,
+  "feedLinesAfterReceipt": 4,
+  "autoCutPaper": true,
+  "saveReceiptCopies": true,
+  "logLevel": "info"
+}

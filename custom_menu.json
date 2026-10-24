@@ -1,0 +1,3140 @@
+{
+  "categories": [
+    {
+      "catID": 8001,
+      "categoryName": "Chef's Signature Subs",
+      "group": "food",
+      "itemsIDs": [
+        80011,
+        80012,
+        80024
+      ],
+      "itemCount": 3,
+      "Position": 0
+    },
+    {
+      "catID": 8002,
+      "categoryName": "Subway Special Toasties",
+      "description": "Artisan toasted delicacies topped with seasoned veggies and melted cheese",
+      "group": "food",
+      "itemsIDs": [
+        80023
+      ],
+      "itemCount": 1,
+      "Position": 1
+    },
+    {
+      "catID": 6111593,
+      "categoryName": "Combos - Save BIG",
+      "description": null,
+      "group": "food",
+      "itemsIDs": [
+        7217732
+      ],
+      "itemCount": 1,
+      "Position": 2
+    },
+    {
+      "catID": 6104010,
+      "categoryName": "Hot & Cheesy Signature Subs",
+      "description": null,
+      "group": "food",
+      "itemsIDs": [
+        6988166,
+        6988171,
+        6988175,
+        6988176,
+        6988179,
+        6988182,
+        6988189
+      ],
+      "itemCount": 7,
+      "Position": 3
+    },
+    {
+      "catID": 6110171,
+      "categoryName": "Create Your Own Sandwiches",
+      "description": null,
+      "group": "food",
+      "itemsIDs": [
+        6988167,
+        6988168,
+        6988169,
+        6988172,
+        6988174,
+        6988177,
+        6988178,
+        6988180,
+        6988181,
+        6988183,
+        6988184,
+        6988185,
+        6988187,
+        6988188,
+        6988190,
+        6988191
+      ],
+      "itemCount": 16,
+      "Position": 4
+    },
+    {
+      "catID": 6111605,
+      "categoryName": "SIGNATURE RICE BOWLS - NEW",
+      "description": null,
+      "group": "food",
+      "itemsIDs": [
+        7053594,
+        7053596,
+        7053597,
+        7053598,
+        7053601,
+        7053602,
+        7053603,
+        7053604,
+        7134144,
+        7134145
+      ],
+      "itemCount": 10,
+      "Position": 5
+    },
+    {
+      "catID": 6104012,
+      "categoryName": "Salads",
+      "description": null,
+      "group": "food",
+      "itemsIDs": [
+        6988047,
+        6988048,
+        6988049,
+        6988050,
+        6988051,
+        6988052,
+        6988053,
+        6988054,
+        6988055,
+        6988056,
+        6988057,
+        6988058,
+        6988059,
+        6988060,
+        6988061
+      ],
+      "itemCount": 15,
+      "Position": 6
+    },
+    {
+      "catID": 6104013,
+      "categoryName": "Signature Wraps",
+      "description": null,
+      "group": "food",
+      "itemsIDs": [
+        6988064,
+        6988065,
+        6988066,
+        6988067,
+        6988068,
+        6988069,
+        6988070,
+        6988071,
+        6988072,
+        6988073,
+        6988074,
+        6988075,
+        6988076,
+        6988077,
+        6988078
+      ],
+      "itemCount": 15,
+      "Position": 7
+    },
+    {
+      "catID": 6104009,
+      "categoryName": "Sub Cravers - Try New",
+      "description": null,
+      "group": "food",
+      "itemsIDs": [
+        6988081,
+        6988082,
+        6988083,
+        6988084,
+        6988085
+      ],
+      "itemCount": 5,
+      "Position": 8
+    },
+    {
+      "catID": 6104008,
+      "categoryName": "All Day Breakfast Special",
+      "description": null,
+      "group": "food",
+      "itemsIDs": [
+        6988086,
+        6988087,
+        6988088
+      ],
+      "itemCount": 3,
+      "Position": 9
+    },
+    {
+      "catID": 6104014,
+      "categoryName": "Sides",
+      "description": null,
+      "group": "food",
+      "itemsIDs": [
+        6988095,
+        6988096,
+        6988097,
+        6988098,
+        6988099,
+        6988100,
+        6988125,
+        6988126,
+        7142735,
+        7203694,
+        7439371,
+        7439372,
+        7478559
+      ],
+      "itemCount": 13,
+      "Position": 10
+    },
+    {
+      "catID": 6104016,
+      "categoryName": "Desserts",
+      "description": null,
+      "group": "food",
+      "itemsIDs": [
+        6988122,
+        6988123,
+        6988124
+      ],
+      "itemCount": 3,
+      "Position": 11
+    },
+    {
+      "catID": 6110172,
+      "categoryName": "Beverages",
+      "description": null,
+      "group": "food",
+      "itemsIDs": [
+        6988103,
+        6988104,
+        6988109,
+        6988112,
+        6988113,
+        6988114,
+        6988116,
+        6988117,
+        6988118,
+        6988119,
+        6988121
+      ],
+      "itemCount": 11,
+      "Position": 12
+    },
+    {
+      "catID": 6104007,
+      "categoryName": "Add Ons",
+      "description": null,
+      "group": "food",
+      "itemsIDs": [
+        6988128,
+        6988129,
+        6988130,
+        6988131,
+        6988132,
+        6988133,
+        6988134,
+        6988135,
+        6988136,
+        6988137,
+        6988138,
+        6988139,
+        6988140,
+        6988141,
+        6988142,
+        6988143,
+        6988144,
+        6988145,
+        6988146,
+        6988147,
+        6988148,
+        6988149,
+        6988150,
+        6988151,
+        6988152,
+        6988153,
+        6988154,
+        6988155,
+        6988156,
+        6988157,
+        6988158,
+        6988159,
+        6988160,
+        6988161,
+        6988162,
+        6988163,
+        7216374,
+        7216375
+      ],
+      "itemCount": 38,
+      "Position": 13
+    }
+  ],
+  "items": {
+    "80011": {
+      "itemID": 80011,
+      "siRefID": 80011,
+      "itemName": "Ultimate Cheesy Paneer Sub",
+      "description": "Crispy grilled paneer cubes loaded with double mozzarella cheese, fresh greens, and secret garlic mayo on fresh Italian bread.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 249,
+      "originalPrice": 249,
+      "categoryID": 8001,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "80012": {
+      "itemID": 80012,
+      "siRefID": 80012,
+      "itemName": "Smoky BBQ Chicken Sub",
+      "description": "Tender BBQ grilled chicken breast slices topped with cheddar cheese, jalapeños, red onions, and smoky chipotle sauce.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 299,
+      "originalPrice": 299,
+      "categoryID": 8001,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965QE.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 1
+    },
+    "80021": {
+      "itemID": 80021,
+      "siRefID": 80021,
+      "itemName": "Garden Fresh Greek Salad",
+      "description": "Crisp lettuce, cucumbers, cherry tomatoes, black olives, and premium feta cheese with olive oil vinaigrette dressing.",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 219,
+      "originalPrice": 219,
+      "categoryID": 8002,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965RR.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "80022": {
+      "itemID": 80022,
+      "siRefID": 80022,
+      "itemName": "Double Dark Chocolate Cookie",
+      "description": "Soft-baked gourmet cookie loaded with decadent dark chocolate chips.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 69,
+      "originalPrice": 69,
+      "categoryID": 8003,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965RV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "80023": {
+      "itemID": 80023,
+      "siRefID": 80023,
+      "itemName": "Tandoori Paneer Toastie",
+      "description": "Freshly toasted artisan loaf with marinated tandoori paneer, diced onions, capsicum, and melted mozzarella.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 219,
+      "originalPrice": 219,
+      "categoryID": 8002,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965RR.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "80024": {
+      "itemID": 80024,
+      "siRefID": 80024,
+      "itemName": "Ultimate Cheesy Delight Sub",
+      "description": "Loaded with melted cheddar, gooey mozzarella cheese, fresh veggies and herb mayo on freshly toasted bread.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 219,
+      "originalPrice": 219,
+      "categoryID": 8001,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 2
+    },
+    "6988047": {
+      "itemID": 6988047,
+      "siRefID": 31322379,
+      "itemName": "Veggie Delite Salad",
+      "description": "Serving size: 210 kcal / 351 g. Enjoy the simpler things; the veggie delite salad is simply delish. A pile of your favourite veggies, finished with the dressing of your choice. Nutritious. Delicious. All for you. Allergens - Contains milk, soy. Values include lettuce, tomatoes, green peppers, cucumbers, onions, pickle, jalapenos and olives.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 259,
+      "originalPrice": 259,
+      "costPrice": 98,
+      "categoryID": 6104012,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965RR.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988048": {
+      "itemID": 6988048,
+      "siRefID": 31322378,
+      "itemName": "Tuna Salad",
+      "description": "Serving size: 16 g protein / 380 kcal / 392 g. Flaked light tuna mixed with eggless mayo and added to your choice of veggies. A classic, now powered with 1.5x protein. Allergens - Contains milk, fish, soy. Values include lettuce, tomatoes, green peppers, cucumbers, onions, pickle, jalapenos and olives.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 299,
+      "originalPrice": 299,
+      "costPrice": 114,
+      "categoryID": 6104012,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMLB.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988049": {
+      "itemID": 6988049,
+      "siRefID": 31322432,
+      "itemName": "Chicken Teriyaki Salad",
+      "description": "Serving size: 18 g protein / 240 kcal / 409 g. Enjoy our teriyaki flavours in a salad, now with 1.5x protein. Chicken strips glazed with teriyaki sauce, served with veggies and sauces of your choice. Allergens - Contains wheat, milk, soy. Values include lettuce, tomatoes, green peppers, cucumbers, onions, pickle, jalapenos and olives.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 299,
+      "originalPrice": 299,
+      "costPrice": 114,
+      "categoryID": 6104012,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMKR.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988050": {
+      "itemID": 6988050,
+      "siRefID": 31322439,
+      "itemName": "Chicken Slice Salad",
+      "description": "Serving size: 18 g protein / 220 kcal / 384 g. Sliced smoke chicken slices with 1.5x protein, served over a bed of fresh, crunchy veggies and finished with your favourite sauce. A simple and satisfying choice. Allergens - Contains milk, soy. Values include lettuce, tomatoes, green peppers, cucumbers, onions, pickle, jalapenos and olives.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 299,
+      "originalPrice": 299,
+      "costPrice": 114,
+      "categoryID": 6104012,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AJ9JMLKVBIR3I7.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988051": {
+      "itemID": 6988051,
+      "siRefID": 31322493,
+      "itemName": "Aloo Patty Salad",
+      "description": "Serving size: 340 kcal / 392 g. Everything but the bread! Now enhanced with 1.5x protein. A combination of perfectly blended aloo patty, tasty veggies and a lip-smacking dressing. Allergens - Contains milk, soy. Values include lettuce, tomatoes, green peppers, cucumbers, onions, pickle, jalapenos and olives.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 259,
+      "originalPrice": 259,
+      "costPrice": 98,
+      "categoryID": 6104012,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09A7L3GIHOT4DOUR.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988052": {
+      "itemID": 6988052,
+      "siRefID": 31322506,
+      "itemName": "Veg Shammi Salad",
+      "description": "Serving size: 13 g protein / 361 kcal / 399 g. Experience authentic Indian flavours with the Veg Shammi Kebab Salad, now with 1.5x protein. A delicious kebab made of lentils & aromatic spices with veggies and your favourite dressing. Allergens - Contains wheat, milk, soy. Values include lettuce, tomatoes, green peppers, cucumbers, onions, pickle, jalapenos and olives.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 259,
+      "originalPrice": 259,
+      "costPrice": 98,
+      "categoryID": 6104012,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965PZ.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988053": {
+      "itemID": 6988053,
+      "siRefID": 31322554,
+      "itemName": "Corn & Peas Salad",
+      "description": "Serving size: 188 kcal / 350 g. Experience a symphony of colours with the Corn & Peas Salad, now packed with 1.5x protein. Green peas, golden corn and diced carrots with a smooth and eggless mayo. Allergens - Contains milk, soy. Values include lettuce, tomatoes, green peppers, cucumbers, onions, pickle, jalapenos and olives.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 259,
+      "originalPrice": 259,
+      "costPrice": 98,
+      "categoryID": 6104012,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AJ9JMLKVBIR3GZ.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988054": {
+      "itemID": 6988054,
+      "siRefID": 31322570,
+      "itemName": "Paneer Tikka Salad",
+      "description": "Serving size: 18 g protein / 470 kcal / 399 g. Love the familiar taste of paneer? Enjoy it with 1.5x protein in this flavour packed salad, with spicy, perfectly cooked paneer paired with fresh veggies and your choice of sauces. Allergens - Contains milk, cashew nut, soy. Values include lettuce, tomatoes, green peppers, cucumbers, onions, pickle, jalapenos and olives.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 259,
+      "originalPrice": 259,
+      "costPrice": 98,
+      "categoryID": 6104012,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMNN.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 1
+    },
+    "6988055": {
+      "itemID": 6988055,
+      "siRefID": 31322674,
+      "itemName": "Chicken Meatball Salad",
+      "description": "Serving size: 17 g protein / 467 kcal / 409 g. The Chicken Meatball Salad is the ultimate craving crusher, now with 1.5x protein. Authentic Indian meatballs on a bed of your favourite veggies and dressing. Allergens - Contains wheat, milk, soy. Values include lettuce, tomatoes, green peppers, cucumbers, onions, pickle, jalapenos and olives.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 299,
+      "originalPrice": 299,
+      "costPrice": 114,
+      "categoryID": 6104012,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AJ9JMLKVBIR3HN.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988056": {
+      "itemID": 6988056,
+      "siRefID": 31322706,
+      "itemName": "Smoked Chicken Strips Salad",
+      "description": "Serving size: 22 g protein / 337 kcal / 409 g. Classic preparation of succulent smoked chicken strips, now with 1.5x protein, along with your favourite veggies and sauces. Allergens - Contains milk, soy. Values include lettuce, tomatoes, green peppers, cucumbers, onions, pickle, jalapenos and olives.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 299,
+      "originalPrice": 299,
+      "costPrice": 114,
+      "categoryID": 6104012,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMMN.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988057": {
+      "itemID": 6988057,
+      "siRefID": 31322867,
+      "itemName": "Tandoori Chicken Tikka Salad",
+      "description": "Serving size: 22 g protein / 442 kcal / 399 g. Hearty chicken marinated with Indian spices, oven-cooked for that classic tandoori tikka flavour. Served with 1.5x protein, paired with your choice of veggies and sauces. Allergens - Contains milk, soy, cashew nut. Values include lettuce, tomatoes, green peppers, cucumbers, onions, pickle, jalapenos and olives.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 299,
+      "originalPrice": 299,
+      "costPrice": 114,
+      "categoryID": 6104012,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965QN.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 2
+    },
+    "6988058": {
+      "itemID": 6988058,
+      "siRefID": 31322889,
+      "itemName": "B.M.T. Salad",
+      "description": "Serving size: 27 g protein / 372 kcal / 434 g. Protein-enriched Italian B.M.T. Salad with 1.5x protein, made with a mix of chicken pepperoni and smoked chicken slice, topped with your favourite sauce and crisp veggies. Allergens - Contains milk, soy. Values include lettuce, tomatoes, green peppers, cucumbers, onions, pickle, jalapenos and olives.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 299,
+      "originalPrice": 299,
+      "costPrice": 114,
+      "categoryID": 6104012,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09A7L3GIHOT4DOUV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988059": {
+      "itemID": 6988059,
+      "siRefID": 31322954,
+      "itemName": "Peri Peri Chicken Salad",
+      "description": "Serving size: 21 g protein / 416 kcal / 399 g. Let your tastebuds travel the world with African peri-peri flavoured chicken, now with 1.5x protein served with your favourite veggies and dressing. Allergens - Contains milk, soy. Values include lettuce, tomatoes, green peppers, cucumbers, onions, pickle, jalapenos and olives.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 299,
+      "originalPrice": 299,
+      "costPrice": 114,
+      "categoryID": 6104012,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AJ9JMLKVBIR3GN.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988060": {
+      "itemID": 6988060,
+      "siRefID": 31322966,
+      "itemName": "Chilli Bean Patty Salad",
+      "description": "Serving size: 469 kcal / 399 g. Want to try something with a kick? Now it comes with 1.5x protein. The chili bean patty is made with red and black kidney beans, paired with your favourite veggies and dressing. Allergens - Contains wheat, milk, soy. Values include lettuce, tomatoes, green peppers, cucumbers, onions, pickle, jalapenos and olives.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 259,
+      "originalPrice": 259,
+      "costPrice": 98,
+      "categoryID": 6104012,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09A7L3GIHOT4DOTZ.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988061": {
+      "itemID": 6988061,
+      "siRefID": 31323018,
+      "itemName": "Spicy Chicken Keema Salad",
+      "description": "Serving size: 17 g protein / 421 kcal / 399 g. Spicy & juicy chicken keema served with wholesome veggies and sauces, now with 1.5x protein for that extra boost. Allergens - Contains wheat, milk, soy. Values include lettuce, tomatoes, green peppers, cucumbers, onions, pickle, jalapenos and olives.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 299,
+      "originalPrice": 299,
+      "costPrice": 114,
+      "categoryID": 6104012,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMM7.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988064": {
+      "itemID": 6988064,
+      "siRefID": 31323127,
+      "itemName": "Veggie Delite Signature Wrap",
+      "description": "Serving size: 10 g protein / 413 kcal / 333 g. A wholesome wrap that gives you double portion of nutritious veggies you love, with the best of sauces, packed inside a tortilla of your choice. Allergens - Contains wheat, barley, oats, milk, soy. Polyols may have laxative effects. Values include 11.5 multigrain wrap.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 259,
+      "originalPrice": 259,
+      "costPrice": 98,
+      "categoryID": 6104013,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AJ9JMLKVBIR3GR.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988065": {
+      "itemID": 6988065,
+      "siRefID": 31323308,
+      "itemName": "Tuna Signature Wrap",
+      "description": "Serving size: 27 g protein / 635 kcal / 340 g. Yummy, it's the tuna wrap! Double portion of flaked tuna mixed with mayo sauce, topped with selected veggies and wrapped inside a tortilla of your choice. Allergens - Contains wheat, barley, oats, milk, fish. Polyols may have laxative effects. Values include 11.5 multigrain wrap.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 299,
+      "originalPrice": 299,
+      "costPrice": 114,
+      "categoryID": 6104013,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMMB.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988066": {
+      "itemID": 6988066,
+      "siRefID": 31323314,
+      "itemName": "Chicken Teriyaki Signature Wrap",
+      "description": "Serving size: 28 g protein / 487 kcal / 349 g. Get double the goodness. Double portion of teriyaki glazed chicken strips, along with nutritious veggies and your choice of sauces, wrapped inside a tortilla. Allergens - Contains wheat, barley, oats, milk, soy. Polyols may have laxative effects. Values include 11.5 multigrain wrap.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 299,
+      "originalPrice": 299,
+      "costPrice": 114,
+      "categoryID": 6104013,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09A7L3GIHOT4DOVN.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988067": {
+      "itemID": 6988067,
+      "siRefID": 31323492,
+      "itemName": "Chicken Slice Signature Wrap",
+      "description": "Serving size: 27 g protein / 455 kcal / 319 g. Get an explosion of yumminess! Double portion of sliced chicken combined with selected nutritious veggies and tasty sauces, wrapped to perfection inside a tortilla. Allergens - Contains wheat, barley, oats, milk, soy. Polyols may have laxative effects. Values include 11.5 multigrain wrap.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 299,
+      "originalPrice": 299,
+      "costPrice": 114,
+      "categoryID": 6104013,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMN3.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988068": {
+      "itemID": 6988068,
+      "siRefID": 31323499,
+      "itemName": "Aloo Patty Signature Wrap",
+      "description": "Serving size: 12 g protein / 577 kcal / 339 g. Unique flavours that are truly one of a kind. Double portion of crispy aloo patty, topped with nutritious veggies and yummy sauces, packed inside a tortilla of your choice. Allergens - Contains wheat, barley, oats, milk, soy. Polyols may have laxative effects. Values include 11.5 multigrain wrap.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 259,
+      "originalPrice": 259,
+      "costPrice": 98,
+      "categoryID": 6104013,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09A7L3GIHOT4DOUZ.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988069": {
+      "itemID": 6988069,
+      "siRefID": 31323690,
+      "itemName": "Veg Shammi Kebab Signature Wrap",
+      "description": "Serving size: 23 g protein / 605 kcal / 349 g. Double your dose of daily goodness. Enjoy mouth-watering kebab made of lentils, paired with selected veggies and tasty sauces, packed inside a tortilla of your choice. Allergens - Contains wheat, barley, oats, milk, soy. Polyols may have laxative effects. Values include 11.5 multigrain wrap.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 259,
+      "originalPrice": 259,
+      "costPrice": 98,
+      "categoryID": 6104013,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965RF.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988070": {
+      "itemID": 6988070,
+      "siRefID": 31323695,
+      "itemName": "Corn & Peas Signature Wrap",
+      "description": "Serving size: 12 g protein / 494 kcal / 318 g. Not just colourful, but with double the filling. Double portion of nutritious green peas, golden corn, and diced carrots combined witheggless mayo along with selected nutritious veggies and wrapped to perfection packed inside a tortilla of your choice. Allergens - Contains wheat, barley, oats, milk. Polyols may have laxative effects. Values include 11.5 multigrain wrap.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 259,
+      "originalPrice": 259,
+      "costPrice": 98,
+      "categoryID": 6104013,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965RV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988071": {
+      "itemID": 6988071,
+      "siRefID": 31323820,
+      "itemName": "Paneer Tikka Signature Wrap",
+      "description": "Serving size: 29 g protein / 719 kcal / 349 g. Double the yum with double portion of spicy Paneer, marinated in tandoori sauce, along with nutritious veggies and your favourite sauces, inside a tortilla of your choice. Allergens - Contains wheat, barley, oats, milk, cashew nut. Polyols may have laxative effects. Values include 11.5 multigrain wrap.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 259,
+      "originalPrice": 259,
+      "costPrice": 98,
+      "categoryID": 6104013,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965Q3.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 3
+    },
+    "6988072": {
+      "itemID": 6988072,
+      "siRefID": 31323821,
+      "itemName": "Chicken Meatball Sig. Wrap",
+      "description": "Serving size: 26 g protein / 684 kcal / 349 g. Enjoy twice the amount of filling with this wrap. Double portion of authentic Indian chicken meatballs, combined with nutritious veggies, inside a tortilla of your choice. Allergens - Contains wheat, barley, oats, milk, soy. Polyols may have laxative effects. Values include 11.5 multigrain wrap.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 299,
+      "originalPrice": 299,
+      "costPrice": 114,
+      "categoryID": 6104013,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AJ9JMLKVBIR3GV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988073": {
+      "itemID": 6988073,
+      "siRefID": 31323935,
+      "itemName": "Smoked Chicken Strips Signature Wrap",
+      "description": "Serving size: 32 g protein / 528 kcal / 349 g. A classic that packs the goodness of double the filling. Double portion of strips of smoked chicken, along with nutritious veggies and delicious sauces, served inside a tortilla of your choice. Allergens - Contains wheat, barley, oats, milk, soy. Polyols may have laxative effects. Values include 11.5 multigrain wrap.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 299,
+      "originalPrice": 299,
+      "costPrice": 114,
+      "categoryID": 6104013,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OF.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988074": {
+      "itemID": 6988074,
+      "siRefID": 31323939,
+      "itemName": "Tandoori Chicken Tikka Signature Wrap",
+      "description": "Serving size: 35 g protein / 682 kcal / 349 g. Enjoy double the filling in this hearty wrap. Double portion of chicken paired with nutritious wonderful veggies and your choice of sauces, inside a tortilla. Now that's a meal for the soul! Allergens - Contains wheat, barley, oats, milk, soy, cashew nut. Polyols may have laxative effects. Values include 11.5 multigrain wrap.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 299,
+      "originalPrice": 299,
+      "costPrice": 114,
+      "categoryID": 6104013,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMKF.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 4
+    },
+    "6988075": {
+      "itemID": 6988075,
+      "siRefID": 31324093,
+      "itemName": "B.M.T. Signature Wrap",
+      "description": "Serving size: 41 g protein / 604 kcal / 391 g. A protein overload that's balanced to perfection. Get double portion of chicken pepperoni, smoked chicken and topped with nutritious veggies along with yummy sauces, all wrapped inside a tortilla of your choice. Allergens - Contains wheat, barley, oats, milk, soy. Polyols may have laxative effects. Values include 11.5 multigrain wrap.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 299,
+      "originalPrice": 299,
+      "costPrice": 114,
+      "categoryID": 6104013,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AJ9JMLKVBIR3HR.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988076": {
+      "itemID": 6988076,
+      "siRefID": 31324104,
+      "itemName": "Peri Peri Chicken Signature Wrap",
+      "description": "Serving size: 33 g protein / 648 kcal / 349 g. Double portion of African peri-peri flavoured chicken, along with high protein nutritious veggies and sauces, inside a tortilla of your choice. Allergens - Contains wheat, barley, oats, milk, soy. Polyols may have laxative effects. Values include 11.5 multigrain wrap.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 299,
+      "originalPrice": 299,
+      "costPrice": 114,
+      "categoryID": 6104013,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMN7.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988077": {
+      "itemID": 6988077,
+      "siRefID": 31324296,
+      "itemName": "Chilli Bean Signature Wrap",
+      "description": "Serving size: 20 g protein / 750 kcal / 349 g. Enjoy this serving filled with double portion of chili bean patty you love, on a tortilla of your choice. Top it with your favourite veggies and sauces. Allergens - Contains wheat, barley, oats, milk. Polyols may have laxative effects. Values include 11.5 multigrain wrap.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 259,
+      "originalPrice": 259,
+      "costPrice": 98,
+      "categoryID": 6104013,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMKJ.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988078": {
+      "itemID": 6988078,
+      "siRefID": 31324306,
+      "itemName": "Spicy Chicken Keema Signature Wrap",
+      "description": "Serving size: 28 g protein / 675 kcal / 349 g. Spicy & juicy chicken keema served along with wholesome veggies and packed in your choice of wrap. Allergens - Contains wheat, barley, oats, milk, soy. Polyols may have laxative effects. Values include 11.5 multigrain wrap.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 299,
+      "originalPrice": 299,
+      "costPrice": 114,
+      "categoryID": 6104013,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965P7.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988081": {
+      "itemID": 6988081,
+      "siRefID": 31324629,
+      "itemName": "Classic Veggie Craver (10cm)",
+      "description": "Serving size: 10 g protein / 346 kcal / 167 g. A delicious veggie patty made with chickpeas and green peas, tossed in garlic and mint mayo, topped with fresh lettuce, tomato, capsicum, onion. Allergens - Contains wheat, rye, barley, oats, milk, soy, cashew nuts.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 79,
+      "originalPrice": 79,
+      "costPrice": 30,
+      "categoryID": 6104009,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965QV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988082": {
+      "itemID": 6988082,
+      "siRefID": 31324639,
+      "itemName": "Tandoori Paneer Craver (10cm)",
+      "description": "Serving size: 12 g protein / 340 kcal / 150 g. A crispy paneer patty with tangy mint and smoky tandoori mayo, topped with fresh lettuce, tomato, capsicum, and onion. Allergens - Contains wheat, rye, barley, oats, milk, soy, cashew nuts.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 99,
+      "originalPrice": 99,
+      "costPrice": 38,
+      "categoryID": 6104009,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09A7L3GIHOT4DOVB.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988083": {
+      "itemID": 6988083,
+      "siRefID": 31324710,
+      "itemName": "Chicken Seekh Craver (10cm)",
+      "description": "Serving size: 12 g protein / 241 kcal / 111 g. An authentic chicken seekh kebab tossed in a tandoori mayo sauce, topped with crunchy onion and lettuce. Allergens - Contains wheat, rye, barley, oats, milk, soy, cashew nuts.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 89,
+      "originalPrice": 89,
+      "costPrice": 34,
+      "categoryID": 6104009,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965Q7.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988084": {
+      "itemID": 6988084,
+      "siRefID": 31324716,
+      "itemName": "Classic Chicken Craver (10cm)",
+      "description": "Serving size: 14 g protein / 251 kcal / 127 g. A Middle Eastern-inspired chicken patty with a garlic sauce, topped with fresh lettuce, onion, and gherkins. Allergens - Contains wheat, rye, barley, oats, milk, soy, cashew nuts.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 99,
+      "originalPrice": 99,
+      "costPrice": 38,
+      "categoryID": 6104009,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMKV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988085": {
+      "itemID": 6988085,
+      "siRefID": 31324775,
+      "itemName": "Spicy Chicken Craver (10cm)",
+      "description": "Serving size: 14 g protein / 265 kcal / 125 g. A perfectly spiced chicken patty, blended with fresh herbs, topped with lettuce, onions, jalapenos, and our peri-peri mayo. Allergens - Contains cereals containing gluten, milk, soy.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 99,
+      "originalPrice": 99,
+      "costPrice": 38,
+      "categoryID": 6104009,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09A7L3GIHOT4DOU7.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988086": {
+      "itemID": 6988086,
+      "siRefID": 31324778,
+      "itemName": "Cheesy Potato Delight Sandwich 15cm",
+      "description": "Golden crispy potato patty with double layers of melted cheese, crisp veggies and signature sauces.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 169,
+      "originalPrice": 169,
+      "costPrice": 64,
+      "categoryID": 6104008,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMNB.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988087": {
+      "itemID": 6988087,
+      "siRefID": 31324820,
+      "itemName": "Cheesy Omelette Sandwich 15cm",
+      "description": "Fluffy egg omelette with melted cheddar and mozzarella cheese on freshly baked Italian bread.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 189,
+      "originalPrice": 189,
+      "costPrice": 72,
+      "categoryID": 6104008,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965PB.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988088": {
+      "itemID": 6988088,
+      "siRefID": 31324862,
+      "itemName": "Chicken N' Cheese Sandwich 15cm",
+      "description": "Tender succulent roasted chicken slices paired with melted cheese, fresh greens and savory dressings.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 199,
+      "originalPrice": 199,
+      "costPrice": 76,
+      "categoryID": 6104008,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AJ9JMLKVBIR3IB.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988095": {
+      "itemID": 6988095,
+      "siRefID": 31324907,
+      "itemName": "Veg Kebab + Dip",
+      "description": "Spiced grilled vegetarian kebabs with authentic Indian seasonings served with our signature creamy dip.",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 119,
+      "originalPrice": 119,
+      "costPrice": 45,
+      "categoryID": 6104014,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965PF.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988096": {
+      "itemID": 6988096,
+      "siRefID": 31324916,
+      "itemName": "Chicken Meatballs + Dip",
+      "description": "Juicy savory chicken meatballs glazed with herbs, served with your choice of delicious dip.",
+      "isVegetarian": "N",
+      "isCustomizable": "N",
+      "price": 129,
+      "originalPrice": 129,
+      "costPrice": 49,
+      "categoryID": 6104014,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965PJ.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988097": {
+      "itemID": 6988097,
+      "siRefID": 31324928,
+      "itemName": "Veggie Toastie + Dip",
+      "description": "Freshly toasted artisan baguette loaded with mozzarella cheese, capsicum, onions, and dipping sauce.",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 109,
+      "originalPrice": 109,
+      "costPrice": 41,
+      "categoryID": 6104014,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMLV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988098": {
+      "itemID": 6988098,
+      "siRefID": 31324931,
+      "itemName": "Nachos + Dip",
+      "description": "Crispy golden Mexican corn tortilla chips served with spicy salsa or cheesy dip.",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 59,
+      "originalPrice": 59,
+      "costPrice": 22,
+      "categoryID": 6104014,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMLZ.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988099": {
+      "itemID": 6988099,
+      "siRefID": 31324938,
+      "itemName": "Crispers- Salt n Pepper",
+      "description": "Enjoy your favourite snack guilt-free! Munch on these exciting V-shaped potato crispers which are baked to golden perfection and topped with classic salt & pepper. Serving Size 93g, Calories 127g. Allergens- NA",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 89,
+      "originalPrice": 89,
+      "costPrice": 34,
+      "categoryID": 6104014,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMNF.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988100": {
+      "itemID": 6988100,
+      "siRefID": 31324945,
+      "itemName": "Hashbrown",
+      "description": "Serves 1 |Crispy on the outside, soft and savoury on the inside. Subway's Classic Aloo Tikki is an all-day snacking delight.\nServing size - 55g/94 kcal. Allergens- NA",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 49,
+      "originalPrice": 49,
+      "costPrice": 19,
+      "categoryID": 6104014,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMKN.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988103": {
+      "itemID": 6988103,
+      "siRefID": 31324976,
+      "itemName": "Thums Up 330ml Can",
+      "description": "Chilled can of refreshing, strong carbonated fizzy cola.",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 66.66,
+      "originalPrice": 66.66,
+      "costPrice": 25,
+      "categoryID": 6110172,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AJ9JMLKVBIR3HV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988104": {
+      "itemID": 6988104,
+      "siRefID": 31324983,
+      "itemName": "Coke Zero 330ml Can",
+      "description": "Zero sugar, crisp and refreshing classic Coca-Cola in an ice-cold can.",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 66.66,
+      "originalPrice": 66.66,
+      "costPrice": 25,
+      "categoryID": 6110172,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09A7L3GIHOT4DOUF.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988109": {
+      "itemID": 6988109,
+      "siRefID": 32893951,
+      "itemName": "Coke 475ml Pet",
+      "description": "Original crisp refreshing Coca-Cola bottled beverage.",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 66.66,
+      "originalPrice": 66.66,
+      "costPrice": 25,
+      "categoryID": 6110172,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09A7L3GIHOT4DOTV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988112": {
+      "itemID": 6988112,
+      "siRefID": 31325013,
+      "itemName": "Schweppes Water 500ml Pet",
+      "description": "Pure, refreshing packaged drinking water.",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 61.9,
+      "originalPrice": 61.9,
+      "costPrice": 24,
+      "categoryID": 6110172,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMMR.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988113": {
+      "itemID": 6988113,
+      "siRefID": 31325027,
+      "itemName": "Cappuccino",
+      "description": "Rich, creamy, frothy milk coffee served hot.\nQty: 230Gms/84 kcal\nAllergens - Contains Milk",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 79,
+      "originalPrice": 79,
+      "costPrice": 30,
+      "categoryID": 6110172,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMLR.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988114": {
+      "itemID": 6988114,
+      "siRefID": 31325028,
+      "itemName": "Americano",
+      "description": "Rich, black coffee for the perfect dose of your daily caffeine.\nQty: 200g/0 Kcal. No added sugar and milk.\nAllergens - NA",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 49,
+      "originalPrice": 49,
+      "costPrice": 19,
+      "categoryID": 6110172,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965RJ.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988116": {
+      "itemID": 6988116,
+      "siRefID": 31325038,
+      "itemName": "Raw Coconut Water 198ml",
+      "description": "100% natural, refreshing tender coconut water packed with natural electrolytes.",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 95.23,
+      "originalPrice": 95.23,
+      "costPrice": 36,
+      "categoryID": 6110172,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMO3.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988117": {
+      "itemID": 6988117,
+      "siRefID": 31325039,
+      "itemName": "Raw Choco Mint Protein Shake 198ml",
+      "description": "Delicious rich chocolate mint protein shake for an instant energy boost.",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 123.8,
+      "originalPrice": 123.8,
+      "costPrice": 47,
+      "categoryID": 6110172,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09A7L3GIHOT4DOVJ.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988118": {
+      "itemID": 6988118,
+      "siRefID": 31325058,
+      "itemName": "Iced Green Tea- Mint Mojito 248ml",
+      "description": "Brewed green tea infused with refreshing mint and zesty lime.",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 95.23,
+      "originalPrice": 95.23,
+      "costPrice": 36,
+      "categoryID": 6110172,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMLF.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988119": {
+      "itemID": 6988119,
+      "siRefID": 31325054,
+      "itemName": "Iced Green Tea - Peach 248ml",
+      "description": "Chilled brewed green tea with sweet, aromatic peach notes.",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 95.23,
+      "originalPrice": 95.23,
+      "costPrice": 36,
+      "categoryID": 6110172,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AJ9JMLKVBIR3H3.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988121": {
+      "itemID": 6988121,
+      "siRefID": 31325069,
+      "itemName": "Classic Cold Coffee",
+      "description": "Subway’s Classic iced milk coffee served chilled.\nQty: 230Gms/230Kcal\nAllergens - Contains Milk",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 109,
+      "originalPrice": 109,
+      "costPrice": 41,
+      "categoryID": 6110172,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09A7L3GIHOT4DOV3.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988122": {
+      "itemID": 6988122,
+      "siRefID": 31325078,
+      "itemName": "Oatmeal Raisin Cookie (eggless)",
+      "description": "Like something extra and sweet add some sweetness with your favourite oatmeal raisin cookies. Serving size : 45 g / 189 kcal. Allergens - Contains wheat, oats, milk.",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 59,
+      "originalPrice": 59,
+      "costPrice": 22,
+      "categoryID": 6104016,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OM.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988123": {
+      "itemID": 6988123,
+      "siRefID": 31325083,
+      "itemName": "Double Dark Chunk Chocolate Cookie (eggless)",
+      "description": "Tasty & chocolatey. Now enjoy your favourite double dark chocolate chunk cookie. Serving size : 45 g / 206 kcal. Allergens - Contains wheat, milk, soy.",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 59,
+      "originalPrice": 59,
+      "costPrice": 22,
+      "categoryID": 6104016,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMKZ.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988124": {
+      "itemID": 6988124,
+      "siRefID": 31325097,
+      "itemName": "Dark Chunk Chocolate Cookie (eggless)",
+      "description": "Craving for chocolate, now enjoy your favourite dark chunk chocolate cookie. Serving size : 45 g / 203 kcal. Allergens - Contains wheat, milk, soy.",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 59,
+      "originalPrice": 59,
+      "costPrice": 22,
+      "categoryID": 6104016,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AJ9JMLKVBIR3IF.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988125": {
+      "itemID": 6988125,
+      "siRefID": 31325102,
+      "itemName": "Sizzling Jalapeno Cornitos",
+      "description": "Crunchy seasoned nachos crisps with spicy pickled jalapeno kick.",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 28.57,
+      "originalPrice": 28.57,
+      "costPrice": 11,
+      "categoryID": 6104014,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMMF.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988126": {
+      "itemID": 6988126,
+      "siRefID": 31325111,
+      "itemName": "Cheese & Herbs Cornitos",
+      "description": "Crispy tortilla crisps seasoned with rich cheese and aromatic herbs.",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 28.57,
+      "originalPrice": 28.57,
+      "costPrice": 11,
+      "categoryID": 6104014,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965PV.png"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988128": {
+      "itemID": 6988128,
+      "siRefID": 31325116,
+      "itemName": "Tuna Add30",
+      "description": "Give extra protein boost to your favourite 30cm footlong sandwich",
+      "isVegetarian": "N",
+      "isCustomizable": "N",
+      "price": 170,
+      "originalPrice": 170,
+      "costPrice": 65,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988129": {
+      "itemID": 6988129,
+      "siRefID": 31325135,
+      "itemName": "Chik Teriyaki Add30",
+      "description": "Give extra protein boost to your favourite 30cm footlong sandwich",
+      "isVegetarian": "N",
+      "isCustomizable": "N",
+      "price": 170,
+      "originalPrice": 170,
+      "costPrice": 65,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988130": {
+      "itemID": 6988130,
+      "siRefID": 31325139,
+      "itemName": "Chik Slice Add30",
+      "description": "Give extra protein boost to your favourite 30cm footlong sandwich",
+      "isVegetarian": "N",
+      "isCustomizable": "N",
+      "price": 170,
+      "originalPrice": 170,
+      "costPrice": 65,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988131": {
+      "itemID": 6988131,
+      "siRefID": 31325154,
+      "itemName": "Veg Shammi Add30",
+      "description": "Give extra protein boost to your favourite 30cm footlong sandwich",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 130,
+      "originalPrice": 130,
+      "costPrice": 49,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988132": {
+      "itemID": 6988132,
+      "siRefID": 31325156,
+      "itemName": "Corn & Peas Add30",
+      "description": "Give extra protein boost to your favourite 30cm footlong sandwich",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 130,
+      "originalPrice": 130,
+      "costPrice": 49,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988133": {
+      "itemID": 6988133,
+      "siRefID": 31325167,
+      "itemName": "Paneer Tikka Add30",
+      "description": "Give extra protein boost to your favourite 30cm footlong sandwich",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 130,
+      "originalPrice": 130,
+      "costPrice": 49,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988134": {
+      "itemID": 6988134,
+      "siRefID": 31325170,
+      "itemName": "Chik Meatball Add30",
+      "description": "Give extra protein boost to your favourite 30cm footlong sandwich",
+      "isVegetarian": "N",
+      "isCustomizable": "N",
+      "price": 170,
+      "originalPrice": 170,
+      "costPrice": 65,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988135": {
+      "itemID": 6988135,
+      "siRefID": 31325179,
+      "itemName": "Smoked Chik Strips Add30",
+      "description": "Give extra protein boost to your favourite 30cm footlong sandwich",
+      "isVegetarian": "N",
+      "isCustomizable": "N",
+      "price": 170,
+      "originalPrice": 170,
+      "costPrice": 65,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988136": {
+      "itemID": 6988136,
+      "siRefID": 31325181,
+      "itemName": "Tandoori Chik Tikka Add30",
+      "description": "Give extra protein boost to your favourite 30cm footlong sandwich",
+      "isVegetarian": "N",
+      "isCustomizable": "N",
+      "price": 170,
+      "originalPrice": 170,
+      "costPrice": 65,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988137": {
+      "itemID": 6988137,
+      "siRefID": 31325194,
+      "itemName": "Aloo Patty Add15",
+      "description": "Give extra protein boost to your favourite 15cm sandwich, salad, wrap or rice bowl",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 65,
+      "originalPrice": 65,
+      "costPrice": 25,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988138": {
+      "itemID": 6988138,
+      "siRefID": 31325196,
+      "itemName": "Chik Meatball Add15",
+      "description": "Give extra protein boost to your favourite 15cm sandwich, salad, wrap or rice bowl",
+      "isVegetarian": "N",
+      "isCustomizable": "N",
+      "price": 85,
+      "originalPrice": 85,
+      "costPrice": 32,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988139": {
+      "itemID": 6988139,
+      "siRefID": 31325207,
+      "itemName": "Tandoori Chik Tikka Add15",
+      "description": "Give extra protein boost to your favourite 15cm sandwich, salad, wrap or rice bowl",
+      "isVegetarian": "N",
+      "isCustomizable": "N",
+      "price": 85,
+      "originalPrice": 85,
+      "costPrice": 32,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988140": {
+      "itemID": 6988140,
+      "siRefID": 31325208,
+      "itemName": "Cheese Slice Add30",
+      "description": "Give extra protein boost to your favourite 30cm footlong sandwich",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 64,
+      "originalPrice": 64,
+      "costPrice": 24,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988141": {
+      "itemID": 6988141,
+      "siRefID": 31325222,
+      "itemName": "Mozz Cheese Add30",
+      "description": "Give extra protein boost to your favourite 30cm footlong sandwich",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 64,
+      "originalPrice": 64,
+      "costPrice": 24,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988142": {
+      "itemID": 6988142,
+      "siRefID": 31325223,
+      "itemName": "Aloo Patty Add30",
+      "description": "Give extra protein boost to your favourite 30cm footlong sandwich",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 130,
+      "originalPrice": 130,
+      "costPrice": 49,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988143": {
+      "itemID": 6988143,
+      "siRefID": 31325238,
+      "itemName": "Liquid Egg Add30",
+      "description": "Give extra protein boost to your favourite 30cm footlong sandwich",
+      "isVegetarian": "N",
+      "isCustomizable": "N",
+      "price": 100,
+      "originalPrice": 100,
+      "costPrice": 38,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988144": {
+      "itemID": 6988144,
+      "siRefID": 31325239,
+      "itemName": "Tuna Add15",
+      "description": "Give extra protein boost to your favourite 15cm sandwich, salad, wrap or rice bowl",
+      "isVegetarian": "N",
+      "isCustomizable": "N",
+      "price": 85,
+      "originalPrice": 85,
+      "costPrice": 32,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988145": {
+      "itemID": 6988145,
+      "siRefID": 31325255,
+      "itemName": "Chik Teriyaki Add15",
+      "description": "Give extra protein boost to your favourite 15cm sandwich, salad, wrap or rice bowl",
+      "isVegetarian": "N",
+      "isCustomizable": "N",
+      "price": 85,
+      "originalPrice": 85,
+      "costPrice": 32,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988146": {
+      "itemID": 6988146,
+      "siRefID": 31325257,
+      "itemName": "Cheese Slice Add15",
+      "description": "Give extra protein boost to your favourite 15cm sandwich, salad, wrap or rice bowl",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 32,
+      "originalPrice": 32,
+      "costPrice": 12,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988147": {
+      "itemID": 6988147,
+      "siRefID": 31325274,
+      "itemName": "Mozz Cheese Add15",
+      "description": "Give extra protein boost to your favourite 15cm sandwich, salad, wrap or rice bowl",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 32,
+      "originalPrice": 32,
+      "costPrice": 12,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988148": {
+      "itemID": 6988148,
+      "siRefID": 31325275,
+      "itemName": "Chik Slice Add15",
+      "description": "Give extra protein boost to your favourite 15cm sandwich, salad, wrap or rice bowl",
+      "isVegetarian": "N",
+      "isCustomizable": "N",
+      "price": 85,
+      "originalPrice": 85,
+      "costPrice": 32,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988149": {
+      "itemID": 6988149,
+      "siRefID": 31325295,
+      "itemName": "Veg Shammi Add15",
+      "description": "Give extra protein boost to your favourite 15cm sandwich, salad, wrap or rice bowl",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 65,
+      "originalPrice": 65,
+      "costPrice": 25,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988150": {
+      "itemID": 6988150,
+      "siRefID": 31325293,
+      "itemName": "Corn & Peas Add15",
+      "description": "Give extra protein boost to your favourite 15cm sandwich, salad, wrap or rice bowl",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 65,
+      "originalPrice": 65,
+      "costPrice": 25,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988151": {
+      "itemID": 6988151,
+      "siRefID": 31325312,
+      "itemName": "Paneer Tikka Add15",
+      "description": "Give extra protein boost to your favourite 15cm sandwich, salad, wrap or rice bowl",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 65,
+      "originalPrice": 65,
+      "costPrice": 25,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988152": {
+      "itemID": 6988152,
+      "siRefID": 31325311,
+      "itemName": "Liquid Egg Add15",
+      "description": "Give extra protein boost to your favourite 15cm sandwich, salad, wrap or rice bowl",
+      "isVegetarian": "N",
+      "isCustomizable": "N",
+      "price": 50,
+      "originalPrice": 50,
+      "costPrice": 19,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988153": {
+      "itemID": 6988153,
+      "siRefID": 31325332,
+      "itemName": "Smoked Chik Strips Add15",
+      "description": "Give extra protein boost to your favourite 15cm sandwich, salad, wrap or rice bowl",
+      "isVegetarian": "N",
+      "isCustomizable": "N",
+      "price": 85,
+      "originalPrice": 85,
+      "costPrice": 32,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988154": {
+      "itemID": 6988154,
+      "siRefID": 31325337,
+      "itemName": "B.M.T. Add15",
+      "description": "Give extra protein boost to your favourite 15cm sandwich, salad, wrap or rice bowl",
+      "isVegetarian": "N",
+      "isCustomizable": "N",
+      "price": 85,
+      "originalPrice": 85,
+      "costPrice": 32,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988155": {
+      "itemID": 6988155,
+      "siRefID": 31325353,
+      "itemName": "B.M.T. Add30",
+      "description": "Give extra protein boost to your favourite 30cm footlong sandwich",
+      "isVegetarian": "N",
+      "isCustomizable": "N",
+      "price": 170,
+      "originalPrice": 170,
+      "costPrice": 65,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988156": {
+      "itemID": 6988156,
+      "siRefID": 31325358,
+      "itemName": "Peri Peri Chik Add15",
+      "description": "Give extra protein boost to your favourite 15cm sandwich, salad, wrap or rice bowl",
+      "isVegetarian": "N",
+      "isCustomizable": "N",
+      "price": 85,
+      "originalPrice": 85,
+      "costPrice": 32,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988157": {
+      "itemID": 6988157,
+      "siRefID": 31325366,
+      "itemName": "Peri Peri Chik Add30",
+      "description": "Give extra protein boost to your favourite 30cm footlong sandwich",
+      "isVegetarian": "N",
+      "isCustomizable": "N",
+      "price": 170,
+      "originalPrice": 170,
+      "costPrice": 65,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988158": {
+      "itemID": 6988158,
+      "siRefID": 31325371,
+      "itemName": "Cheese Pull (Mozzarella) Add15",
+      "description": "Give extra protein boost to your favourite 15cm sandwich, salad, wrap or rice bowl",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 55,
+      "originalPrice": 55,
+      "costPrice": 21,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988159": {
+      "itemID": 6988159,
+      "siRefID": 31325381,
+      "itemName": "Cheese Pull (Mozzarella) Add30",
+      "description": "Give extra protein boost to your favourite 30cm footlong sandwich",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 110,
+      "originalPrice": 110,
+      "costPrice": 42,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988160": {
+      "itemID": 6988160,
+      "siRefID": 31325389,
+      "itemName": "Chilli Bean Patty Add15",
+      "description": "Give extra protein boost to your favourite 15cm sandwich, salad, wrap or rice bowl",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 65,
+      "originalPrice": 65,
+      "costPrice": 25,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988161": {
+      "itemID": 6988161,
+      "siRefID": 31325396,
+      "itemName": "Chilli Bean Patty Add30",
+      "description": "Give extra protein boost to your favourite 30cm footlong sandwich",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 130,
+      "originalPrice": 130,
+      "costPrice": 49,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988162": {
+      "itemID": 6988162,
+      "siRefID": 31325403,
+      "itemName": "Chik Keema Add15",
+      "description": "Give extra protein boost to your favourite 15cm sandwich, salad, wrap or rice bowl",
+      "isVegetarian": "N",
+      "isCustomizable": "N",
+      "price": 85,
+      "originalPrice": 85,
+      "costPrice": 32,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988163": {
+      "itemID": 6988163,
+      "siRefID": 31325415,
+      "itemName": "Chik Keema Add30",
+      "description": "Give extra protein boost to your favourite 30cm footlong sandwich",
+      "isVegetarian": "N",
+      "isCustomizable": "N",
+      "price": 170,
+      "originalPrice": 170,
+      "costPrice": 65,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988166": {
+      "itemID": 6988166,
+      "siRefID": 31327331,
+      "itemName": "Cheesy American BBQ",
+      "description": "Serving size: 15cm - 30 g protein / 457 kcal / 230 g, 30cm - 60 g protein / 914 kcal / 460 g. Hot toasted sub loaded with 1.5x filling and real mozz cheese, topped with BBQ sauce, capsicum, onion, gherkins, eggless mayo and cheese slice. Allergens - Contains cereals containing gluten, milk, soy.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 279,
+      "originalPrice": 279,
+      "costPrice": 106,
+      "categoryID": 6104010,
+      "parentCategoryID": 0,
+      "type": "Group",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AJ9JMLKVBIR3HB.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988167": {
+      "itemID": 6988167,
+      "siRefID": 31325483,
+      "itemName": "Veggie Delite Sandwich",
+      "description": "Serving size: 15cm - 11 g protein / 378 kcal / 214 g, 30cm - 22 g protein / 756 kcal / 428 g. Delicious combination of fresh lettuce, tomatoes, green peppers, cucumbers, onions, olives and pickles served on a freshly baked bread. Allergens - Contains wheat, rye, barley, oats, milk. Values include multigrain bread, lettuce, tomatoes, onions, green peppers and cucumbers.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 159,
+      "originalPrice": 159,
+      "costPrice": 60,
+      "categoryID": 6110171,
+      "parentCategoryID": 0,
+      "type": "Group",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYML7.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988168": {
+      "itemID": 6988168,
+      "siRefID": 31327628,
+      "itemName": "Corn & Peas Sandwich",
+      "description": "Serving size: 15cm - 12 g protein / 392 kcal / 248 g, 30cm - 24 g protein / 784 kcal / 496 g. A delicious assortment of green peas, golden corn and diced carrots, dressed with a creamy mixture of eggless mayo, and served on your favourite bread. Allergens - Contains wheat, rye, barley, oats, milk. Values include multigrain bread, lettuce, tomatoes, onions, green peppers and cucumbers.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 169,
+      "originalPrice": 169,
+      "costPrice": 64,
+      "categoryID": 6110171,
+      "parentCategoryID": 0,
+      "type": "Group",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965QJ.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988169": {
+      "itemID": 6988169,
+      "siRefID": 31329109,
+      "itemName": "Roasted Chicken Strip Sandwich",
+      "description": "Serving size: 15cm - 22 g protein / 430 kcal / 274 g, 30cm - 44 g protein / 860 kcal / 548 g. Classic preparation of succulent strips of smoked chicken served with veggies and sauces in your choice of freshly baked bread. Allergens - Contains wheat, rye, barley, oats, milk, soy. Values include multigrain bread, lettuce, tomatoes, onions, green peppers and cucumbers.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 239,
+      "originalPrice": 239,
+      "costPrice": 91,
+      "categoryID": 6110171,
+      "parentCategoryID": 0,
+      "type": "Group",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMM3.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 14
+    },
+    "6988171": {
+      "itemID": 6988171,
+      "siRefID": 31326975,
+      "itemName": "Cheesy Paneer Tikka",
+      "description": "Serving size: 15cm - 33 g protein / 678 kcal / 299 g, 30cm - 66 g protein / 1356 kcal / 598 g. Double the paneer, with real mozz cheese. Indulge in hot cheesy paneer melt loaded with paneer, tangy tandoori sauce, fresh veggies and cheese slice. Allergens - Contains cereals containing gluten, milk, soy.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 299,
+      "originalPrice": 299,
+      "costPrice": 114,
+      "categoryID": 6104010,
+      "parentCategoryID": 0,
+      "type": "Group",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 16
+    },
+    "6988172": {
+      "itemID": 6988172,
+      "siRefID": 31326456,
+      "itemName": "Tuna Sandwich",
+      "description": "Serving size: 15cm - 19 g protein / 496 kcal / 269 g, 30cm - 38 g protein / 992 kcal / 538 g. Flaked light tuna mixed with eggless mayo and heaped onto your choice of freshly baked bread. You will love every bite of our classic tuna sandwich. Allergens - Contains wheat, rye, barley, oats, fish, milk. Values include multigrain bread, lettuce, tomatoes, onions, green peppers and cucumbers.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 289,
+      "originalPrice": 289,
+      "costPrice": 110,
+      "categoryID": 6110171,
+      "parentCategoryID": 0,
+      "type": "Group",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AJ9JMLKVBIR3I3.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988174": {
+      "itemID": 6988174,
+      "siRefID": 31326201,
+      "itemName": "Double Egg n' Cheese Omelette Sandwich",
+      "description": "Serving size:15cm - 26 g protein / 525 kcal / 234 g, 30cm - 52 g protein / 1050 kcal / 468 g. A classic for a reason. Enjoy protein-rich double omelette with Cheese, topped with Chilli mayo in a freshly baked bread. Allergens - Contains wheat, rye, barley oats, milk, soy, egg. Values include multigrain bread, lettuce, tomatoes, onions, green peppers and cucumbers.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 199,
+      "originalPrice": 199,
+      "costPrice": 76,
+      "categoryID": 6110171,
+      "parentCategoryID": 0,
+      "type": "Group",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965RN.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988175": {
+      "itemID": 6988175,
+      "siRefID": 31325898,
+      "itemName": "Cheesy Mexican",
+      "description": "Serving size: 15cm - 19 g protein / 597 kcal / 281 g, 30cm - 38 g protein / 1194 kcal / 562 g. Hot and cheesy toasted sub with 1.5x chili bean patty, real mozz cheese, chipotle southwest sauce, tomato, capsicum, onion, olive, jalapeno and cheese slice. Allergens - Contains cereals containing gluten, milk, soy.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 269,
+      "originalPrice": 269,
+      "costPrice": 102,
+      "categoryID": 6104010,
+      "parentCategoryID": 0,
+      "type": "Group",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09A7L3GIHOT4DOUN.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988176": {
+      "itemID": 6988176,
+      "siRefID": 31328875,
+      "itemName": "Chicken Keema Melt",
+      "description": "Serving size: 15cm - 28 g protein / 569 kcal / 233 g, 30cm - 56 g protein / 1138 kcal / 466 g. Hot and cheesy toasted sub with 1.5x chicken keema, real mozz cheese, onion, capsicum, chili mayo and cheese slice. Allergens - Contains cereals containing gluten, milk, soy.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 249,
+      "originalPrice": 249,
+      "costPrice": 95,
+      "categoryID": 6104010,
+      "parentCategoryID": 0,
+      "type": "Group",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09A7L3GIHOT4DOUB.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988177": {
+      "itemID": 6988177,
+      "siRefID": 31327309,
+      "itemName": "Paneer Tikka Sandwich",
+      "description": "Serving size: 15cm – 20 g protein / 529 kcal / 274 g, 30cm – 40 g protein / 1058 kcal / 548 g. A delicious twist to your favourite paneer marinated in tikka masala blend for a spicy, smoky flavour, combined with your choice of veggies and sauces, served on a freshly baked bread. \nAllergens – Contains wheat, rye, barley, oats, milk, cashew nut. Values include multigrain bread, lettuce, tomatoes, onions, green peppers and cucumbers.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 229,
+      "originalPrice": 229,
+      "costPrice": 87,
+      "categoryID": 6110171,
+      "parentCategoryID": 0,
+      "type": "Group",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AJ9JMLKVBIR3HJ.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 12
+    },
+    "6988178": {
+      "itemID": 6988178,
+      "siRefID": 31327955,
+      "itemName": "Chicken Meatball Sandwich",
+      "description": "Serving size: 15cm - 19 g protein / 512 kcal / 274 g, 30cm - 38 g protein / 1024 kcal / 548 g. Authentic Indian meatballs, perfectly seasoned and spiced, served along with wholesome veggies and packed in your choice of freshly baked bread. Allergens - Contains wheat, rye, barley, oats, milk, soy. Values include multigrain bread, lettuce, tomatoes, onions, green peppers and cucumbers.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 199,
+      "originalPrice": 199,
+      "costPrice": 76,
+      "categoryID": 6110171,
+      "parentCategoryID": 0,
+      "type": "Group",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09A7L3GIHOT4DOVV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988179": {
+      "itemID": 6988179,
+      "siRefID": 31329472,
+      "itemName": "Cheesy Chicken Tikka",
+      "description": "Serving size: 15cm - 40 g protein / 654 kcal / 299 g, 30cm - 80 g protein / 1308 kcal / 598g. Double the chicken, with real mozz cheese. Indulge in hot cheesy chicken tikka sub loaded with chicken, tandoori sauce, fresh veggies and cheese. Allergens - Contains cereals containing gluten, milk, soy, cashew nuts.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 299,
+      "originalPrice": 299,
+      "costPrice": 114,
+      "categoryID": 6104010,
+      "parentCategoryID": 0,
+      "type": "Group",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965P3.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 17
+    },
+    "6988180": {
+      "itemID": 6988180,
+      "siRefID": 31329062,
+      "itemName": "Tandoori Chicken Tikka Sandwich",
+      "description": "Serving size: 15cm - 23 g protein / 511 kcal / 274 g, 30cm - 46 g protein / 1022 kcal / 548 g. Hearty chicken marinated with flavorful ingredients like yogurt, garlic and ginger, oven cooked with trademark tandoori tikka taste and served with veggies and sauces in your favourite bread. Allergens - Contains wheat, rye, barley, oats, milk, soy, cashew nut. Values include multigrain bread, lettuce, tomatoes, onions, green peppers and cucumbers.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 239,
+      "originalPrice": 239,
+      "costPrice": 91,
+      "categoryID": 6110171,
+      "parentCategoryID": 0,
+      "type": "Group",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965R7.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 13
+    },
+    "6988181": {
+      "itemID": 6988181,
+      "siRefID": 31325995,
+      "itemName": "Chicken Teriyaki Sandwich",
+      "description": "Serving size: 15cm - 20 g protein / 407 kcal / 274 g, 30cm - 40 g protein / 814 kcal / 548 g. Chicken strips glazed with teriyaki sauce, combined with your favourite veggies and topped with our signature sweet onion sauce, served hot in a freshly baked bread of your choice. Allergens - Contains wheat, rye, barley, oats, milk, soy. Values include multigrain bread, lettuce, tomatoes, onions, green peppers and cucumbers.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 249,
+      "originalPrice": 249,
+      "costPrice": 95,
+      "categoryID": 6110171,
+      "parentCategoryID": 0,
+      "type": "Group",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OR.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988182": {
+      "itemID": 6988182,
+      "siRefID": 31326438,
+      "itemName": "Potato Chilli Cheese",
+      "description": "Serving size: 15cm - 17 g protein / 518 kcal / 238 g, 30cm - 34 g protein / 1036 kcal / 476 g. Hot toasted sub loaded with 1.5x potato patty and real mozz cheese, topped with mint mayo, onions and capsicum, and cheese slice. Allergens - Contains cereals containing gluten, milk, soy.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 249,
+      "originalPrice": 249,
+      "costPrice": 95,
+      "categoryID": 6104010,
+      "parentCategoryID": 0,
+      "type": "Group",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09A7L3GIHOT4DOU4.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988183": {
+      "itemID": 6988183,
+      "siRefID": 31328404,
+      "itemName": "Aloo Patty Sandwich",
+      "description": "Serving size: 15cm - 12 g protein / 451 kcal / 269 g, 30cm - 24 g protein / 902 kcal / 538 g. Aloo patty seasoned with special herbs and spices, paired with your choice of nutritious veggies, on a freshly baked bread. Allergens - Contains wheat, rye, barley, oats, milk. Values include multigrain bread, lettuce, tomatoes, onions, green peppers and cucumbers.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 169,
+      "originalPrice": 169,
+      "costPrice": 64,
+      "categoryID": 6110171,
+      "parentCategoryID": 0,
+      "type": "Group",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMNJ.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 11
+    },
+    "6988184": {
+      "itemID": 6988184,
+      "siRefID": 31328585,
+      "itemName": "Peri Peri Chicken Sandwich",
+      "description": "Serving size: 15cm - 23 g protein / 490 kcal / 274 g, 30cm - 46 g protein / 980 kcal / 548 g. Let your tastebuds travel the world with African peri-peri flavoured chicken, served with nutritious veggies and packaged in your favourite bread of choice. Allergens - Contains wheat, rye, barley, oats, milk, soy. Values include multigrain bread, lettuce, tomatoes, onions, green peppers and cucumbers.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 239,
+      "originalPrice": 239,
+      "costPrice": 91,
+      "categoryID": 6110171,
+      "parentCategoryID": 0,
+      "type": "Group",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965QF.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 15
+    },
+    "6988185": {
+      "itemID": 6988185,
+      "siRefID": 31328759,
+      "itemName": "Spicy Chicken Keema Sandwich",
+      "description": "Serving size: 15cm - 20 g protein / 494 kcal / 274 g, 30cm - 40 g protein / 988 kcal / 548 g. Spicy & juicy chicken keema, served along with wholesome veggies and packed in your choice of freshly baked bread. Allergens - Contains wheat, rye, barley, oats, milk, soy. Values include multigrain bread, lettuce, tomatoes, onions, green peppers and cucumbers.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 209,
+      "originalPrice": 209,
+      "costPrice": 79,
+      "categoryID": 6110171,
+      "parentCategoryID": 0,
+      "type": "Group",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965R3.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988187": {
+      "itemID": 6988187,
+      "siRefID": 31327838,
+      "itemName": "Chilli Bean Patty Sandwich",
+      "description": "Serving size: 15cm - 16 g protein / 541 kcal / 274 g, 30cm - 32 g protein / 1082 kcal / 548 g. A refreshing filling of red and black kidney beans patty, topped with aromatic seasoning, along with your choice of veggies and sauces, served on a freshly baked bread. Allergens - Contains wheat, rye, barley, oats, milk. Values include multigrain bread, lettuce, tomatoes, onions, green peppers and cucumbers.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 199,
+      "originalPrice": 199,
+      "costPrice": 76,
+      "categoryID": 6110171,
+      "parentCategoryID": 0,
+      "type": "Group",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMMV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988188": {
+      "itemID": 6988188,
+      "siRefID": 31328074,
+      "itemName": "Chicken Slice Sandwich",
+      "description": "Serving size: 15cm - 20 g protein / 394 kcal / 259 g, 30cm - 40 g protein / 788 kcal / 518 g. Sliced smoked chicken with your choice of nutritious vegetables, served on a freshly baked bread. Allergens - Contains wheat, rye, barley, oats, soy. Values include multigrain bread, lettuce, tomatoes, onions, green peppers and cucumbers.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 199,
+      "originalPrice": 199,
+      "costPrice": 76,
+      "categoryID": 6110171,
+      "parentCategoryID": 0,
+      "type": "Group",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYML3.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988189": {
+      "itemID": 6988189,
+      "siRefID": 31328273,
+      "itemName": "Egg'n Chicken Melt",
+      "description": "Serving size: 15cm - 34 g protein / 525 kcal / 292 g, 30cm - 68 g protein / 1050 kcal / 584 g. Hot toasted sub with a generous 1.5x filling of delicious egg and chicken slice, real mozz cheese topped with southwest chipotle sauce, tomato, capsicum, onion and cheese slice. Allergens - Contains cereals containing gluten, milk, soy, egg.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 249,
+      "originalPrice": 249,
+      "costPrice": 95,
+      "categoryID": 6104010,
+      "parentCategoryID": 0,
+      "type": "Group",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMMZ.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988190": {
+      "itemID": 6988190,
+      "siRefID": 31329303,
+      "itemName": "Veg Shammi Sandwich",
+      "description": "Serving size: 15cm - 17 g protein / 465 kcal / 274 g, 30cm - 34 g protein / 930 kcal / 548 g. Experience authentic flavours with kebab made of lentils and enriched with mouth-watering hints of garlic and onion, accompanied by nutritious veggies, in your favourite bread. Allergens - Contains wheat, rye, barley, oats, milk, soy. Values include multigrain bread, lettuce, tomatoes, onions, green peppers and cucumbers.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 199,
+      "originalPrice": 199,
+      "costPrice": 76,
+      "categoryID": 6110171,
+      "parentCategoryID": 0,
+      "type": "Group",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AJ9JMLKVBIR3HZ.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "6988191": {
+      "itemID": 6988191,
+      "siRefID": 31325496,
+      "itemName": "B.M.T Sandwich",
+      "description": "Serving size: 15cm - 26 g protein / 485 kcal / 295 g, 30cm - 52 g protein / 970 kcal / 590 g. Protein-enriched classic Italian B.M.T. sub with a mix of tasty chicken pepperoni, smoked chicken slice, topped with your fav sauce to deliver a flavour burst, served in your choice of freshly baked bread. Allergens - Contains wheat, rye, barley, oats, milk, soy. Values include multigrain bread, lettuce, tomatoes, onions, green peppers and cucumbers.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 289,
+      "originalPrice": 289,
+      "costPrice": 110,
+      "categoryID": 6110171,
+      "parentCategoryID": 0,
+      "type": "Group",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09A7L3GIHOT4DOVR.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "7053594": {
+      "itemID": 7053594,
+      "siRefID": 31744925,
+      "itemName": "Aloo Patty Rice Bowl",
+      "description": "Serving size: 13 g protein / 558 kcal / 399 g. Seasoned aloo patty combined with fluffy basmati rice, beans, and colourful veggies, making every bite filling and flavourful. Allergens - Contains milk, soy, sulphite. Values include basmati rice, mixed beans, vegetables, southwest chipotle sauce and aloo patty.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 179,
+      "originalPrice": 179,
+      "costPrice": 68,
+      "categoryID": 6111605,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09A7L3GIHOT4DOV7.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "7053596": {
+      "itemID": 7053596,
+      "siRefID": 31744924,
+      "itemName": "Chilli Bean Patty Rice Bowl",
+      "description": "Serving size: 16 g protein / 636 kcal / 404 g. A hearty patty of kidney beans with aromatic spices, paired with basmati rice, beans, and wholesome vegetables. Allergens - Contains cereals containing gluten, milk, soy, sulphite. Values include basmati rice, mixed beans, vegetables, southwest chipotle sauce and chilli bean patty.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 179,
+      "originalPrice": 179,
+      "costPrice": 68,
+      "categoryID": 6111605,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09A7L3GIHOT4DOUJ.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 5
+    },
+    "7053597": {
+      "itemID": 7053597,
+      "siRefID": 31744929,
+      "itemName": "Veg Shammi Rice Bowl",
+      "description": "Serving size: 18 g protein / 573 kcal / 404 g. Savour the authentic taste of lentil kebab infused with garlic and onion, served with basmati rice, beans, and crisp veggies. Allergens - Contains cereals containing gluten, milk, soy, sulphite. Values include basmati rice, mixed beans, vegetables, southwest chipotle sauce and veg shammi.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 179,
+      "originalPrice": 179,
+      "costPrice": 68,
+      "categoryID": 6111605,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMMJ.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "7053598": {
+      "itemID": 7053598,
+      "siRefID": 31744932,
+      "itemName": "Paneer Tikka Rice Bowl",
+      "description": "Serving size: 21 g protein / 621 kcal / 404 g. Flavourful paneer marinated in delicious tikka masala blend, served with basmati rice, beans and fresh veggies. Allergens – Contains milk, soy, sulphite. Values include basmati rice, mixed beans, vegetables, southwest chipotle sauce and paneer tikka.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 219,
+      "originalPrice": 219,
+      "costPrice": 83,
+      "categoryID": 6111605,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMNR.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 6
+    },
+    "7053601": {
+      "itemID": 7053601,
+      "siRefID": 31744937,
+      "itemName": "Roasted Chicken Rice Bowl",
+      "description": "Serving size: 22 g protein / 522 kcal / 404 g. Tender strips of roasted chicken served with fluffy basmati rice, beans, and a medley of fresh vegetables. Allergens - Contains milk, soy, sulphite. Values include basmati rice, mixed beans, vegetables, southwest chipotle sauce and roast chicken.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 219,
+      "originalPrice": 219,
+      "costPrice": 83,
+      "categoryID": 6111605,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMNV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "7053602": {
+      "itemID": 7053602,
+      "siRefID": 31744936,
+      "itemName": "Peri Peri Chicken Rice Bowl",
+      "description": "Serving size: 23 g protein / 585 kcal / 404 g. African-inspired peri-peri chicken combined with basmati rice, beans, and fresh veggies for a fiery, wholesome meal. Allergens - Contains milk, soy, sulphite. Values include basmati rice, mixed beans, vegetables, southwest chipotle sauce and peri peri chicken.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 219,
+      "originalPrice": 219,
+      "costPrice": 83,
+      "categoryID": 6111605,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965QR.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "7053603": {
+      "itemID": 7053603,
+      "siRefID": 31744942,
+      "itemName": "Tandoori Chicken Tikka Rice Bowl",
+      "description": "Serving size: 24 g protein / 602 kcal / 404 g. Juicy chicken marinated in classic tandoori spices, paired with basmati rice, beans, and nutritious vegetables. Allergens - Contains milk, nut, soy, sulphite. Values include basmati rice, mixed beans, vegetables, southwest chipotle sauce and tandoori chicken.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 219,
+      "originalPrice": 219,
+      "costPrice": 83,
+      "categoryID": 6111605,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965PN.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 7
+    },
+    "7053604": {
+      "itemID": 7053604,
+      "siRefID": 31744943,
+      "itemName": "Chicken Teriyaki Rice Bowl",
+      "description": "Serving size: 21 g protein / 531 kcal / 404 g. Succulent chicken strips glazed in teriyaki sauce, layered with basmati rice, beans, and fresh vegetables. Allergens - Contains cereals containing gluten, milk, soy, sulphite. Values include basmati rice, mixed beans, vegetables, southwest chipotle sauce and chicken teriyaki.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 219,
+      "originalPrice": 219,
+      "costPrice": 83,
+      "categoryID": 6111605,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMLN.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "7134144": {
+      "itemID": 7134144,
+      "siRefID": 31744947,
+      "itemName": "Chicken 65 Rice Bowl",
+      "description": "Serving size: 22 g protein / 579 kcal / 404 g. Spicy Chicken 65 tossed in southern-style seasoning, served over fluffy basmati rice with protein-rich mixed beans and fresh vegetables for a bold, satisfying bowl. Allergens - Contains milk, soy, sulphite. Values include basmati rice, mixed beans, vegetables, southwest chipotle sauce and chicken 65.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 219,
+      "originalPrice": 219,
+      "costPrice": 83,
+      "categoryID": 6111605,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965QB.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 8
+    },
+    "7134145": {
+      "itemID": 7134145,
+      "siRefID": 31744950,
+      "itemName": "Pepper Chicken Rice Bowl",
+      "description": "Serving size: 22 g protein / 576 kcal / 404 g. Fiery black-pepper chicken cooked with aromatic spices, paired with basmati rice, mixed beans and crisp vegetables for a warm, comforting, flavour-forward meal. Allergens contains milk, soy, sulphite. Values include basmati rice, mixed beans, vegetables, southwest chipotle sauce and pepper chicken.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 219,
+      "originalPrice": 219,
+      "costPrice": 83,
+      "categoryID": 6111605,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965QZ.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 9
+    },
+    "7142735": {
+      "itemID": 7142735,
+      "siRefID": 31325446,
+      "itemName": "Chilli Dip",
+      "description": "Spicy and tangy signature red chilli dipping sauce.",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 30,
+      "originalPrice": 30,
+      "costPrice": 11,
+      "categoryID": 6104014,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AJ9JMLKVBIR3HF.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "7203694": {
+      "itemID": 7203694,
+      "siRefID": 31325474,
+      "itemName": "Potato Chips",
+      "description": "Classic salted crispy potato chips.",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 23.8,
+      "originalPrice": 23.8,
+      "costPrice": 9,
+      "categoryID": 6104014,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OZ.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "7216374": {
+      "itemID": 7216374,
+      "siRefID": 31325458,
+      "itemName": "Chicken 65 Add15",
+      "description": "Give extra protein boost to your favourite 15cm sandwich, salad, wrap or rice bowl",
+      "isVegetarian": "N",
+      "isCustomizable": "N",
+      "price": 85,
+      "originalPrice": 85,
+      "costPrice": 32,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "7216375": {
+      "itemID": 7216375,
+      "siRefID": 31325467,
+      "itemName": "Pepper Chicken Add15",
+      "description": "Give extra protein boost to your favourite 15cm sandwich, salad, wrap or rice bowl",
+      "isVegetarian": "N",
+      "isCustomizable": "N",
+      "price": 85,
+      "originalPrice": 85,
+      "costPrice": 32,
+      "categoryID": 6104007,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "7217732": {
+      "itemID": 7217732,
+      "siRefID": 31329289,
+      "itemName": "Make it a Meal (Beverage + Chips)",
+      "description": "Complete your order with your choice of cold drink and crispy chips.",
+      "isVegetarian": "Y",
+      "isCustomizable": "Y",
+      "price": 79,
+      "originalPrice": 79,
+      "costPrice": 30,
+      "categoryID": 6111593,
+      "parentCategoryID": 0,
+      "type": "Group",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965OV.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "7439371": {
+      "itemID": 7439371,
+      "siRefID": 33562067,
+      "itemName": "Chicken Chunks 2pc",
+      "description": "Serving size: 9.3 g protein / 147 kcal / 100 g.Tender whole-muscle chicken pieces coated in a flavourful seasoning, with a spicy kick in every bite. Allergens Contains milk, soy, sulphite.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 99,
+      "originalPrice": 99,
+      "costPrice": 38,
+      "categoryID": 6104014,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09ABH8UJIQZ965RB.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 10
+    },
+    "7439372": {
+      "itemID": 7439372,
+      "siRefID": 33562068,
+      "itemName": "Chicken Chunks 3pc",
+      "description": "Serving size: 14 g protein / 210 kcal / 150 g. Tender whole-muscle chicken pieces coated in a flavourful seasoning, with a spicy kick in every bite. Allergens Contains milk, soy, sulphite.",
+      "isVegetarian": "N",
+      "isCustomizable": "Y",
+      "price": 139,
+      "originalPrice": 139,
+      "costPrice": 53,
+      "categoryID": 6104014,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-07/37C09AFDE8KJT5DYMLJ.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    },
+    "7478559": {
+      "itemID": 7478559,
+      "siRefID": 33883389,
+      "itemName": "Cheese And Jalapeno Dip",
+      "description": "Creamy cheddar cheese dip infused with spicy chopped jalapenos.",
+      "isVegetarian": "Y",
+      "isCustomizable": "N",
+      "price": 26.67,
+      "originalPrice": 26.67,
+      "costPrice": 10,
+      "categoryID": 6104014,
+      "parentCategoryID": 0,
+      "type": "Simple",
+      "serviceSubType": "qsr",
+      "image": [
+        "//cdn.dotpe.in/catalog/sku-images/2026-10-13/37D8UFD528UIR2RZS4H.jpg"
+      ],
+      "itemStatus": "A",
+      "Position": 0
+    }
+  }
+}

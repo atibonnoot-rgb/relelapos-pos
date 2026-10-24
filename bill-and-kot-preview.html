@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sattva Tiffins – Restaurant Bill & KOT Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --surface-2: #334155;
+      --border: #334155;
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --accent: #10b981;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --receipt-bg: #ffffff;
+      --receipt-text: #050505;
+      --receipt-border: #475569;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 60px;
+    }
+
+    /* ── Top Bar ── */
+    .topbar {
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #10b981, #059669);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    }
+
+    .brand-text h1 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+    }
+
+    .brand-text p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .action-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: #2563eb;
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+    }
+
+    .btn-success {
+      background: #059669;
+      color: #fff;
+    }
+
+    .btn-success:hover {
+      background: #047857;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .btn-outline:hover {
+      background: var(--surface-2);
+    }
+
+    .btn-dark {
+      background: #000000;
+      color: #ffffff;
+      border: 1px solid #334155;
+    }
+
+    .btn-dark:hover {
+      background: #111827;
+    }
+
+    /* ── Main Container ── */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 30px 24px;
+      width: 100%;
+    }
+
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(16, 185, 129, 0.08));
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text h2 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #60a5fa;
+      margin-bottom: 4px;
+    }
+
+    .hero-text p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      max-width: 750px;
+      line-height: 1.5;
+    }
+
+    .hero-btn {
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 10px 20px;
+      background: #3b82f6;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-btn:hover {
+      background: #2563eb;
+    }
+
+    /* ── Controls Bar ── */
+    .controls-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .controls-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .control-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+    }
+
+    .select-input {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .select-input:focus {
+      border-color: var(--primary);
+    }
+
+    .segmented-control {
+      display: inline-flex;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2px;
+    }
+
+    .segment-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .segment-btn.active {
+      background: var(--surface-2);
+      color: #fff;
+    }
+
+    /* ── Receipt Stage Area ── */
+    .receipts-stage {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .slip-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .slip-title-bar {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .slip-title-bar .badge {
+      font-size: 0.68rem;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-weight: 700;
+      background: rgba(59, 130, 246, 0.2);
+      color: #93c5fd;
+    }
+
+    /* ── Thermal Paper Simulation ── */
+    .thermal-slip {
+      width: 360px;
+      background: var(--receipt-bg);
+      color: var(--receipt-text);
+      font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
+      padding: 22px 18px;
+      border-radius: 6px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+      position: relative;
+      font-size: 12px;
+      line-height: 1.35;
+      letter-spacing: -0.2px;
+    }
+
+    .thermal-slip.compact-58mm {
+      width: 290px;
+      font-size: 11px;
+      padding: 16px 12px;
+    }
+
+    /* Jagged Paper Tear Effect */
+    .thermal-slip::before {
+      content: '';
+      position: absolute;
+      top: -6px;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: radial-gradient(circle, transparent, transparent 50%, #fff 50%, #fff 100%);
+      background-size: 12px 12px;
+    }
+
+    .thermal-slip::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: radial-gradient(circle, transparent, transparent 50%, #fff 50%, #fff 100%);
+      background-size: 12px 12px;
+      transform: rotate(180deg);
+    }
+
+    /* ── Slip 1: Customer Bill Elements ── */
+    .bill-header {
+      text-align: center;
+      border-bottom: 1.5px dashed #333;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+
+    .bill-store-name {
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .bill-tagline {
+      font-size: 10.5px;
+      color: #333;
+      margin-top: 3px;
+    }
+
+    .bill-contact {
+      font-size: 10.5px;
+      color: #444;
+      margin-top: 2px;
+    }
+
+    .bill-meta-block {
+      border-bottom: 1.5px dashed #333;
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+      font-size: 11.5px;
+    }
+
+    .bill-token-pill {
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .meta-line {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2px;
+    }
+
+    .meta-line strong {
+      font-weight: 700;
+    }
+
+    .bill-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 8px;
+      font-size: 11.5px;
+    }
+
+    .bill-table thead tr {
+      border-top: 1.5px solid #000;
+      border-bottom: 1.5px solid #000;
+    }
+
+    .bill-table th {
+      padding: 4px 0;
+      font-weight: 800;
+      font-size: 10.5px;
+      text-align: left;
+    }
+
+    .bill-table td {
+      padding: 4px 0;
+      vertical-align: top;
+    }
+
+    .col-qty {
+      text-align: center;
+      width: 36px;
+    }
+
+    .col-rate {
+      text-align: right;
+      width: 44px;
+    }
+
+    .col-amt {
+      text-align: right;
+      width: 54px;
+      font-weight: 700;
+    }
+
+    .bill-divider-solid {
+      border-top: 1.5px solid #000;
+      margin: 4px 0;
+    }
+
+    .bill-divider-dashed {
+      border-top: 1.5px dashed #333;
+      margin: 6px 0;
+    }
+
+    .bill-total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 900;
+      padding: 6px 0;
+      border-top: 1.5px dashed #333;
+      border-bottom: 1.5px dashed #333;
+      margin: 6px 0;
+    }
+
+    .bill-note-box {
+      font-size: 10.5px;
+      border-bottom: 1.5px dashed #333;
+      padding-bottom: 6px;
+      margin-bottom: 8px;
+    }
+
+    .bill-footer {
+      text-align: center;
+      font-size: 10.5px;
+      color: #333;
+      padding-top: 6px;
+      line-height: 1.4;
+    }
+
+    .bill-footer strong {
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── Slip 2: KOT Elements ── */
+    .kot-header {
+      text-align: center;
+      border-bottom: 1.5px solid #000;
+      padding-bottom: 6px;
+      margin-bottom: 6px;
+    }
+
+    .kot-store {
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .kot-token-box {
+      text-align: center;
+      border-top: 1.5px solid #000;
+      border-bottom: 1.5px solid #000;
+      padding: 6px 0;
+      margin: 6px 0;
+    }
+
+    .kot-token-num {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .kot-meta {
+      font-size: 11.5px;
+      border-bottom: 1.5px dashed #333;
+      padding-bottom: 6px;
+      margin-bottom: 8px;
+    }
+
+    .kot-items-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .kot-item-row {
+      font-size: 14.5px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      line-height: 1.3;
+      padding-bottom: 3px;
+      border-bottom: 1px dotted #ccc;
+    }
+
+    .kot-item-row:last-child {
+      border-bottom: none;
+    }
+
+    .kot-item-qty {
+      font-size: 16px;
+      margin-right: 4px;
+    }
+
+    .kot-note-box {
+      border-top: 1.5px dashed #333;
+      padding-top: 6px;
+      font-size: 11.5px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .kot-footer-cut {
+      border-top: 1.5px solid #000;
+      padding-top: 6px;
+      text-align: center;
+      font-size: 10px;
+      color: #666;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── Code & Prompt Tabs ── */
+    .specs-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-top: 30px;
+    }
+
+    .tabs-header {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.4);
+      overflow-x: auto;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 14px 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+
+    .tab-btn:hover {
+      color: var(--text);
+    }
+
+    .tab-btn.active {
+      color: #60a5fa;
+      border-bottom-color: #3b82f6;
+      background: rgba(59, 130, 246, 0.05);
+    }
+
+    .tab-content {
+      padding: 20px 24px;
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .code-container {
+      position: relative;
+    }
+
+    .code-copy-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .code-copy-btn:hover {
+      background: #475569;
+    }
+
+    pre {
+      background: #0a0f1d;
+      border: 1px solid #1e293b;
+      border-radius: 8px;
+      padding: 18px;
+      overflow-x: auto;
+      font-family: 'JetBrains Mono', Courier, monospace;
+      font-size: 0.82rem;
+      color: #e2e8f0;
+      line-height: 1.5;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #10b981;
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 9999;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: #fff !important;
+        color: #000 !important;
+        padding: 0 !important;
+      }
+
+      .topbar,
+      .hero-banner,
+      .controls-card,
+      .specs-card,
+      .toast {
+        display: none !important;
+      }
+
+      .receipts-stage {
+        margin: 0 !important;
+        gap: 0 !important;
+        display: block !important;
+      }
+
+      .slip-column {
+        page-break-after: always;
+        break-after: page;
+        margin-bottom: 20px;
+      }
+
+      .slip-title-bar,
+      .slip-actions {
+        display: none !important;
+      }
+
+      .thermal-slip {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        width: 76mm !important;
+      }
+
+      .thermal-slip::before,
+      .thermal-slip::after {
+        display: none !important;
+      }
+
+      @page {
+        size: 80mm auto;
+        margin: 2mm 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+  <header class="topbar">
+    <div class="brand-group">
+      <div class="brand-icon">🧾</div>
+      <div class="brand-text">
+        <h1>Restaurant Bill & KOT Design System</h1>
+        <p>Pure ESC/POS 80mm/58mm Blueprint & Antigravity Hand-off Kit</p>
+      </div>
+    </div>
+    <div class="action-group">
+      <button class="btn btn-outline" id="btn-print-bill">🖨️ Print Bill</button>
+      <button class="btn btn-outline" id="btn-print-kot">👨‍🍳 Print KOT</button>
+      <button class="btn btn-dark" id="btn-print-both">🖨️ Print Both Slips</button>
+      <button class="btn btn-primary" id="btn-copy-prompt-top">📋 Copy Antigravity Prompt</button>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- Hero Callout -->
+    <div class="hero-banner">
+      <div class="hero-text">
+        <h2>🚀 Ready to hand over to another Antigravity instance?</h2>
+        <p>
+          This design kit captures the exact <strong>Customer Bill</strong> (itemized 48-column table with rates and
+          total) and <strong>Kitchen Order Ticket (KOT)</strong> (ultra-compact, high-speed, huge double-height item
+          names, no prices). You can copy the master prompt with 1-click and give it directly to another AI agent to
+          recreate this identical layout.
+        </p>
+      </div>
+      <button class="hero-btn" id="hero-copy-btn">
+        <span>📋</span> Copy Antigravity Prompt
+      </button>
+    </div>
+
+    <!-- Controls Bar -->
+    <div class="controls-card">
+      <div class="controls-left">
+        <span class="control-label">Sample Order:</span>
+        <select class="select-input" id="order-selector">
+          <option value="0">Order #01 – Breakfast Dine-In (Masala Dosa, Idly, Wada)</option>
+          <option value="1">Order #22 – Quick Takeaway (Aloo Masala Dosa + Coffee)</option>
+          <option value="2">Order #05 – High-Volume Lunch (Thali, Bonda, Cold Drinks)</option>
+        </select>
+
+        <span class="control-label" style="margin-left: 12px;">Paper Width:</span>
+        <div class="segmented-control">
+          <button class="segment-btn active" data-width="80mm">80mm POS (Standard)</button>
+          <button class="segment-btn" data-width="58mm">58mm POS (Compact)</button>
+        </div>
+      </div>
+
+      <div>
+        <span style="font-size:0.75rem;color:var(--text-muted);font-weight:600">
+          Format: 2 Individual Slips with Auto-Cut
+        </span>
+      </div>
+    </div>
+
+    <!-- Stage: Live Dual Receipts -->
+    <div class="receipts-stage">
+
+      <!-- Slip 1: Customer Bill -->
+      <div class="slip-column" id="slip-col-bill">
+        <div class="slip-title-bar">
+          <span>SLIP 1: CUSTOMER TAX INVOICE</span>
+          <span class="badge">80mm Thermal · 48 Cols</span>
+        </div>
+
+        <div class="thermal-slip" id="bill-preview-card">
+          <!-- Rendered by JS -->
+        </div>
+
+        <div class="slip-actions" style="margin-top: 8px;">
+          <button class="btn btn-outline" onclick="printSingleSlip('bill')">🖨️ Print Customer Bill Only</button>
+        </div>
+      </div>
+
+      <!-- Slip 2: Kitchen Order Ticket (KOT) -->
+      <div class="slip-column" id="slip-col-kot">
+        <div class="slip-title-bar">
+          <span>SLIP 2: KITCHEN ORDER TICKET (KOT)</span>
+          <span class="badge" style="background:rgba(16,185,129,0.2);color:#6ee7b7">Chef Token Slip · 32 Cols</span>
+        </div>
+
+        <div class="thermal-slip" id="kot-preview-card">
+          <!-- Rendered by JS -->
+        </div>
+
+        <div class="slip-actions" style="margin-top: 8px;">
+          <button class="btn btn-outline" onclick="printSingleSlip('kot')">👨‍🍳 Print Kitchen Slip Only</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Specifications & Code Tabs -->
+    <div class="specs-card">
+      <div class="tabs-header">
+        <button class="tab-btn active" data-tab="tab-prompt">📋 Antigravity Master Prompt</button>
+        <button class="tab-btn" data-tab="tab-powershell">⚡ ESC/POS PowerShell Engine</button>
+        <button class="tab-btn" data-tab="tab-html">🌐 HTML/CSS Modal Component</button>
+        <button class="tab-btn" data-tab="tab-json">📦 Order JSON Schema</button>
+      </div>
+
+      <!-- Tab 1: Prompt -->
+      <div class="tab-content active" id="tab-prompt">
+        <div class="code-container">
+          <button class="code-copy-btn" onclick="copyCodeFromPre('pre-prompt')">📋 Copy Prompt</button>
+          <pre id="pre-prompt"></pre>
+        </div>
+      </div>
+
+      <!-- Tab 2: PowerShell -->
+      <div class="tab-content" id="tab-powershell">
+        <div class="code-container">
+          <button class="code-copy-btn" onclick="copyCodeFromPre('pre-powershell')">📋 Copy PowerShell Code</button>
+          <pre id="pre-powershell"></pre>
+        </div>
+      </div>
+
+      <!-- Tab 3: HTML Component -->
+      <div class="tab-content" id="tab-html">
+        <div class="code-container">
+          <button class="code-copy-btn" onclick="copyCodeFromPre('pre-html')">📋 Copy HTML/CSS</button>
+          <pre id="pre-html"></pre>
+        </div>
+      </div>
+
+      <!-- Tab 4: JSON Schema -->
+      <div class="tab-content" id="tab-json">
+        <div class="code-container">
+          <button class="code-copy-btn" onclick="copyCodeFromPre('pre-json')">📋 Copy JSON</button>
+          <pre id="pre-json"></pre>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="toast" id="toast">✅ Copied to clipboard!</div>
+
+  <script>
+    // ── Sample Orders Data ──
+    const SAMPLES = [
+      {
+        id: "101",
+        tokenId: "01",
+        storeName: "SATTVA TIFFINS",
+        tagline: "Pure Taste - Freshly Made Always",
+        address: "Main Road Outlet | Ph: +91 98765 43210",
+        tableNumber: "T-1",
+        serviceMode: "dine-in",
+        paymentMethod: "cash",
+        customerName: "Rahul Sharma",
+        customerPhone: "+91 98765 43210",
+        dateStr: "24-Oct-2026 01:15 PM",
+        timeShort: "24/10 13:15",
+        specialInstructions: "Less spicy sambar, extra coconut chutney",
+        items: [
+          { name: "Masala Dosa", qty: 1, price: 60 },
+          { name: "Idly (4 pcs)", qty: 2, price: 60 },
+          { name: "Wada (2 pcs)", qty: 1, price: 60 }
+        ],
+        total: 240
+      },
+      {
+        id: "122",
+        tokenId: "22",
+        storeName: "SATTVA TIFFINS",
+        tagline: "Pure Taste - Freshly Made Always",
+        address: "Main Road Outlet | Ph: +91 98765 43210",
+        tableNumber: "PARCEL-4",
+        serviceMode: "takeaway",
+        paymentMethod: "upi",
+        customerName: "Dinein",
+        customerPhone: "",
+        dateStr: "24-Oct-2026 01:25 PM",
+        timeShort: "24/10 13:25",
+        specialInstructions: "Pack sambar in separate pouch",
+        items: [
+          { name: "Aloo Masala Dosa", qty: 2, price: 70 },
+          { name: "Filter Coffee", qty: 2, price: 25 }
+        ],
+        total: 190
+      },
+      {
+        id: "105",
+        tokenId: "05",
+        storeName: "SATTVA TIFFINS",
+        tagline: "Pure Taste - Freshly Made Always",
+        address: "Main Road Outlet | Ph: +91 98765 43210",
+        tableNumber: "T-8",
+        serviceMode: "dine-in",
+        paymentMethod: "cash",
+        customerName: "Priya Rao",
+        customerPhone: "+91 98450 11223",
+        dateStr: "24-Oct-2026 01:40 PM",
+        timeShort: "24/10 13:40",
+        specialInstructions: "Serve cold drinks chilled",
+        items: [
+          { name: "Special South Indian Meals", qty: 2, price: 150 },
+          { name: "Mysore Bonda (4 pcs)", qty: 2, price: 50 },
+          { name: "Fresh Sweet Lime Juice", qty: 2, price: 60 }
+        ],
+        total: 520
+      }
+    ];
+
+    let currentOrder = SAMPLES[0];
+
+    // ── Render Receipts ──
+    function renderReceipts() {
+      const o = currentOrder;
+
+      // 1. Customer Bill (Slip 1)
+      const billEl = document.getElementById('bill-preview-card');
+      const itemsSubtotal = o.items.reduce((s, it) => s + (it.qty * it.price), 0);
+      const grandTotal = o.total || itemsSubtotal;
+
+      billEl.innerHTML = `
+        <div class="bill-header">
+          <div class="bill-store-name" style="font-size:18px;font-weight:900;letter-spacing:1px;margin:4px 0">R E L E L A P O S</div>
+          <div class="bill-tagline">${esc(o.tagline)}</div>
+          <div class="bill-contact">Main Road Outlet</div>
+        </div>
+
+        <div class="bill-token-box" style="text-align:center;padding:8px 0;border-top:1.5px dashed #333;border-bottom:1.5px dashed #333;margin:8px 0">
+          <div style="font-size:18px;font-weight:900;letter-spacing:1px">T O K E N   #${esc(String(o.tokenId).padStart(2, '0'))}</div>
+        </div>
+
+        <div class="bill-meta-block" style="border-bottom:none;padding-bottom:2px">
+          <div class="meta-line"><span>DATE/TIME: ${esc(o.dateStr)}</span></div>
+          <div class="meta-line"><span>PAYMENT  : ${esc(o.paymentMethod.toUpperCase())}</span></div>
+        </div>
+
+        <table class="bill-table">
+          <thead>
+            <tr>
+              <th>ITEM</th>
+              <th class="col-qty">QTY</th>
+              <th class="col-rate">RATE</th>
+              <th class="col-amt">AMOUNT</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${o.items.map(it => `
+              <tr>
+                <td>${esc(it.name)}</td>
+                <td class="col-qty">${it.qty}</td>
+                <td class="col-rate">${it.price}</td>
+                <td class="col-amt">${it.qty * it.price}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+
+        <div class="bill-total-row">
+          <span>TOTAL AMOUNT:</span>
+          <span>Rs ${grandTotal}</span>
+        </div>
+
+        ${o.specialInstructions ? `
+          <div class="bill-note-box">
+            <strong>SPECIAL NOTE:</strong> ${esc(o.specialInstructions)}
+          </div>
+        ` : ''}
+
+        <div class="bill-footer">
+          <div>Good Food Brings People Together</div>
+          <div style="margin-top: 2px;"><strong>*** THANK YOU! VISIT AGAIN ***</strong></div>
+        </div>
+      `;
+
+      // 2. Kitchen Order Ticket (Slip 2 - KOT)
+      const kotEl = document.getElementById('kot-preview-card');
+      kotEl.innerHTML = `
+        <div class="kot-header">
+          <div class="kot-store">${esc(o.storeName)}</div>
+        </div>
+
+        <div class="kot-token-box">
+          <div class="kot-token-num">TOKEN #${esc(String(o.tokenId).padStart(2, '0'))}</div>
+        </div>
+
+        <div class="kot-meta">
+          <div class="meta-line" style="font-weight:700">
+            <span>Mode: ${esc(o.serviceMode.toUpperCase())}</span>
+            <span>${esc(o.timeShort)}</span>
+          </div>
+          <div class="meta-line">
+            <span>Table: ${esc(o.tableNumber)}</span>
+          </div>
+          <div class="meta-line">
+            <span>Pay  : ${esc(o.paymentMethod.toUpperCase())}</span>
+          </div>
+        </div>
+
+        <div class="kot-items-list">
+          ${o.items.map(it => `
+            <div class="kot-item-row">
+              <span class="kot-item-qty">${it.qty}x</span>
+              <span>${esc(it.name.toUpperCase())}</span>
+            </div>
+          `).join('')}
+        </div>
+
+        ${o.specialInstructions ? `
+          <div class="kot-note-box">
+            <span>Note: ${esc(o.specialInstructions)}</span>
+          </div>
+        ` : ''}
+
+        <div class="kot-footer-cut">
+          ══════════════ [ CUT HERE ] ══════════════
+        </div>
+      `;
+    }
+
+    function esc(s) {
+      return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    // ── Prompt and Snippets Loading ──
+    const MASTER_PROMPT = `You are an expert POS & Thermal Receipt Engineer. I want you to build an identical restaurant Bill (Customer Receipt) and KOT (Kitchen Order Ticket) printing system matching the exact industry-standard thermal layout described below.
+
+### 🎯 Architecture Overview (2 Separate Slips per Order)
+When an order is placed or printed, it outputs TWO separate distinct slips with automated paper cuts:
+
+1. **Slip 1 – Customer Bill (Full Itemized Tax/Payment Invoice)**:
+   - Formatted for 80mm thermal receipt paper (48 characters per line).
+   - Shows restaurant brand header, token number, table, mode, customer info, date/time, payment mode.
+   - 4-column aligned table: [ITEM (31 cols) | QTY (3 cols) | RATE (4 cols) | AMOUNT (6 cols)].
+   - Grand Total in large bold double-size text.
+   - Footer with thank you greeting.
+   - Feed 3 lines & Cut paper command.
+
+2. **Slip 2 – Kitchen Order Ticket / KOT (Chef Preparation Slip)**:
+   - Ultra-compact, high-speed, paper-saving ticket formatted for 32 columns.
+   - Giant bold centered Token Number: "TOKEN #XX" (Double Width & Double Height) so kitchen staff can read it from 5 meters away.
+   - Mode & Time on a single justified line: "Mode: DINE-IN             24/10 13:45".
+   - Table Number & Payment status.
+   - Kitchen Items in ALL CAPS, BOLD, DOUBLE-HEIGHT with quantity prefix (e.g. "2x MASALA DOSA", "1x IDLY (4 PCS)").
+   - NO PRICES or monetary totals (removes cognitive clutter for cooks).
+   - Highlighted chef special instructions/notes.
+   - Feed 2 lines & Cut paper command.
+
+---
+
+### 🖨️ Exact Visual Mockups
+
+#### SLIP 1: CUSTOMER BILL (80mm / 48 Columns)
+                  SATTVA TIFFINS
+         Pure Taste - Freshly Made Always
+     Main Road Outlet | Ph: +91 98765 43210
+------------------------------------------------
+TOKEN NO : 01
+TABLE NO : T-1 (DINE-IN)
+CUSTOMER : Rahul Sharma
+PHONE    : +91 98765 43210
+DATE/TIME: 24-Oct-2026 01:15 PM
+PAYMENT  : CASH
+================================================
+ITEM                           QTY   RATE AMOUNT
+------------------------------------------------
+Masala Dosa                      1     60     60
+Idly (4 pcs)                     2     60    120
+Wada (2 pcs)                     1     60     60
+------------------------------------------------
+TOTAL AMOUNT: Rs 240
+------------------------------------------------
+SPECIAL NOTE: Less spicy sambar, extra chutney
+------------------------------------------------
+        Good Food Brings People Together
+         *** THANK YOU! VISIT AGAIN ***
+[-- ESC/POS PAPER CUT --]
+
+#### SLIP 2: KITCHEN ORDER TICKET (KOT) (32 Columns)
+         SATTVA TIFFINS
+================================
+           TOKEN #01
+================================
+Mode: DINE-IN        24/10 13:15
+Table: T-1
+Pay  : CASH
+--------------------------------
+1x MASALA DOSA
+2x IDLY (4 PCS)
+1x WADA (2 PCS)
+--------------------------------
+Note: Less spicy sambar, extra chutney
+================================
+[-- ESC/POS PAPER CUT --]
+
+---
+
+### ⚙️ ESC/POS Thermal Printer Commands (Standard Hex)
+- Initialize: 0x1B, 0x40 (ESC @)
+- Center Align: 0x1B, 0x61, 0x01
+- Left Align: 0x1B, 0x61, 0x00
+- Bold On: 0x1B, 0x45, 0x01
+- Bold Off: 0x1B, 0x45, 0x00
+- Double Height: 0x1D, 0x21, 0x01
+- Double Width & Height (Massive): 0x1D, 0x21, 0x11
+- Normal Size: 0x1D, 0x21, 0x00
+- Feed & Cut: 0x0A, 0x0A, 0x0A, 0x1D, 0x56, 0x41, 0x00
+
+### 📐 48-Column Item Alignment Formula
+Item Name: Pad right 31 chars -> name.PadRight(31)
+Quantity:  Pad left 3 chars   -> qty.PadLeft(3)
+Gap:       3 spaces           -> "   "
+Rate:      Pad left 4 chars   -> rate.PadLeft(4)
+Gap:       1 space            -> " "
+Amount:    Pad left 6 chars   -> amount.PadLeft(6)
+Line:      "{0}{1}   {2} {3}\\n" -> Exactly 48 columns.
+
+Please implement this exact format for both receipts in my project.`;
+
+    const POWERSHELL_SNIPPET = `# Native Windows ESC/POS Print Function (POS-80 Printer)
+function Print-ReceiptAndKOT($order, [string]$PrinterName = "POS-80") {
+    $ms = New-Object System.IO.MemoryStream
+    $bw = New-Object System.IO.BinaryWriter($ms)
+
+    # 1. Initialize
+    $bw.Write([byte[]]@(0x1B, 0x40))
+
+    # --- SLIP 1: CUSTOMER BILL ---
+    $bw.Write([byte[]]@(0x1B, 0x61, 0x01)) # Center
+    $bw.Write([byte[]]@(0x1B, 0x45, 0x01)) # Bold on
+    $bw.Write([byte[]]@(0x1D, 0x21, 0x11)) # Double size
+    $bw.Write([System.Text.Encoding]::ASCII.GetBytes("SATTVA TIFFINS\`n"))
+    $bw.Write([byte[]]@(0x1D, 0x21, 0x00)) # Normal size
+    $bw.Write([byte[]]@(0x1B, 0x45, 0x00)) # Bold off
+    $bw.Write([System.Text.Encoding]::ASCII.GetBytes("Pure Taste - Freshly Made Always\`n"))
+    $bw.Write([System.Text.Encoding]::ASCII.GetBytes("Main Road Outlet | Ph: +91 98765 43210\`n"))
+    $bw.Write([System.Text.Encoding]::ASCII.GetBytes("------------------------------------------------\`n"))
+
+    # Meta
+    $bw.Write([byte[]]@(0x1B, 0x61, 0x00)) # Left
+    $tok = ("{0:D2}" -f [int]($order.tokenId -as [int]))
+    $bw.Write([byte[]]@(0x1B, 0x45, 0x01))
+    $bw.Write([byte[]]@(0x1D, 0x21, 0x01))
+    $bw.Write([System.Text.Encoding]::ASCII.GetBytes("TOKEN NO : $tok\`n"))
+    $bw.Write([byte[]]@(0x1D, 0x21, 0x00))
+    $bw.Write([byte[]]@(0x1B, 0x45, 0x00))
+    $bw.Write([System.Text.Encoding]::ASCII.GetBytes("TABLE NO : $($order.tableNumber) ($($order.serviceMode.ToUpper()))\`n"))
+    $bw.Write([System.Text.Encoding]::ASCII.GetBytes("DATE/TIME: $((Get-Date).ToString('dd-MMM-yyyy hh:mm tt'))\`n"))
+    $bw.Write([System.Text.Encoding]::ASCII.GetBytes("PAYMENT  : $($order.paymentMethod.ToUpper())\`n"))
+    $bw.Write([System.Text.Encoding]::ASCII.GetBytes("================================================\`n"))
+    $bw.Write([System.Text.Encoding]::ASCII.GetBytes("ITEM                           QTY   RATE AMOUNT\`n"))
+    $bw.Write([System.Text.Encoding]::ASCII.GetBytes("------------------------------------------------\`n"))
+
+    # Items table (48 cols)
+    foreach ($it in $order.items) {
+        $n = if ($it.name.Length -gt 30) { $it.name.Substring(0,30) } else { $it.name }
+        $nCol = $n.PadRight(31)
+        $qCol = ([string]$it.qty).PadLeft(3)
+        $rCol = ([string][Math]::Round($it.price)).PadLeft(4)
+        $aCol = ([string][Math]::Round($it.qty * $it.price)).PadLeft(6)
+        $bw.Write([System.Text.Encoding]::ASCII.GetBytes("$nCol$qCol   $rCol $aCol\`n"))
+    }
+    $bw.Write([System.Text.Encoding]::ASCII.GetBytes("------------------------------------------------\`n"))
+    $bw.Write([byte[]]@(0x1B, 0x45, 0x01))
+    $bw.Write([byte[]]@(0x1D, 0x21, 0x11))
+    $bw.Write([System.Text.Encoding]::ASCII.GetBytes("TOTAL AMOUNT: Rs $($order.total)\`n"))
+    $bw.Write([byte[]]@(0x1D, 0x21, 0x00))
+    $bw.Write([byte[]]@(0x1B, 0x45, 0x00))
+    $bw.Write([System.Text.Encoding]::ASCII.GetBytes("------------------------------------------------\`n"))
+    $bw.Write([byte[]]@(0x1B, 0x61, 0x01))
+    $bw.Write([System.Text.Encoding]::ASCII.GetBytes("*** THANK YOU! VISIT AGAIN ***\`n"))
+    
+    # Paper Cut 1
+    $bw.Write([byte[]]@(0x0A, 0x0A, 0x0A, 0x1D, 0x56, 0x41, 0x00))
+
+    # --- SLIP 2: KITCHEN ORDER TICKET (KOT) ---
+    $bw.Write([byte[]]@(0x1B, 0x40))
+    $bw.Write([byte[]]@(0x1B, 0x61, 0x01))
+    $bw.Write([System.Text.Encoding]::ASCII.GetBytes("SATTVA TIFFINS\`n================================\`n"))
+    $bw.Write([byte[]]@(0x1D, 0x21, 0x11)) # Massive token
+    $bw.Write([System.Text.Encoding]::ASCII.GetBytes("TOKEN #$tok\`n"))
+    $bw.Write([byte[]]@(0x1D, 0x21, 0x00))
+    $bw.Write([System.Text.Encoding]::ASCII.GetBytes("================================\`n"))
+    $bw.Write([byte[]]@(0x1B, 0x61, 0x00))
+    $timeOnly = (Get-Date).ToString("dd/MM HH:mm")
+    $modeStr = "Mode: " + $order.serviceMode.ToUpper()
+    $spc = [Math]::Max(1, 32 - $modeStr.Length - $timeOnly.Length)
+    $bw.Write([System.Text.Encoding]::ASCII.GetBytes($modeStr + (" " * $spc) + $timeOnly + "\`n"))
+    $bw.Write([System.Text.Encoding]::ASCII.GetBytes("Table: $($order.tableNumber)\`n--------------------------------\`n"))
+
+    # KOT Items: double-height uppercase bold
+    $bw.Write([byte[]]@(0x1B, 0x45, 0x01))
+    $bw.Write([byte[]]@(0x1D, 0x21, 0x01))
+    foreach ($it in $order.items) {
+        $bw.Write([System.Text.Encoding]::ASCII.GetBytes("$($it.qty)x $($it.name.ToUpper())\`n"))
+    }
+    $bw.Write([byte[]]@(0x1D, 0x21, 0x00))
+    $bw.Write([byte[]]@(0x1B, 0x45, 0x00))
+
+    if ($order.specialInstructions) {
+        $bw.Write([System.Text.Encoding]::ASCII.GetBytes("--------------------------------\`nNote: $($order.specialInstructions)\`n"))
+    }
+    $bw.Write([System.Text.Encoding]::ASCII.GetBytes("================================\`n"))
+    
+    # Paper Cut 2
+    $bw.Write([byte[]]@(0x0A, 0x0A, 0x1D, 0x56, 0x41, 0x00))
+
+    $bw.Flush()
+    return $ms.ToArray()
+}`;
+
+    const HTML_SNIPPET = `<!-- Thermal Receipt Modal Preview & Print Container -->
+<div id="receipt-modal-container" style="display:flex;gap:20px;justify-content:center;background:#fff;padding:24px;font-family:'Courier New',monospace;border:1.5px dashed #444;border-radius:8px">
+  <!-- Insert generated bill & kot html here -->
+</div>
+
+<style>
+@media print {
+  body * { visibility: hidden; }
+  #receipt-modal-container, #receipt-modal-container * { visibility: visible; }
+  #receipt-modal-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 78mm;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  @page { size: 80mm auto; margin: 0; }
+}
+</style>`;
+
+    const JSON_SNIPPET = `{
+  "id": "101",
+  "tokenId": "01",
+  "tableNumber": "T-1",
+  "serviceMode": "dine-in",
+  "paymentMethod": "cash",
+  "customerName": "Rahul Sharma",
+  "customerPhone": "+91 98765 43210",
+  "timestamp": "2026-10-24T13:15:00.000Z",
+  "items": [
+    { "name": "Masala Dosa", "qty": 1, "price": 60 },
+    { "name": "Idly (4 pcs)", "qty": 2, "price": 60 },
+    { "name": "Wada (2 pcs)", "qty": 1, "price": 60 }
+  ],
+  "total": 240,
+  "specialInstructions": "Less spicy sambar, extra chutney"
+}`;
+
+    document.getElementById('pre-prompt').textContent = MASTER_PROMPT;
+    document.getElementById('pre-powershell').textContent = POWERSHELL_SNIPPET;
+    document.getElementById('pre-html').textContent = HTML_SNIPPET;
+    document.getElementById('pre-json').textContent = JSON_SNIPPET;
+
+    // ── Listeners ──
+    document.getElementById('order-selector').addEventListener('change', e => {
+      currentOrder = SAMPLES[parseInt(e.target.value, 10)] || SAMPLES[0];
+      renderReceipts();
+    });
+
+    document.querySelectorAll('.segment-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.segment-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const is58 = btn.dataset.width === '58mm';
+        document.getElementById('bill-preview-card').classList.toggle('compact-58mm', is58);
+        document.getElementById('kot-preview-card').classList.toggle('compact-58mm', is58);
+      });
+    });
+
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    function showToast(msg = '✅ Copied to clipboard!') {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2500);
+    }
+
+    function copyCodeFromPre(preId) {
+      const text = document.getElementById(preId).textContent;
+      navigator.clipboard.writeText(text).then(() => showToast('✅ Copied snippet to clipboard!'));
+    }
+
+    document.getElementById('hero-copy-btn').addEventListener('click', () => {
+      navigator.clipboard.writeText(MASTER_PROMPT).then(() => showToast('📋 Antigravity Master Prompt Copied!'));
+    });
+
+    document.getElementById('btn-copy-prompt-top').addEventListener('click', () => {
+      navigator.clipboard.writeText(MASTER_PROMPT).then(() => showToast('📋 Antigravity Master Prompt Copied!'));
+    });
+
+    // Printing
+    function printSingleSlip(type) {
+      const colBill = document.getElementById('slip-col-bill');
+      const colKot = document.getElementById('slip-col-kot');
+      if (type === 'bill') {
+        colBill.style.display = 'flex';
+        colKot.style.display = 'none';
+      } else {
+        colBill.style.display = 'none';
+        colKot.style.display = 'flex';
+      }
+      window.print();
+      setTimeout(() => {
+        colBill.style.display = 'flex';
+        colKot.style.display = 'flex';
+      }, 500);
+    }
+
+    document.getElementById('btn-print-bill').addEventListener('click', () => printSingleSlip('bill'));
+    document.getElementById('btn-print-kot').addEventListener('click', () => printSingleSlip('kot'));
+    document.getElementById('btn-print-both').addEventListener('click', () => {
+      document.getElementById('slip-col-bill').style.display = 'flex';
+      document.getElementById('slip-col-kot').style.display = 'flex';
+      window.print();
+    });
+
+    // Initialize
+    renderReceipts();
+  </script>
+</body>
+
+</html>

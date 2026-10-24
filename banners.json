@@ -1,0 +1,62 @@
+[
+  {
+    "id": "banner-1",
+    "imageID": 29137,
+    "title": "Signature Rice Bowls - Fresh & Filling",
+    "url": "https://cdn.dotpe.in/promoBanner/21751/1.png",
+    "linkCategory": "6111605",
+    "linkName": "SIGNATURE RICE BOWLS - NEW",
+    "active": true,
+    "position": 0
+  },
+  {
+    "id": "banner-2",
+    "imageID": 29138,
+    "title": "Sandwich Classics - Baked Fresh Daily",
+    "url": "https://cdn.dotpe.in/promoBanner/21751/2.png",
+    "linkCategory": "6110171",
+    "linkName": "Create Your Own Sandwiches",
+    "active": true,
+    "position": 1
+  },
+  {
+    "id": "banner-3",
+    "imageID": 29139,
+    "title": "Crispy Fresh Garden Salads",
+    "url": "https://cdn.dotpe.in/promoBanner/21751/3.png",
+    "linkCategory": "6104012",
+    "linkName": "Salads",
+    "active": true,
+    "position": 2
+  },
+  {
+    "id": "banner-4",
+    "imageID": 29140,
+    "title": "Sub Cravers - Handcrafted Melts",
+    "url": "https://cdn.dotpe.in/promoBanner/21751/4.png",
+    "linkCategory": "6104009",
+    "linkName": "Sub Cravers - Try New",
+    "active": true,
+    "position": 3
+  },
+  {
+    "id": "banner-5",
+    "imageID": 29141,
+    "title": "Chef's Signature Gourmet Subs",
+    "url": "https://cdn.dotpe.in/promoBanner/21751/5.png",
+    "linkCategory": "6104010",
+    "linkName": "Hot & Cheesy Signature Subs",
+    "active": true,
+    "position": 4
+  },
+  {
+    "id": "banner-6",
+    "imageID": 29142,
+    "title": "Subway Special Toasties & Sides",
+    "url": "https://cdn.dotpe.in/promoBanner/21751/6.png",
+    "linkCategory": "6114166",
+    "linkName": "Subway Special Toasties",
+    "active": true,
+    "position": 5
+  }
+]

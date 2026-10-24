@@ -1,0 +1,501 @@
+{
+  "storeInfo": {
+    "name": "RELELAPOS",
+    "subtitle": "• T I F F I N S •",
+    "tagline": "Pure Taste - Freshly Made Always",
+    "outlet": "Main Road Outlet",
+    "phone": "+91 98765 43210",
+    "storeId": "521",
+    "address": "Main Road Outlet, Topsia Kolkata, West Bengal 700046",
+    "gstin": "19AAACS2026M1Z4",
+    "fssai": "12821013000521"
+  },
+  "currentShift": {
+    "shiftId": "SH-20261023-12",
+    "date": "2026-10-23",
+    "isOpen": true,
+    "openedAt": "2026-10-23T19:29:53.912Z",
+    "openingFloat": 100,
+    "cashSales": 249,
+    "cashExpenses": 0,
+    "expectedCash": 349,
+    "actualCountedCash": null,
+    "discrepancy": 0,
+    "isSettled": false,
+    "settledAt": null
+  },
+  "orders": [
+    {
+      "id": "ORD-2052",
+      "orderNumber": 112,
+      "tokenNumber": 12,
+      "orderType": "Dine-In",
+      "table": "T-1",
+      "items": [
+        {
+          "itemID": 7053603,
+          "itemName": "Tandoori Chicken Tikka Rice Bowl",
+          "quantity": 1,
+          "price": 219,
+          "costPrice": 88,
+          "isVegetarian": "Y"
+        },
+        {
+          "itemID": 7134144,
+          "itemName": "Chicken 65 Rice Bowl",
+          "quantity": 1,
+          "price": 219,
+          "costPrice": 88,
+          "isVegetarian": "Y"
+        }
+      ],
+      "itemCount": 2,
+      "subtotal": 438,
+      "discount": 0,
+      "cgst": 0,
+      "sgst": 0,
+      "tax": 0,
+      "total": 438,
+      "paymentMethod": "UPI",
+      "paymentStatus": "Paid",
+      "orderStatus": "New",
+      "createdAt": "2026-10-24T08:44:15.068Z",
+      "customer": {
+        "name": "Guest Customer",
+        "phone": "+91 98765 43210",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ORD-2051",
+      "orderNumber": 111,
+      "tokenNumber": 11,
+      "orderType": "Dine-In",
+      "table": "T-4",
+      "items": [
+        {
+          "name": "Paneer Tikka Sub",
+          "qty": 1,
+          "price": 249
+        },
+        {
+          "name": "Chilli Bean Patty Rice Bowl",
+          "qty": 1,
+          "price": 249
+        }
+      ],
+      "itemCount": 2,
+      "subtotal": 498,
+      "discount": 0,
+      "cgst": 0,
+      "sgst": 0,
+      "tax": 0,
+      "total": 498,
+      "paymentMethod": "UPI",
+      "paymentStatus": "Paid",
+      "orderStatus": "New",
+      "createdAt": "2026-10-24T08:33:31.692Z",
+      "customer": {
+        "name": "Great customer",
+        "phone": "9988776655"
+      }
+    },
+    {
+      "id": "ORD-2050",
+      "orderNumber": 110,
+      "tokenNumber": 10,
+      "orderType": "Dine-In",
+      "table": "T-3",
+      "items": [
+        {
+          "name": "Paneer Tikka Sub",
+          "qty": 1,
+          "price": 249
+        },
+        {
+          "name": "Chilli Bean Patty Rice Bowl",
+          "qty": 1,
+          "price": 249
+        }
+      ],
+      "itemCount": 2,
+      "subtotal": null,
+      "discount": 0,
+      "cgst": 0,
+      "sgst": 0,
+      "tax": 0,
+      "total": null,
+      "paymentMethod": "UPI",
+      "paymentStatus": "Paid",
+      "orderStatus": "New",
+      "createdAt": "2026-10-24T08:32:26.487Z",
+      "customer": {
+        "name": "Great customer",
+        "phone": "9988776655"
+      }
+    },
+    {
+      "id": "ORD-2049",
+      "orderNumber": 109,
+      "tokenNumber": 9,
+      "orderType": "Dine-In",
+      "table": "T-2",
+      "items": [
+        {
+          "name": "Veggie Delite Sub",
+          "qty": 1,
+          "price": 180
+        }
+      ],
+      "itemCount": 1,
+      "subtotal": null,
+      "discount": 0,
+      "cgst": 0,
+      "sgst": 0,
+      "tax": 0,
+      "total": null,
+      "paymentMethod": "UPI",
+      "paymentStatus": "Paid",
+      "orderStatus": "New",
+      "createdAt": "2026-10-24T08:30:26.044Z",
+      "customer": {
+        "name": "Rahul Sharma",
+        "phone": "9876543210"
+      }
+    },
+    {
+      "id": "ORD-2048",
+      "orderNumber": 108,
+      "tokenNumber": 8,
+      "orderType": "Dine-In",
+      "table": "T-1",
+      "items": [
+        {
+          "itemID": 101,
+          "itemName": "Aloo Patty Sub",
+          "quantity": 1,
+          "price": 150
+        }
+      ],
+      "itemCount": 1,
+      "subtotal": 150,
+      "discount": 0,
+      "cgst": 0,
+      "sgst": 0,
+      "tax": 0,
+      "total": 150,
+      "paymentMethod": "UPI",
+      "paymentStatus": "Paid",
+      "orderStatus": "New",
+      "createdAt": "2026-10-24T08:19:09.896Z",
+      "customer": {
+        "name": "Counter Test",
+        "phone": "9876543210"
+      }
+    },
+    {
+      "id": "ORD-2047",
+      "orderNumber": 107,
+      "tokenNumber": 7,
+      "orderType": "Dine-In",
+      "table": "T-1",
+      "items": [
+        {
+          "itemID": 6988177,
+          "itemName": "Paneer Tikka Sandwich",
+          "quantity": 1,
+          "price": 229,
+          "costPrice": 92,
+          "isVegetarian": "Y"
+        }
+      ],
+      "itemCount": 1,
+      "subtotal": 229,
+      "discount": 0,
+      "cgst": 0,
+      "sgst": 0,
+      "tax": 0,
+      "total": 229,
+      "paymentMethod": "UPI",
+      "paymentStatus": "Paid",
+      "orderStatus": "New",
+      "createdAt": "2026-10-24T08:18:40.713Z",
+      "customer": {
+        "name": "Guest Customer",
+        "phone": "+91 98765 43210",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ORD-2046",
+      "orderNumber": 106,
+      "tokenNumber": 6,
+      "orderType": "Dine-In",
+      "table": "T-1",
+      "items": [
+        {
+          "itemID": 7053596,
+          "itemName": "Chilli Bean Patty Rice Bowl",
+          "quantity": 1,
+          "price": 179,
+          "costPrice": 72,
+          "isVegetarian": "Y"
+        }
+      ],
+      "itemCount": 1,
+      "subtotal": 179,
+      "discount": 0,
+      "cgst": 0,
+      "sgst": 0,
+      "tax": 0,
+      "total": 179,
+      "paymentMethod": "UPI",
+      "paymentStatus": "Paid",
+      "orderStatus": "New",
+      "createdAt": "2026-10-24T08:15:47.410Z",
+      "customer": {
+        "name": "Guest Customer",
+        "phone": "+91 98765 43210",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ORD-2045",
+      "orderNumber": 105,
+      "tokenNumber": 5,
+      "orderType": "Dine-In",
+      "table": "T-1",
+      "items": [
+        {
+          "itemID": 6988177,
+          "itemName": "Paneer Tikka Sandwich",
+          "quantity": 1,
+          "price": 229,
+          "costPrice": 92,
+          "isVegetarian": "Y"
+        }
+      ],
+      "itemCount": 1,
+      "subtotal": 229,
+      "discount": 0,
+      "cgst": 0,
+      "sgst": 0,
+      "tax": 0,
+      "total": 229,
+      "paymentMethod": "UPI",
+      "paymentStatus": "Paid",
+      "orderStatus": "New",
+      "createdAt": "2026-10-24T08:12:28.613Z",
+      "customer": {
+        "name": "Guest Customer",
+        "phone": "+91 98765 43210",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ORD-2044",
+      "orderNumber": 104,
+      "tokenNumber": 4,
+      "orderType": "Dine-In",
+      "table": "T-1",
+      "items": [
+        {
+          "itemID": 7053603,
+          "itemName": "Tandoori Chicken Tikka Rice Bowl",
+          "quantity": 1,
+          "price": 219,
+          "costPrice": 88,
+          "isVegetarian": "Y"
+        }
+      ],
+      "itemCount": 1,
+      "subtotal": 219,
+      "discount": 0,
+      "cgst": 0,
+      "sgst": 0,
+      "tax": 0,
+      "total": 219,
+      "paymentMethod": "UPI",
+      "paymentStatus": "Paid",
+      "orderStatus": "New",
+      "createdAt": "2026-10-24T08:11:47.714Z",
+      "customer": {
+        "name": "Guest Customer",
+        "phone": "+91 98765 43210",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ORD-2043",
+      "orderNumber": 103,
+      "tokenNumber": 3,
+      "orderType": "Dine-In",
+      "table": "T-1",
+      "items": [
+        {
+          "itemID": 7053598,
+          "itemName": "Paneer Tikka Rice Bowl",
+          "quantity": 1,
+          "price": 219,
+          "costPrice": 88,
+          "isVegetarian": "Y"
+        }
+      ],
+      "itemCount": 1,
+      "subtotal": 219,
+      "discount": 0,
+      "cgst": 0,
+      "sgst": 0,
+      "tax": 0,
+      "total": 219,
+      "paymentMethod": "UPI",
+      "paymentStatus": "Paid",
+      "orderStatus": "New",
+      "createdAt": "2026-10-24T08:11:21.152Z",
+      "customer": {
+        "name": "Guest Customer",
+        "phone": "+91 98765 43210",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ORD-2042",
+      "orderNumber": 102,
+      "tokenNumber": 2,
+      "orderType": "Dine-In",
+      "table": "T-1",
+      "items": [
+        {
+          "itemID": 7053596,
+          "itemName": "Chilli Bean Patty Rice Bowl",
+          "quantity": 1,
+          "price": 179,
+          "costPrice": 72,
+          "isVegetarian": "Y"
+        }
+      ],
+      "itemCount": 1,
+      "subtotal": 179,
+      "discount": 0,
+      "cgst": 0,
+      "sgst": 0,
+      "tax": 0,
+      "total": 179,
+      "paymentMethod": "UPI",
+      "paymentStatus": "Paid",
+      "orderStatus": "New",
+      "createdAt": "2026-10-24T07:42:46.864Z",
+      "customer": {
+        "name": "Guest Customer",
+        "phone": "+91 98765 43210",
+        "notes": ""
+      }
+    },
+    {
+      "id": "ORD-2041",
+      "orderNumber": 101,
+      "tokenNumber": 1,
+      "orderType": "Dine-In",
+      "table": "T-1",
+      "items": [
+        {
+          "itemID": 7053596,
+          "itemName": "Chilli Bean Patty Rice Bowl",
+          "quantity": 1,
+          "price": 249,
+          "costPrice": 100,
+          "isVegetarian": "Y"
+        }
+      ],
+      "itemCount": 1,
+      "subtotal": 249,
+      "discount": 0,
+      "cgst": 0,
+      "sgst": 0,
+      "tax": 0,
+      "total": 249,
+      "paymentMethod": "Cash",
+      "paymentStatus": "Pending (Pay at Counter)",
+      "orderStatus": "New",
+      "createdAt": "2026-10-24T06:00:23.594Z",
+      "customer": {
+        "name": "Guest Customer",
+        "phone": "+91 98765 43210",
+        "notes": ""
+      }
+    }
+  ],
+  "expenses": [],
+  "inventory": [
+    {
+      "id": "INV-1",
+      "name": "Italian Artisan 6-inch Loaf",
+      "category": "Bakery",
+      "currentStock": 49,
+      "minStock": 25,
+      "unit": "loaves",
+      "costPerUnit": 18,
+      "status": "OK"
+    },
+    {
+      "id": "INV-2",
+      "name": "Parmesan Oregano Loaf",
+      "category": "Bakery",
+      "currentStock": 14,
+      "minStock": 20,
+      "unit": "loaves",
+      "costPerUnit": 22,
+      "status": "LOW"
+    },
+    {
+      "id": "INV-3",
+      "name": "Mozzarella Cheese Slices",
+      "category": "Dairy",
+      "currentStock": 110,
+      "minStock": 40,
+      "unit": "slices",
+      "costPerUnit": 12,
+      "status": "OK"
+    },
+    {
+      "id": "INV-4",
+      "name": "Paneer Cubes (Fresh)",
+      "category": "Produce",
+      "currentStock": 8.5,
+      "minStock": 4,
+      "unit": "kg",
+      "costPerUnit": 240,
+      "status": "OK"
+    },
+    {
+      "id": "INV-5",
+      "name": "Grilled Chicken Breast Fillets",
+      "category": "Poultry",
+      "currentStock": 4.2,
+      "minStock": 5,
+      "unit": "kg",
+      "costPerUnit": 320,
+      "status": "LOW"
+    },
+    {
+      "id": "INV-6",
+      "name": "Chipotle Southwest Sauce",
+      "category": "Sauces",
+      "currentStock": 6,
+      "minStock": 3,
+      "unit": "bottles",
+      "costPerUnit": 180,
+      "status": "OK"
+    },
+    {
+      "id": "INV-7",
+      "name": "Sub Wrapping Sheets (Pack)",
+      "category": "Packaging",
+      "currentStock": 3,
+      "minStock": 5,
+      "unit": "packs",
+      "costPerUnit": 150,
+      "status": "LOW"
+    }
+  ]
+}
