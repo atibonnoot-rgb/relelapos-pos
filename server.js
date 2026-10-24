@@ -591,22 +591,72 @@ function handleRequest(req, res) {
     return;
   }
 
+  // Promo Banners API: return customized banner slider from bannerStore
+  if (pathname.includes('/banners') || pathname.includes('promo/banner')) {
+    const promoData = { status: true, promoBanners: bannerStore.getPromoBanners() };
+    const jsonStr = JSON.stringify(promoData);
+    res.writeHead(200, {
+      'Content-Type': 'application/json',
+      'Content-Length': Buffer.byteLength(jsonStr),
+      'Access-Control-Allow-Origin': '*',
+      'Cache-Control': 'no-cache, no-store, must-revalidate'
+    });
+    res.end(jsonStr);
+    return;
+  }
+
   // Intercept Merchant and Store info APIs to eliminate dotpe proxy lag and 401/403s
   if (pathname.startsWith('/api/merchant/external/')) {
+    const storeObj = {
+      storeId: 521,
+      storeID: 521,
+      cstoreId: 521,
+      cstoreID: 521,
+      merchantId: 21751,
+      merchantID: 21751,
+      name: "Subway",
+      storeName: "Subway",
+      merchantName: "Subway",
+      description: "Order direct from Subway. Fresh subs, salads and wraps.",
+      location: "Subway Store",
+      serviceType: "instore",
+      status: "ACTIVE",
+      storeStatusFlag: true,
+      isOpen: true,
+      isStoreOpen: {
+        instore: true,
+        delivery: true,
+        pickup: true,
+        takeaway: true
+      },
+      templateType: "ecommerce",
+      services: {
+        instore: ["dine-in", "takeaway"],
+        outstore: ["delivery", "pickup"]
+      },
+      configs: {
+        enableCatalogBanner: true,
+        templateType: {
+          instore: "ecommerce",
+          delivery: "ecommerce",
+          pickup: "ecommerce",
+          takeaway: "ecommerce"
+        }
+      }
+    };
     const jsonStr = JSON.stringify({
       status: true,
-      store: {
-        storeId: 521,
-        merchantId: 21751,
-        name: "Subway",
-        serviceType: "instore",
-        status: "ACTIVE",
-        isOpen: true
-      },
+      store: storeObj,
       merchant: {
         merchantId: 21751,
+        merchantID: 21751,
         name: "Subway",
-        status: "ACTIVE"
+        merchantName: "Subway",
+        status: "ACTIVE",
+        services: {
+          instore: ["dine-in", "takeaway"],
+          outstore: ["delivery", "pickup"]
+        }
       }
     });
     res.writeHead(200, {
@@ -2554,8 +2604,8 @@ function handleRequest(req, res) {
         `;
 
         const mobileBodyScripts = `
-        <script src="/subway_slider_client.js?v=20261024_8"></script>
-        <script src="/subway_cart_client.js?v=20261024_8"></script>
+        <script src="/subway_slider_client.js?v=20261024_9"></script>
+        <script src="/subway_cart_client.js?v=20261024_9"></script>
         <a id="subway-admin-link" href="/admin" target="_blank" title="Open Admin Panel">
           ⚙ Admin
         </a>
