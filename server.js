@@ -2313,15 +2313,7 @@ function handleRequest(req, res) {
               }
             } catch(e) {}
 
-            const observer = new MutationObserver(() => {
-              const patch = document.getElementById('mobile-inner-patch');
-              if (patch && patch.nextElementSibling) {
-                document.head.appendChild(patch);
-              }
-            });
-            observer.observe(document.head, { childList: true });
-
-            // Continuously guarantee full natural scrolling for all 141+ menu items
+            // Guarantee full natural scrolling for all 141+ menu items
             function ensureNaturalScrolling() {
               if (document.documentElement) {
                 if (document.documentElement.style.overflowY === 'hidden') document.documentElement.style.overflowY = 'auto';
@@ -2346,8 +2338,8 @@ function handleRequest(req, res) {
               }
             }
             ensureNaturalScrolling();
-            setInterval(ensureNaturalScrolling, 120);
-            window.addEventListener('scroll', ensureNaturalScrolling, { passive: true });
+            setTimeout(ensureNaturalScrolling, 600);
+            setTimeout(ensureNaturalScrolling, 2000);
 
             let isProgrammaticScrolling = false;
 
@@ -2578,16 +2570,23 @@ function handleRequest(req, res) {
 
             initCatalogImages();
             let hydrateTimer = null;
+            let hydrateCount = 0;
+            let obs = null;
             function scheduleHydration() {
               if (hydrateTimer) return;
               hydrateTimer = setTimeout(() => {
                 hydrateTimer = null;
                 hydrateCategoryImages();
-              }, 80);
+                hydrateCount++;
+                if (hydrateCount > 15 && obs) {
+                  obs.disconnect();
+                }
+              }, 150);
             }
             if (window.MutationObserver) {
-              const obs = new MutationObserver(scheduleHydration);
-              obs.observe(document.body || document.documentElement, { childList: true, subtree: true });
+              obs = new MutationObserver(scheduleHydration);
+              const rootEl = document.getElementById('root') || document.body;
+              if (rootEl) obs.observe(rootEl, { childList: true, subtree: true });
             }
 
           })();
@@ -2624,8 +2623,8 @@ function handleRequest(req, res) {
         `;
 
         const mobileBodyScripts = `
-        <script src="/subway_slider_client.js?v=20261026_1"></script>
-        <script src="/subway_cart_client.js?v=20261026_1"></script>
+        <script src="/subway_slider_client.js?v=20261026_2"></script>
+        <script src="/subway_cart_client.js?v=20261026_2"></script>
         <a id="subway-admin-link" href="/admin" target="_blank" title="Open Admin Panel">
           ⚙ Admin
         </a>

@@ -1124,20 +1124,13 @@
     });
   }
 
-  // Run immediately and continuously
-  forceUnlockAndCleanLoaders();
-  setInterval(forceUnlockAndCleanLoaders, 100);
-
-  if (window.MutationObserver) {
-    const unblockObserver = new MutationObserver(() => {
-      forceUnlockAndCleanLoaders();
-    });
-    unblockObserver.observe(document.documentElement, {
-      childList: true,
-      subtree: true,
-      attributes: true,
-      attributeFilter: ['style', 'class']
-    });
+  // Run safely on load and delayed check without recursive mutation observers
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', forceUnlockAndCleanLoaders);
+  } else {
+    forceUnlockAndCleanLoaders();
   }
+  setTimeout(forceUnlockAndCleanLoaders, 500);
+  setTimeout(forceUnlockAndCleanLoaders, 2000);
 })();
 
