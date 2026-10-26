@@ -77,19 +77,17 @@ CREATE POLICY "Allow public all on print_jobs" ON public.print_jobs FOR ALL USIN
 DROP POLICY IF EXISTS "Allow public all on app_config" ON public.app_config;
 CREATE POLICY "Allow public all on app_config" ON public.app_config FOR ALL USING (true);
 
--- 5. ENABLE REALTIME
+-- 5. ENABLE REALTIME (Safely wrapped so script succeeds even if publication is already enabled or handled via Dashboard)
 DO $$
 BEGIN
-    IF NOT EXISTS (
-        SELECT 1 FROM pg_publication_tables 
-        WHERE pubname = 'supabase_realtime' AND tablename = 'orders'
-    ) THEN
-        ALTER PUBLICATION supabase_realtime ADD TABLE public.orders;
-    END IF;
-    IF NOT EXISTS (
-        SELECT 1 FROM pg_publication_tables 
-        WHERE pubname = 'supabase_realtime' AND tablename = 'print_jobs'
-    ) THEN
-        ALTER PUBLICATION supabase_realtime ADD TABLE public.print_jobs;
-    END IF;
+    ALTER PUBLICATION supabase_realtime ADD TABLE public.orders;
+EXCEPTION WHEN OTHERS THEN
+    RAISE NOTICE 'Notice: Realtime on orders skipped or already present: %', SQLERRM;
+END $$;
+
+DO $$
+BEGIN
+    ALTER PUBLICATION supabase_realtime ADD TABLE public.print_jobs;
+EXCEPTION WHEN OTHERS THEN
+    RAISE NOTICE 'Notice: Realtime on print_jobs skipped or already present: %', SQLERRM;
 END $$;

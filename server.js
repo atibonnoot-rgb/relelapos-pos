@@ -912,9 +912,9 @@ function handleRequest(req, res) {
     return;
   }
 
-  // Static files handling
-  if (pathname.startsWith('/static/')) {
-    const relativeStatic = pathname.slice('/static/'.length);
+  // Static files handling (universal: matches /static/ and any nested /.../static/ path)
+  if (pathname.includes('/static/')) {
+    const relativeStatic = pathname.slice(pathname.indexOf('/static/') + '/static/'.length);
     const localStaticFile = path.join(EVERSUB_DIR, 'static', relativeStatic);
 
     if (fs.existsSync(localStaticFile) && fs.statSync(localStaticFile).isFile()) {
@@ -931,26 +931,30 @@ function handleRequest(req, res) {
     const cdnStaticFile = path.join(BASE_DIR, 'cdn.dotpe.in', 'static', relativeStatic);
     if (fs.existsSync(cdnStaticFile) && fs.statSync(cdnStaticFile).isFile()) {
       const ext = path.extname(cdnStaticFile).toLowerCase();
-      res.writeHead(200, { 'Content-Type': MIME_TYPES[ext] || 'application/octet-stream' });
+      res.writeHead(200, {
+        'Content-Type': MIME_TYPES[ext] || 'application/octet-stream',
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Pragma': 'no-cache'
+      });
       fs.createReadStream(cdnStaticFile).pipe(res);
       return;
     }
 
-    fetchAndCache(`https://eversub.dotpe.in${pathname}`, localStaticFile, res);
+    fetchAndCache(`https://eversub.dotpe.in/static/${relativeStatic}`, localStaticFile, res);
     return;
   }
 
   // Self-unregistering Service Worker to ensure clean live updates
-  if (pathname === '/worker.js' || pathname === '/service-worker.js') {
+  if (pathname === '/worker.js' || pathname === '/service-worker.js' || pathname.endsWith('/worker.js')) {
     res.writeHead(200, { 'Content-Type': 'application/javascript; charset=utf-8' });
     res.end('self.addEventListener("install", () => self.skipWaiting()); self.addEventListener("activate", () => self.registration.unregister());');
     return;
   }
 
-  // Mirrors subdirectories (cdn.dotpe.in, etc.)
+  // Mirrors subdirectories (cdn.dotpe.in, etc.) - match anywhere in path
   for (const domain of ['cdn.dotpe.in', 'assets.loginwithamazon.com', 'dynamic.criteo.com', 'www.google-analytics.com', 'connect.facebook.net']) {
-    if (pathname.startsWith(`/${domain}/`)) {
-      const rel = pathname.slice(`/${domain}/`.length);
+    if (pathname.includes(`/${domain}/`)) {
+      const rel = pathname.slice(pathname.indexOf(`/${domain}/`) + `/${domain}/`.length);
       const localFile = path.join(BASE_DIR, domain, rel);
       if (fs.existsSync(localFile) && fs.statSync(localFile).isFile()) {
         const ext = path.extname(localFile).toLowerCase();
@@ -973,6 +977,13 @@ function handleRequest(req, res) {
     return;
   }
 
+  // Asset guard: Never serve HTML for static assets, scripts, or styles that were not found
+  if (/\.(?:js|css|png|jpg|jpeg|gif|svg|woff|woff2|ttf|ico|json|map)$/i.test(pathname)) {
+    res.writeHead(404, { 'Content-Type': 'text/plain' });
+    res.end('Asset not found');
+    return;
+  }
+
   // Root URL redirect to Store SPA
   if (pathname === '/' || pathname === '') {
     res.writeHead(302, { 'Location': '/store/521/1/999' });
@@ -989,6 +1000,11 @@ function handleRequest(req, res) {
     if (fs.existsSync(storeHtml)) {
       try {
         let htmlContent = fs.readFileSync(storeHtml, 'utf8');
+
+        // Normalize all relative HTTrack asset URLs to root-relative URLs
+        htmlContent = htmlContent.replace(/(?:\.\.\/)+static\//g, '/static/');
+        htmlContent = htmlContent.replace(/(?:\.\.\/)+cdn\.dotpe\.in\//g, '/cdn.dotpe.in/');
+        htmlContent = htmlContent.replace(/(?:\.\.\/)+worker\.js/g, '/worker.js');
 
         // Disable service worker to prevent registration/caching errors on mobile
         htmlContent = htmlContent.replace('"serviceWorker"in navigator', 'false');
@@ -2608,8 +2624,8 @@ function handleRequest(req, res) {
         `;
 
         const mobileBodyScripts = `
-        <script src="/subway_slider_client.js?v=20261024_9"></script>
-        <script src="/subway_cart_client.js?v=20261024_9"></script>
+        <script src="/subway_slider_client.js?v=20261026_1"></script>
+        <script src="/subway_cart_client.js?v=20261026_1"></script>
         <a id="subway-admin-link" href="/admin" target="_blank" title="Open Admin Panel">
           ⚙ Admin
         </a>
