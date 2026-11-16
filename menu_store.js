@@ -1,7 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 
-const MENU_FILE = path.join(__dirname, 'custom_menu.json');
+const MENU_FILE = fs.existsSync(path.join(process.cwd(), 'custom_menu.json'))
+  ? path.join(process.cwd(), 'custom_menu.json')
+  : path.join(__dirname, 'custom_menu.json');
 const ORIG_SAMPLE_FILE = fs.existsSync(path.join(__dirname, 'original_menu_sample.json'))
   ? path.join(__dirname, 'original_menu_sample.json')
   : path.join(__dirname, 'scratch', 'original_menu_sample.json');

@@ -1,11 +1,17 @@
 const fs = require('fs');
 const path = require('path');
 
-const BANNERS_FILE = path.join(__dirname, 'banners.json');
+const BANNERS_FILE = fs.existsSync(path.join(process.cwd(), 'banners.json'))
+  ? path.join(process.cwd(), 'banners.json')
+  : path.join(__dirname, 'banners.json');
 const UPLOADS_DIR = path.join(__dirname, 'uploads', 'banners');
 
-if (!fs.existsSync(UPLOADS_DIR)) {
-  fs.mkdirSync(UPLOADS_DIR, { recursive: true });
+try {
+  if (!fs.existsSync(UPLOADS_DIR)) {
+    fs.mkdirSync(UPLOADS_DIR, { recursive: true });
+  }
+} catch (e) {
+  // Read-only filesystem in cloud serverless environment
 }
 
 const DEFAULT_BANNERS = [

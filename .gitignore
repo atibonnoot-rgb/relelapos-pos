@@ -1,4 +1,5 @@
 node_modules/
+relelapos-pos.zip
 .vercel/
 .env
 .env.local
@@ -37,4 +38,8 @@ relelapos-printer-daemon/.printed_orders.json
 relelapos-printer-daemon/daemon_printed_cache.json
 
 
+relelapos-pos.zip
 .vercel
+
+.vercel
+.env*

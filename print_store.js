@@ -3,7 +3,9 @@ const path = require('path');
 const { execSync } = require('child_process');
 const supabaseClient = require('./supabase_client');
 
-const PRINT_JOBS_FILE = path.join(__dirname, 'print_jobs.json');
+const PRINT_JOBS_FILE = fs.existsSync(path.join(process.cwd(), 'print_jobs.json'))
+  ? path.join(process.cwd(), 'print_jobs.json')
+  : path.join(__dirname, 'print_jobs.json');
 
 const DEFAULT_STORE_INFO = {
   name: "RELELAPOS",

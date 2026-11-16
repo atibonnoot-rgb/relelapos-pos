@@ -51,7 +51,7 @@ function parseBody(req) {
 }
 
 const PORT = process.env.PORT || 3000;
-const BASE_DIR = __dirname;
+const BASE_DIR = fs.existsSync(path.join(process.cwd(), 'admin')) ? process.cwd() : __dirname;
 const EVERSUB_DIR = path.join(BASE_DIR, 'eversub.dotpe.in');
 
 const MIME_TYPES = {
@@ -128,10 +128,12 @@ function fetchAndCache(url, localPath, res) {
   const getReq = https.get(url, (proxyRes) => {
     proxyRes.on('error', (err) => console.error('fetchAndCache proxyRes error:', err.message));
     if (proxyRes.statusCode === 200) {
-      fs.mkdirSync(path.dirname(localPath), { recursive: true });
-      const isGzip = proxyRes.headers['content-encoding'] === 'gzip';
-      const fileStream = fs.createWriteStream(localPath);
-      fileStream.on('error', (err) => console.error('fileStream error:', err.message));
+      let fileStream = null;
+      try {
+        fs.mkdirSync(path.dirname(localPath), { recursive: true });
+        fileStream = fs.createWriteStream(localPath);
+        fileStream.on('error', () => {});
+      } catch (e) {}
 
       if (!res.headersSent) {
         res.writeHead(200, {
@@ -143,10 +145,10 @@ function fetchAndCache(url, localPath, res) {
       if (isGzip) {
         const gunzip = zlib.createGunzip();
         gunzip.on('error', (err) => console.error('gunzip error:', err.message));
-        proxyRes.pipe(gunzip).pipe(fileStream);
+        if (fileStream) try { proxyRes.pipe(gunzip).pipe(fileStream); } catch(e) {}
         proxyRes.pipe(res);
       } else {
-        proxyRes.pipe(fileStream);
+        if (fileStream) try { proxyRes.pipe(fileStream); } catch(e) {}
         proxyRes.pipe(res);
       }
     } else {

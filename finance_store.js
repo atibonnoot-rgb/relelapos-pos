@@ -2,7 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const supabaseClient = require('./supabase_client');
 
-const FINANCE_FILE = path.join(__dirname, 'restaurant_finances.json');
+const FINANCE_FILE = fs.existsSync(path.join(process.cwd(), 'restaurant_finances.json'))
+  ? path.join(process.cwd(), 'restaurant_finances.json')
+  : path.join(__dirname, 'restaurant_finances.json');
 
 const INITIAL_FINANCES = {
   storeInfo: {
