@@ -1,0 +1,30 @@
+# Project Context & AI Guidelines for RELELAPOS
+
+You are working on the **RELELAPOS** Restaurant Ordering, Admin Studio & KDS system.
+
+## 1. Project Overview & Architectural Guidelines
+- **Core Server**: `server.js` is the central Node.js HTTP router. It handles REST APIs, static file routing, and order processing.
+- **Serverless / Vercel**: `api/index.js` wraps `server.js` for Vercel Serverless deployments. Always keep code compatible with both local Node.js (`node server.js`) and Vercel serverless execution.
+- **Database**: Supabase PostgreSQL. Tables are defined in `supabase_schema.sql`.
+- **Client Scripts**:
+  - `subway_cart_client.js`: Injected into the customer storefront for cart UI, add-ons, quantity selectors, checkout modal, and API submission.
+  - `subway_slider_client.js`: Handles top promotional slider banners.
+- **Admin UI**: `admin/index.html` is a standalone single-page application with tabs for Orders (KDS), Menu Studio, Finances, and Hardware Printer controls.
+
+## 2. Important Rules & Conventions
+1. **Zero-Breakage on Static Storefront**:
+   - `eversub.dotpe.in/` contains the customer storefront HTML and bundled assets. Do not rewrite bundled asset files manually unless necessary; dynamic behaviors are injected via `subway_cart_client.js` and `subway_slider_client.js`.
+2. **API Consistency**:
+   - Storefront routes are accessed via `/store/521/1/999`.
+   - Admin routes live at `/admin`.
+   - Admin REST endpoints live under `/api/admin/...`.
+   - Customer order endpoints live under `/api/orders`.
+   - Hardware printer endpoints live under `/api/printer/...`.
+3. **Environment Variables**:
+   - Never commit `.env` or hardcode sensitive tokens (Supabase Service Role Key, PRINTER_SECRET).
+   - Read variables using `process.env`.
+4. **Data Stores**:
+   - Menu data: `menu_store.js` (with fallback to `custom_menu.json`).
+   - Finances: `finance_store.js` (with fallback to `restaurant_finances.json`).
+   - Thermal Printing: `print_store.js` (with fallback to `print_jobs.json`).
+   - All critical mutations should sync with Supabase when credentials are configured.
